@@ -1,4 +1,4 @@
-<div id="partner-area">
+<section id="partner-area">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -76,4 +76,4 @@
                 </div>
             </div>
         </div>
-    </div>
+</section>
