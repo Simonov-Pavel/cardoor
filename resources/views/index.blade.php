@@ -1,5 +1,9 @@
 @extends('layouts.master')
 @section('title', 'Cardoor')
+@section('description', 'description')
+@section('keywords', 'keywords')
+@section('canonical', route('index'))
+
 @section('content')
     
 @include('includes.slider')
