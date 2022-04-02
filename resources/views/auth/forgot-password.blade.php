@@ -1,13 +1,11 @@
 <x-guest-layout>
     <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
+    <x-slot name="logo">
+            <h1 style="font-size:40px; font-weight:700">Востановление пароля</h1>
         </x-slot>
 
         <div class="mb-4 text-sm text-gray-600">
-            {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
+            {{ __('Забыли пароль, нет проблем. Введите email, который указывали при регистрации и мы отправим на него ссылку для востановления пароля.') }}
         </div>
 
         <!-- Session Status -->
@@ -28,7 +26,7 @@
 
             <div class="flex items-center justify-end mt-4">
                 <x-button>
-                    {{ __('Email Password Reset Link') }}
+                    {{ __('Востановить') }}
                 </x-button>
             </div>
         </form>
