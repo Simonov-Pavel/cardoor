@@ -26,6 +26,7 @@
     <link href="{{ asset('assets/css/font-awesome.css') }}" rel="stylesheet">
     <!--=== Theme Reset CSS ===-->
     <link href="{{ asset('assets/css/reset.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <!--=== Main Style CSS ===-->
     <link href="{{ asset('style.css') }}" rel="stylesheet">
     <!--=== Responsive CSS ===-->
@@ -75,15 +76,16 @@
                     <!--== Single HeaderTop End ==-->
 
                     <!--== Social Icons Start ==-->
-                    <div class="col-lg-3 text-right">
+                    <!--<div class="col-lg-3 text-right">
                         <div class="header-social-icons">
                             <a href="#"><i class="fa fa-behance"></i></a>
                             <a href="#"><i class="fa fa-pinterest"></i></a>
                             <a href="#"><i class="fa fa-facebook"></i></a>
                             <a href="#"><i class="fa fa-linkedin"></i></a>
                         </div>
-                    </div>
+                    </div>-->
                     <!--== Social Icons End ==-->
+                    
                 </div>
             </div>
         </div>
@@ -94,12 +96,41 @@
             <div class="container">
                 <div class="row">
                     <!--== Logo Start ==-->
-                    <div class="col-lg-4">
-                        <a href="index.html" class="logo">
+                    <div class="col-lg-2">
+                        <a href="{{ route('index') }}" class="logo">
                             <img src="{{ asset('assets/img/logo.png') }}" alt="JSOFT">
                         </a>
                     </div>
                     <!--== Logo End ==-->
+
+                    <div class="cart-icon col-lg-2 text-right">
+                            <a href="" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                @guest
+                                <i class="fa fa-user mr-2" aria-hidden="true" style="font-size:30px;"></i>Акаунт
+                                @endguest
+                                <!--@auth
+                                    <picture>
+                                        <sourse srcset="{{ Storage::url('user/' . Auth::user()->img_webp_preview)}}" type="image/webp">
+                                        <img src="{{ Storage::url('user/' . Auth::user()->img_preview)}}" alt="User Image - {{Auth::user()->name}}" style="width:45px; border-radius:50%">
+                                    </picture>
+                                    
+                                    {{Auth::user()->name}}
+                                @endauth-->
+                            </a>
+                            <ul class="dropdown-menu" style="left:30px">
+                                @guest
+                                <li><a href="{{ route('register') }}" class="account-link ml-2">Регистрация</a></li>
+                                <li><a href="{{ route('login') }}" class="account-link ml-2">Войти</a></li>
+                                @endguest
+                                <!--@auth
+                                    <li><a href="{{ route('account') }}" class="account-link ml-2">Личный кабинет</a></li>
+                                    @admin 
+                                        <li><a href="{{ route('admin') }}" class="account-link ml-2">Панель администратора</a></li>
+                                    @endadmin
+                                    <li><a href="{{ route('get.logout') }}" class="account-link ml-2">Выйти</a></li>
+                                @endauth-->
+                            </ul>
+                        </div>
 
                     <!--== Main Menu Start ==-->
                     <div class="col-lg-8 d-none d-xl-block">

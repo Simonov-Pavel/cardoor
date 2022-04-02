@@ -167,6 +167,14 @@
     color: #fff;
 }
 
+#header-area .cart-icon .account-link {
+    color: #000;
+}
+
+#header-area .cart-icon .account-link:hover {
+    color: #ffd000;
+}
+
 #header-top {
     background-color: #1e2228;
     padding: 8px 0;
