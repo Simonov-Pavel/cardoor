@@ -121,7 +121,7 @@
                                 @guest
                                 <li><a href="{{ route('register') }}" class="account-link ml-2">Регистрация</a></li>
                                 <li><a href="{{ route('login') }}" class="account-link ml-2">Войти</a></li>
-                                @endguest
+                                @endguest         
                                 <!--@auth
                                     <li><a href="{{ route('account') }}" class="account-link ml-2">Личный кабинет</a></li>
                                     @admin 
