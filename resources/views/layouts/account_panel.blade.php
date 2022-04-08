@@ -35,10 +35,10 @@
     <div class="logotip" style="background:#fff">
     <a href="{{ route('index') }}" class="brand-link">
       
-      <!--<picture>
-        <source srcset="{{ Storage::url('contact/' . $contact->logo_webp)}}" type="image/webp">
-        <img src="{{ Storage::url('contact/' . $contact->logo)}}" alt="logo">
-      </picture>-->
+      <picture>
+        <source srcset="" type="image/webp">
+        <img src="" alt="logo">
+      </picture>
       
       
     </a>
@@ -47,10 +47,10 @@
     <div class="sidebar">
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <!--<picture>
+          <picture>
             <sourse srcset="{{ Storage::url('user/' . Auth::user()->img_webp_preview)}}" type="image/webp">
             <img src="{{ Storage::url('user/' . Auth::user()->img_preview)}}" alt="User Image - {{Auth::user()->name}}" style="width:45px; border-radius:50%">
-          </picture>-->
+          </picture>
         </div>
         <div class="info">
           <a href="{{route('account')}}" class="d-block">{{Auth::user()->name}}</a>
@@ -80,7 +80,6 @@
       <div>
     
       <section class="content">
-        @include('includes.user_errors')
 
         @yield('content')
 
