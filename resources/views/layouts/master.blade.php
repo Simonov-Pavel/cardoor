@@ -109,10 +109,10 @@
                                 <i class="fa fa-user mr-2" aria-hidden="true" style="font-size:30px;"></i>Акаунт
                                 @endguest
                                 @auth
-                                    <!--<picture>
+                                    <picture>
                                         <sourse srcset="{{ Storage::url('user/' . Auth::user()->img_webp_preview)}}" type="image/webp">
                                         <img src="{{ Storage::url('user/' . Auth::user()->img_preview)}}" alt="User Image - {{Auth::user()->name}}" style="width:45px; border-radius:50%">
-                                    </picture>-->
+                                    </picture>
                                     
                                     {{Auth::user()->name}}
                                 @endauth
