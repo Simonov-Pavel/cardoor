@@ -32,12 +32,12 @@
   </nav>
 
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
-    <div class="logotip" style="background:#fff">
+    <div class="logotip">
     <a href="{{ route('index') }}" class="brand-link">
       
       <picture>
         <source srcset="" type="image/webp">
-        <img src="" alt="logo">
+        <img src="{{ asset('assets/img/logo.png') }}" alt="logo">
       </picture>
       
       
