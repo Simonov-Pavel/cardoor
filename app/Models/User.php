@@ -23,6 +23,10 @@ class User extends Authenticatable
         'password',
         'phone',
         'role',
+        'img',
+        'img_webp',
+        'img_preview',
+        'img_preview_webp',
     ];
 
     /**
