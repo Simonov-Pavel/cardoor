@@ -110,8 +110,8 @@
                                 @endguest
                                 @auth
                                     <picture>
-                                        <sourse srcset="{{ Storage::url('user/' . Auth::user()->img_webp_preview)}}" type="image/webp">
-                                        <img src="{{ Storage::url('user/' . Auth::user()->img_preview)}}" alt="User Image - {{Auth::user()->name}}" style="width:45px; border-radius:50%">
+                                        <sourse srcset="{{ Storage::url('user/' . Auth::user()->img_preview_webp)}}" type="image/webp">
+                                        <img src="{{ Storage::url('user/' . Auth::user()->img_preview)}}" alt="User Image - {{Auth::user()->name}}" style="width:45px; border-radius:50%;display:inline-block">
                                     </picture>
                                     
                                     {{Auth::user()->name}}
