@@ -108,27 +108,27 @@
                                 @guest
                                 <i class="fa fa-user mr-2" aria-hidden="true" style="font-size:30px;"></i>Акаунт
                                 @endguest
-                                <!--@auth
-                                    <picture>
+                                @auth
+                                    <!--<picture>
                                         <sourse srcset="{{ Storage::url('user/' . Auth::user()->img_webp_preview)}}" type="image/webp">
                                         <img src="{{ Storage::url('user/' . Auth::user()->img_preview)}}" alt="User Image - {{Auth::user()->name}}" style="width:45px; border-radius:50%">
-                                    </picture>
+                                    </picture>-->
                                     
                                     {{Auth::user()->name}}
-                                @endauth-->
+                                @endauth
                             </a>
                             <ul class="dropdown-menu" style="left:30px">
                                 @guest
                                 <li><a href="{{ route('register') }}" class="account-link ml-2">Регистрация</a></li>
                                 <li><a href="{{ route('login') }}" class="account-link ml-2">Войти</a></li>
                                 @endguest         
-                                <!--@auth
+                                @auth
                                     <li><a href="{{ route('account') }}" class="account-link ml-2">Личный кабинет</a></li>
                                     @admin 
                                         <li><a href="{{ route('admin') }}" class="account-link ml-2">Панель администратора</a></li>
                                     @endadmin
                                     <li><a href="{{ route('get.logout') }}" class="account-link ml-2">Выйти</a></li>
-                                @endauth-->
+                                @endauth
                             </ul>
                         </div>
 
