@@ -117,7 +117,7 @@
                                     {{Auth::user()->name}}
                                 @endauth
                             </a>
-                            <ul class="dropdown-menu" style="left:30px">
+                            <ul class="dropdown-menu" style="left:30px;@auth @admin width:250px; @endadmin @endauth">
                                 @guest
                                 <li><a href="{{ route('register') }}" class="account-link ml-2">Регистрация</a></li>
                                 <li><a href="{{ route('login') }}" class="account-link ml-2">Войти</a></li>
