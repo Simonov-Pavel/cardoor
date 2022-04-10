@@ -13,6 +13,7 @@
     <title>@yield('title')</title>
 
     <!--=== Bootstrap CSS ===-->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">
     <!--=== Slicknav CSS ===-->
     <link href="{{ asset('assets/css/plugins/slicknav.min.css') }}" rel="stylesheet">
@@ -24,13 +25,15 @@
     <link href="{{ asset('assets/css/plugins/gijgo.css') }}" rel="stylesheet">
     <!--=== FontAwesome CSS ===-->
     <link href="{{ asset('assets/css/font-awesome.css') }}" rel="stylesheet">
+    
     <!--=== Theme Reset CSS ===-->
     <link href="{{ asset('assets/css/reset.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    
     <!--=== Main Style CSS ===-->
     <link href="{{ asset('style.css') }}" rel="stylesheet">
     <!--=== Responsive CSS ===-->
     <link href="{{ asset('assets/css/responsive.css') }}" rel="stylesheet">
+    
 
 
     <!--[if lt IE 9]>
