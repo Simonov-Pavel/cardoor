@@ -133,7 +133,7 @@
                         </div>
 
                     <!--== Main Menu Start ==-->
-                    <div class="col-lg-8 d-none d-xl-block">
+                    <div class="col-lg-8 d-none d-lg-block">
                         <nav class="mainmenu alignright">
                             <ul>
                                 <li class="active"><a href="#">Home</a>

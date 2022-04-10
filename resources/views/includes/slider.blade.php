@@ -1,4 +1,3 @@
-<!--== Slider Area Start ==-->
 <section id="slider-area">
         <!--== slide Item One ==-->
         <div class="single-slide-item overlay">
@@ -66,4 +65,3 @@
         </div>
         <!--== slide Item One ==-->
     </section>
-    <!--== Slider Area End ==-->
