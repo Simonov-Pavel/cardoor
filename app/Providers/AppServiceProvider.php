@@ -31,7 +31,7 @@ class AppServiceProvider extends ServiceProvider
         });
 
         Blade::directive('menuactive', function($route){
-            return "<?php echo Route::currentRouteNamed($route) ? active : '' ?>";
+            return "<?php echo Route::currentRouteNamed($route) ? 'active' : '' ?>";
         });
     }
 }

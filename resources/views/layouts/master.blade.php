@@ -136,7 +136,7 @@
                     <div class="col-lg-8 d-none d-lg-block">
                         <nav class="mainmenu alignright">
                             <ul>
-                                <li class="active"><a href="#">Home</a>
+                                <li class="@menuactive('index')"><a href="{{route('index')}}">Главная</a>
                                     <ul>
                                         <li><a href="index.html">Home 1</a></li>
                                         <li><a href="index2.html">Home 2</a></li>
