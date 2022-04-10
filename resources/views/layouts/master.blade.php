@@ -136,14 +136,8 @@
                     <div class="col-lg-8 d-none d-lg-block">
                         <nav class="mainmenu alignright">
                             <ul>
-                                <li class="@menuactive('index')"><a href="{{route('index')}}">Главная</a>
-                                    <ul>
-                                        <li><a href="index.html">Home 1</a></li>
-                                        <li><a href="index2.html">Home 2</a></li>
-                                        <li><a href="index3.html">Home 3</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="about.html">About</a></li>
+                                <li class="@menuactive('index')"><a href="{{route('index')}}">Главная</a></li>
+                                <li class="@menuactive('about')"><a href="{{route('about')}}">About</a></li>
                                 <li><a href="services.html">services</a></li>
                                 <li><a href="#">Cars</a>
                                     <ul>
