@@ -20,5 +20,29 @@
 
 
 @section('content') 
-  
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Адрес</th>
+      <th scope="col">Телефон</th>
+      <th scope="col">E-mail</th>
+      <th scope="col">Время работы</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <th scope="row"></th>
+      <th scope="row"></th>
+      <th scope="row"></th>
+      <th scope="row"></th>
+      <td scope="row" class="d-flex align-items-center">
+        <a href="" class="btn btn-tool" title="Редактировать"><i class="fas fa-pen text-primary"></i></a>
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
 @endsection
