@@ -14,14 +14,17 @@ return new class extends Migration
     public function up()
     {
         Schema::create('contacts', function (Blueprint $table) {
-            $table->string('address');
-            $table->string('phone');
-            $table->string('email');
-            $table->string('start-week');
-            $table->string('end-week');
-            $table->string('start-time');
-            $table->string('end-time');
-            $table->string('map');
+            $table->string('address')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('email')->nullable();
+            $table->string('logo')->nullable();
+            $table->string('logo_webp')->nullable();
+            $table->text('description')->nullable();
+            $table->string('start-week')->nullable();
+            $table->string('end-week')->nullable();
+            $table->string('start-time')->nullable();
+            $table->string('end-time')->nullable();
+            $table->string('map')->nullable();
         });
     }
 
