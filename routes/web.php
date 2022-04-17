@@ -14,7 +14,6 @@ Route::get('/', [MainController::class, 'index'])->name('index');
 Route::get('/about', [AboutController::class, 'index'])->name('about');
 
 Route::middleware(['auth'])->group(function(){
-    Route::resources(['user' => UserController::class,]);
     Route::group(['prefix'=>'account'], function(){
         Route::get('/', [App\Http\Controllers\Account\MainController::class, 'index'])->name('account');
     });
