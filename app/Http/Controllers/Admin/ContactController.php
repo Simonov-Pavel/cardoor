@@ -37,7 +37,7 @@ class ContactController extends Controller
      */
     public function edit(Contact $contact)
     {
-        //
+        return view('admin.contact.edit', compact('contact'));
     }
 
     /**
