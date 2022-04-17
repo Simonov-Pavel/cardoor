@@ -50,6 +50,11 @@
         <textarea  class="form-control" id="summernote" name='description'>{{ old('description', $contact->description) }}</textarea>
         @include('includes.error', ['field'=>'description'])
     </div>
+    <div class="form-group">
+        <label for="map">Карта</label>
+        <textarea  class="form-control" id="map" name='map'>{{ old('map', $contact->map) }}</textarea>
+        @include('includes.error', ['field'=>'map'])
+    </div>
     <div class="form-group"> 
         <label for="logo">Логотип <small>(выбирете фаил,если хотите изменить его)</small></label><br>
         <div class="picture" style="position:relative;width: fit-content;">

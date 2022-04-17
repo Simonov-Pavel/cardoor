@@ -69,17 +69,29 @@
       </td>
     </tr>
     <tr>
+      <td>Режим работы</td>
+      <td>
+        {{$contact->start_week}} - {{$contact->end_week}} {{$contact->start_time}} -{{$contact->end_time}}
+      </td>
+    </tr>
+    <tr>
       <td>Описание</td>
       <td>
       @if(isset($contact->description))
         {!!$contact->description!!}
-        @else
+      @else
           <p>Не добавленно</p>
-        @endif
+      @endif
       </td>
     </tr>
   </tbody>
 </table>
-
+<div class="col-12 mt-2">
+  @if(isset($contact->map))
+    {{$contact->map}}
+  @else
+    <p>Карта не добавленна</p>
+  @endif
+</div>
 </div>
 @endsection

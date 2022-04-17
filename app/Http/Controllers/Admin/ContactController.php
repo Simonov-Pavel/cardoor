@@ -49,6 +49,9 @@ class ContactController extends Controller
      */
     public function update(Request $request, Contact $contact)
     {
-        //
+        //logo-image??
+        $params = $request->all();
+        $contact->update($params);
+        return redirect()->route('contact.index')->with('success', 'Успешно обновлено');
     }
 }
