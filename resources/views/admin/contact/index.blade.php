@@ -20,40 +20,66 @@
 
 @section('content') 
 
-<a href="{{ route('contact.store', $contact) }}" class="btn btn-primary ml-2 mb-3">Редактировать</a>
-@if(isset($contact))
+<a href="{{ route('contact.edit', $contact) }}" class="btn btn-primary ml-2 mb-3">Редактировать</a>
+
 <table class="table table-striped">
   <tbody>
+    
     <tr>
       <td>Логотип</td>
       <td>
+        @if(isset($contact->logo))
         <picture>
           <source srcset="{{ Storage::url('contact/'.$contact->logo_webp) }}" type="image/webp">
           <img src="{{ Storage::url('contact/'.$contact->logo) }}" width="100" alt="logo">
         </picture>
+        @else
+          <p>Не добавленно</p>
+        @endif
       </td>
     </tr>
     <tr>
       <td>Адрес</td>
-      <td>{{$contact->address}}</td>
+      <td>
+        @if(isset($contact->address))
+        {{$contact->address}}
+        @else
+          <p>Не добавленно</p>
+        @endif
+      </td>
     </tr>
     <tr>
       <td>Телефон</td>
-      <td>{{$contact->phone}}</td>
+      <td>
+      @if(isset($contact->phone))
+        {{$contact->phone}}
+        @else
+          <p>Не добавленно</p>
+        @endif
+      </td>
     </tr>
     <tr>
       <td>Email</td>
-      <td>{{$contact->email}}</td>
+      <td>
+      @if(isset($contact->email))
+        {{$contact->email}}
+        @else
+          <p>Не добавленно</p>
+        @endif
+      </td>
     </tr>
     <tr>
       <td>Описание</td>
-      <td>{!!$contact->description!!}</td>
+      <td>
+      @if(isset($contact->description))
+        {!!$contact->description!!}
+        @else
+          <p>Не добавленно</p>
+        @endif
+      </td>
     </tr>
   </tbody>
 </table>
-@else
-<h3 class='text-center'>Вы пока ничего не добавили</h3>
-@endif
 
 </div>
 @endsection
