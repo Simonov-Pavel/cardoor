@@ -20,5 +20,6 @@ Route::middleware(['auth'])->group(function(){
 
     Route::group(['prefix'=>'admin', 'middleware'=>['admin']], function(){
         Route::get('/', [App\Http\Controllers\Admin\MainController::class, 'index'])->name('admin');
+        Route::get('/contact', [App\Http\Controllers\Admin\ContactController::class, 'index'])->name('contact');
     });
 });
