@@ -27,14 +27,10 @@
     <tr>
       <td>Логотип</td>
       <td>
-        @if(isset($contact->logo))
         <picture>
           <source srcset="{{ Storage::url('contact/'.$contact->logo_webp) }}" type="image/webp">
           <img src="{{ Storage::url('contact/'.$contact->logo) }}" width="100" alt="logo">
         </picture>
-        @else
-          <p>Не добавленно</p>
-        @endif
       </td>
     </tr>
     <tr>
