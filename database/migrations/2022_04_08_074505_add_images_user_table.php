@@ -14,10 +14,10 @@ return new class extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('img')->after('phone')->default('avatar.jpg');
-            $table->string('img_webp')->after('img')->default('avatar_webp.webp');
-            $table->string('img_preview')->after('img_webp')->default('avatar_preview.jpg');
-            $table->string('img_preview_webp')->after('img_preview')->default('avatar_preview_webp.webp');
+            $table->string('img')->after('phone')->default('default.jpg');
+            $table->string('img_webp')->after('img')->default('default_webp.webp');
+            $table->string('img_preview')->after('img_webp')->default('default_preview.jpg');
+            $table->string('img_preview_webp')->after('img_preview')->default('default_preview_webp.webp');
         });
     }
 
