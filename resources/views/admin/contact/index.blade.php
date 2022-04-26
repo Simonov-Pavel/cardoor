@@ -29,7 +29,7 @@
       <td>
         <picture>
           <source srcset="{{ Storage::url('contact/'.$contact->logo_webp) }}" type="image/webp">
-          <img src="{{ Storage::url('contact/'.$contact->logo) }}" width="100" alt="logo">
+          <img src="{{ Storage::url('contact/'.$contact->logo) }}" alt="logo">
         </picture>
       </td>
     </tr>
