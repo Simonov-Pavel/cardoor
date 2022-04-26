@@ -3,7 +3,6 @@
 @section('panel', 'AdminPanel')
 @section('keywords', 'keywords')
 @section('description', 'description')
-@section('canonical', route('index'))
 @section('meta')
   <meta name="csrf-token" content="{{ csrf_token() }}">
 @endsection

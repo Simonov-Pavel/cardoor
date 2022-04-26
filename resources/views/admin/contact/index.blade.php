@@ -3,7 +3,6 @@
 @section('panel', "Панель администратора")
 @section('keywords', 'keywords')
 @section('description', 'description')
-@section('canonical', route('index'))
 
 @section('user_menu')
   @include('admin.includes.sidebar_menu')

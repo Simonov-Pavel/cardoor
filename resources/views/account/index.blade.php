@@ -3,7 +3,6 @@
 @section('title', 'Главная')
 @section('keywords', 'keywords')
 @section('description', 'description')
-@section('canonical', route('index'))
 @section('user_menu')
     @include('account.includes.sidebar-menu')
 @endsection

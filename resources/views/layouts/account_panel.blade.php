@@ -6,7 +6,7 @@
   <meta name="description" content="@yield('description')">
   <meta name="keywords" content="@yield('keywords')">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  @yield('meta')
+  <meta name="robots" content="noindex,nofollow">
   
   <link rel="canonical" href="@yield('canonical')">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
