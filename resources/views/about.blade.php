@@ -2,7 +2,7 @@
 @section('title', 'Cardoor - about')
 @section('description', 'description')
 @section('keywords', 'keywords')
-@section('canonical', route('index'))
+@section('canonical', route('about'))
 
 @section('content')
 
