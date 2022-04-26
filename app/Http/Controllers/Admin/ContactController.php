@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Contact;
-use Illuminate\Http\Request;
+use App\Http\Requests\Admin\ContactRequest;
 
 class ContactController extends Controller
 {
@@ -37,17 +37,19 @@ class ContactController extends Controller
      */
     public function edit(Contact $contact)
     {
-        return view('admin.contact.edit', compact('contact'));
+        $week = ['Пн'=>'Понедельник','Вт'=>'Вторник','Ср'=>'Среда','Чт'=>'Четверг',
+                'Пт'=>'Пятница','Сб'=>'Суббота','Вс'=>'Воскресенье'];
+        return view('admin.contact.edit', compact('contact', 'week'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\Admin\ContactRequest  $request
      * @param  \App\Models\Contact  $contact
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Contact $contact)
+    public function update(ContactRequest $request, Contact $contact)
     {
         //logo-image??
         $params = $request->all();

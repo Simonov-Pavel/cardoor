@@ -27,9 +27,13 @@ class ContactRequest extends FormRequest
             'address' => ['required', 'string'],
             'phone' => ['required', 'string'],
             'email' => ['required', 'string', 'email'],
+            'start_week' => ['required', 'string'],
+            'end_week' => ['required', 'string'],
+            'start_time' => ['required', 'string'],
+            'end_time' => ['required', 'string'],
             'description' => ['required', 'string'],
-            'map' => ['required', 'string'],
-            'logo' => ['mimes:jpeg,jpg,png', 'dimensions:min_width=100, min_height=100'],
+            'map' => ['nullable','string'],
+            'logo' => ['mimes:jpeg,jpg,png', 'dimensions:min_width=100, min_height=50'],
         ];
     }
 }
