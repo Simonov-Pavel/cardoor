@@ -62,19 +62,19 @@
                 <div class="row">
                     <!--== Single HeaderTop Start ==-->
                     <div class="col-lg-3 text-left">
-                        <i class="fa fa-map-marker"></i> 802/2, Mirpur, Dhaka
+                        <i class="fa fa-map-marker"></i> {{$contact->address}}
                     </div>
                     <!--== Single HeaderTop End ==-->
 
                     <!--== Single HeaderTop Start ==-->
                     <div class="col-lg-3 text-center">
-                        <i class="fa fa-mobile"></i> +1 800 345 678
+                        <i class="fa fa-mobile"></i> {{$contact->phone}}
                     </div>
                     <!--== Single HeaderTop End ==-->
 
                     <!--== Single HeaderTop Start ==-->
                     <div class="col-lg-3 text-center">
-                        <i class="fa fa-clock-o"></i> Mon-Fri 09.00 - 17.00
+                        <i class="fa fa-clock-o"></i> {{$contact->start_week}} - {{$contact->end_week}} {{$contact->start_time}} -{{$contact->end_time}}
                     </div>
                     <!--== Single HeaderTop End ==-->
 
@@ -101,7 +101,10 @@
                     <!--== Logo Start ==-->
                     <div class="col-lg-2">
                         <a href="{{ route('index') }}" class="logo">
-                            <img src="{{ asset('assets/img/logo.png') }}" alt="JSOFT">
+                            <picture>
+                                <source srcset="{{ Storage::url('contact/'.$contact->img_webp) }}" type="image/webp">
+                                <img src="{{ Storage::url('contact/'.$contact->img) }}" alt="logo">
+                            </picture>
                         </a>
                     </div>
                     <!--== Logo End ==-->
@@ -191,18 +194,21 @@
                     <!-- Single Footer Widget Start -->
                     <div class="col-lg-4 col-md-6">
                         <div class="single-footer-widget">
-                            <h2>About Us</h2>
+                            <h2>о нас</h2>
                             <div class="widget-body">
-                                <img src="{{ asset('assets/img/logo.png') }}" alt="JSOFT">
-                                <p>Lorem ipsum dolored is a sit ameted consectetur adipisicing elit. Nobis magni assumenda distinctio debitis, eum fuga fugiat error reiciendis.</p>
-
+                                <picture>
+                                    <source srcset="{{ Storage::url('contact/'.$contact->img_webp) }}" type="image/webp">
+                                    <img src="{{ Storage::url('contact/'.$contact->img) }}" alt="logo">
+                                </picture>
+                                <p>{{$contact->description}}</p>
+                                <!--noindex-->
                                 <div class="newsletter-area">
                                     <form action="index.html">
-                                        <input type="email" placeholder="Subscribe Our Newsletter">
+                                        <input type="email" placeholder="Подпишитесь на нашу рассылку">
                                         <button type="submit" class="newsletter-btn"><i class="fa fa-send"></i></button>
                                     </form>
                                 </div>
-
+                                <!--/noindex-->
                             </div>
                         </div>
                     </div>
@@ -211,7 +217,7 @@
                     <!-- Single Footer Widget Start -->
                     <div class="col-lg-4 col-md-6">
                         <div class="single-footer-widget">
-                            <h2>Recent Posts</h2>
+                            <h2>последнии посты</h2>
                             <div class="widget-body">
                                 <ul class="recent-post">
                                     <li>
@@ -247,14 +253,14 @@
                     <!-- Single Footer Widget Start -->
                     <div class="col-lg-4 col-md-6">
                         <div class="single-footer-widget">
-                            <h2>get touch</h2>
+                            <h2>Контакты</h2>
                             <div class="widget-body">
-                                <p>Lorem ipsum doloer sited amet, consectetur adipisicing elit. nibh auguea, scelerisque sed</p>
+                                <p>Можете с нами связаться по контактам ниже</p>
 
                                 <ul class="get-touch">
-                                    <li><i class="fa fa-map-marker"></i> 800/8, Kazipara, Dhaka</li>
-                                    <li><i class="fa fa-mobile"></i> +880 01 86 25 72 43</li>
-                                    <li><i class="fa fa-envelope"></i> kazukamdu83@gmail.com</li>
+                                    <li><i class="fa fa-map-marker"></i> {{$contact->address}}</li>
+                                    <li><i class="fa fa-mobile"></i> {{$contact->phone}}</li>
+                                    <li><i class="fa fa-envelope"></i> {{$contact->email}}</li>
                                 </ul>
                                 <a href="https://goo.gl/maps/b5mt45MCaPB2" class="map-show" target="_blank">Show Location</a>
                             </div>
