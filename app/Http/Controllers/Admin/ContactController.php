@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Contact;
 use App\Http\Requests\Admin\ContactRequest;
+use App\Classes\Images;
 
 class ContactController extends Controller
 {
@@ -51,7 +52,9 @@ class ContactController extends Controller
      */
     public function update(ContactRequest $request, Contact $contact)
     {
-        //logo-image??
+        if($request->has('image')){
+        Images::updateImages($request, $contact, 'contact', 190);
+        }
         $params = $request->all();
         $contact->update($params);
         return redirect()->route('contact.index')->with('success', 'Успешно обновлено');

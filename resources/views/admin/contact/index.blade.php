@@ -28,8 +28,8 @@
       <td>Логотип</td>
       <td>
         <picture>
-          <source srcset="{{ Storage::url('contact/'.$contact->logo_webp) }}" type="image/webp">
-          <img src="{{ Storage::url('contact/'.$contact->logo) }}" alt="logo">
+          <source srcset="{{ Storage::url('contact/'.$contact->img_webp) }}" type="image/webp">
+          <img src="{{ Storage::url('contact/'.$contact->img) }}" alt="logo">
         </picture>
       </td>
     </tr>

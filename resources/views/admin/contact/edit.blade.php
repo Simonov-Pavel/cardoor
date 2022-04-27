@@ -100,17 +100,17 @@
         @include('includes.error', ['field'=>'map'])
     </div>
     <div class="form-group"> 
-        <label for="logo">Логотип <small>(выбирете фаил,если хотите изменить его)</small></label><br>
+        <label for="image">Логотип <small>(выбирете фаил,если хотите изменить его)</small></label><br>
         <div class="picture" style="position:relative;width: fit-content;">
             <picture>
-                <source srcset="{{ Storage::url('contact/'.$contact->logo_webp) }}" type="image/webp">
-                <img src="{{ Storage::url('contact/'.$contact->logo) }}" alt="logo">
+                <source srcset="{{ Storage::url('contact/'.$contact->img_webp) }}" type="image/webp">
+                <img src="{{ Storage::url('contact/'.$contact->img) }}" alt="logo">
             </picture>
-      <div class="overflow d-none" style="position:absolute; top:0;left:0;right:0;bottom:0;background-color:rgba(255, 255, 255, 0.8);"></div>
+        </div>
     </div>
     <small>Рекомендуемые минимальные размеры 100px X 50px</small><br>
-    <input type="file" id="logo" name="logo"><br><br>
-    @include('includes.error', ['field'=>'logo'])
+    <input type="file" id="image" name="image"><br><br>
+    @include('includes.error', ['field'=>'image'])
   
 <button type="submit" class="btn btn-primary">Изменить</button>
 </form>

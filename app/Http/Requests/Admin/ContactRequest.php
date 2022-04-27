@@ -33,7 +33,7 @@ class ContactRequest extends FormRequest
             'end_time' => ['required', 'string'],
             'description' => ['required', 'string'],
             'map' => ['nullable','string'],
-            'logo' => ['mimes:jpeg,jpg,png', 'dimensions:min_width=100, min_height=50'],
+            'logo' => ['image','mimes:jpeg,jpg,png', 'dimensions:min_width=100, min_height=50'],
         ];
     }
 }
