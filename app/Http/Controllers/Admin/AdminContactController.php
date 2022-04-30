@@ -7,7 +7,7 @@ use App\Models\Contact;
 use App\Http\Requests\Admin\ContactRequest;
 use App\Classes\Images;
 
-class ContactController extends Controller
+class AdminContactController extends Controller
 {
     /**
      * Display a listing of the resource.

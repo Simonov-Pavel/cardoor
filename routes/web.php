@@ -4,7 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\AboutController;
-use App\Http\Controllers\Admin\ContactController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\Admin\AdminContactController;
 
 
 require __DIR__.'/auth.php';
@@ -12,6 +13,7 @@ Route::get('/logout', [AuthenticatedSessionController::class, 'destroy'])->name(
 
 Route::get('/', [MainController::class, 'index'])->name('index');
 Route::get('/about', [AboutController::class, 'index'])->name('about');
+Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 
 Route::middleware(['auth'])->group(function(){
     Route::group(['prefix'=>'account'], function(){
@@ -21,7 +23,7 @@ Route::middleware(['auth'])->group(function(){
     Route::group(['prefix'=>'admin', 'middleware'=>['admin']], function(){
         Route::get('/', [App\Http\Controllers\Admin\MainController::class, 'index'])->name('admin');
         Route::resources([
-            'contact' => ContactController::class,
+            'contact' => AdminContactController::class,
         ]);
     });
 });
