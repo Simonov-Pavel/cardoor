@@ -77,17 +77,6 @@
                         <i class="fa fa-clock-o"></i> {{$contact->start_week}} - {{$contact->end_week}} {{$contact->start_time}} -{{$contact->end_time}}
                     </div>
                     <!--== Single HeaderTop End ==-->
-
-                    <!--== Social Icons Start ==-->
-                    <!--<div class="col-lg-3 text-right">
-                        <div class="header-social-icons">
-                            <a href="#"><i class="fa fa-behance"></i></a>
-                            <a href="#"><i class="fa fa-pinterest"></i></a>
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-linkedin"></i></a>
-                        </div>
-                    </div>-->
-                    <!--== Social Icons End ==-->
                     
                 </div>
             </div>
@@ -259,10 +248,10 @@
 
                                 <ul class="get-touch">
                                     <li><i class="fa fa-map-marker"></i> {{$contact->address}}</li>
-                                    <li><i class="fa fa-mobile"></i> {{$contact->phone}}</li>
-                                    <li><i class="fa fa-envelope"></i> {{$contact->email}}</li>
+                                    <li><i class="fa fa-mobile"></i> <a href="tel:{{ $contact->phone }}">{{ $contact->phone }}</a></li>
+                                    <li><i class="fa fa-envelope"></i> <a href="mailto:{{ $contact->email }}">{{ $contact->email }}</a></li>
                                 </ul>
-                                <a href="https://goo.gl/maps/b5mt45MCaPB2" class="map-show" target="_blank">Show Location</a>
+                                <a href="https://goo.gl/maps/LspsfvqXceEXgU526" class="map-show" target="_blank">Show Location</a>
                             </div>
                         </div>
                     </div>

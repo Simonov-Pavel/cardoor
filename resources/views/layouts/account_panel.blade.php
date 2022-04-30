@@ -92,12 +92,8 @@
 <script>
 </script>
 <script src="{{ asset('plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-<script src="{{ asset('plugins/inputmask/jquery.inputmask.min.js') }}"></script>
 <script src="{{ asset('dist/js/adminlte.js') }}"></script>
 <script src="https://use.fontawesome.com/68a4632e2a.js"></script>
 @yield('custom-js')
-<script>
-  $('[data-mask]').inputmask()
-</script>
 </body>
 </html>

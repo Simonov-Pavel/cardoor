@@ -24,6 +24,6 @@ class ViewServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        View::composer(['layouts.master', 'admin.contact.index'], 'App\ViewsComposer\ContactComposer');
+        View::composer(['layouts.master', 'contact', 'admin.contact.index'], 'App\ViewsComposer\ContactComposer');
     }
 }

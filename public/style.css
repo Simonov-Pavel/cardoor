@@ -2622,8 +2622,8 @@ body,
 }
 
 .message-input,
-.website-input,
-.subject-input {
+.phone-input,
+.email-input {
     margin-top: 30px;
 }
 
@@ -2732,11 +2732,11 @@ body,
     padding: 15px 25px;
 }
 
-.maparea {
-    height: 550px;
+#map {
+    height: 300px;
 }
 
-.maparea iframe {
+#map iframe {
     border: medium none;
     -webkit-filter: grayscale(100%);
     filter: grayscale(100%);

@@ -3,6 +3,12 @@
 @section('panel', 'AdminPanel')
 @section('keywords', 'keywords')
 @section('description', 'description')
+@section('custom-js')
+    <script src="{{ asset('plugins/inputmask/jquery.inputmask.min.js') }}"></script>
+    <script>
+        $('[data-mask]').inputmask()
+    </script>
+@endsection
 @section('meta')
   <meta name="csrf-token" content="{{ csrf_token() }}">
 @endsection
