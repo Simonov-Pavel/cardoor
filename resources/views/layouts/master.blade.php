@@ -34,7 +34,7 @@
     <!--=== Responsive CSS ===-->
     <link href="{{ asset('assets/css/responsive.css') }}" rel="stylesheet">
     
-
+    @yield('custom-css')
 
     <!--[if lt IE 9]>
         <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -322,7 +322,7 @@
 
     <!--=== Mian Js ===-->
     <script src="{{ asset('assets/js/main.js') }}"></script>
-
+    @yield('custom-js')
 </body>
 
 </html>
