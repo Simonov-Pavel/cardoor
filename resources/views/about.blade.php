@@ -3,6 +3,7 @@
 @section('description', 'description')
 @section('keywords', 'keywords')
 @section('canonical', route('about'))
+@section('title-header', 'О нас')
 
 @section('content')
 
