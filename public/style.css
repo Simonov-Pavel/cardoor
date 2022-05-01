@@ -2733,15 +2733,14 @@ body,
 }
 
 #map {
-    height: 300px;
-}
-
-#map iframe {
-    border: medium none;
+    height: 400px;
+    width: 100%;
     -webkit-filter: grayscale(100%);
     filter: grayscale(100%);
-    height: 100%;
-    width: 100%;
+}
+
+[class*="copyrights-pane"]{
+    display: none !important;
 }
 
 /*==============================

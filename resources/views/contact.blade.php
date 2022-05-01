@@ -9,6 +9,41 @@
     <script>
         $('[data-mask]').inputmask()
     </script>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=23118afd-889a-4350-b7c2-9fede61fc90b&lang=ru_RU"></script>
+    <script>
+        ymaps.ready(init);
+        let center = [56.144975, 101.598878];
+        function init(){
+            let myMap = new ymaps.Map("map", {
+                center: center,
+                zoom: 16
+            });
+
+            let placemark = new ymaps.Placemark(center, {
+                balloonContent: `
+                <div class='bollon'>
+                    <div>{{ $contact->address }}</div>
+                </div>
+                `
+            },{
+                iconLayout:'default#image',
+                //iconImageHref: '',
+                iconImageSize: [40,40],
+                iconImageSOffset: [-19,-44]
+            });
+            
+            myMap.controls.remove('geolocationControl');
+            myMap.controls.remove('searchControl');
+            myMap.controls.remove('trafficControl');
+            myMap.controls.remove('typeSelector');
+            myMap.controls.remove('fullscreenControl');
+            myMap.controls.remove('zoomControl');
+            myMap.controls.remove('rulerControl');
+
+            myMap.geoObjects.add(placemark);
+        }
+
+    </script>
 @endsection
 
 @section('content')
@@ -18,25 +53,24 @@
     <!--== Contact Page Area Start ==-->
     <div class="contact-page-wrao section-padding">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-10 m-auto">
-                    <div id="map">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d555.6693509134135!2d101.60399481416644!3d56.14539151701966!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5ce34e88d1c1ffbb%3A0x15ce59675e7edd5a!2z0JDQktCi0J7QlNCV0JvQng!5e0!3m2!1sru!2sbd!4v1651322827918!5m2!1sru!2sbd" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
-                </div>
-                
-            </div>
-            <div class="row m-3">
-            <div class="col-lg-10">
+        <div class="row">
+                <div class="col-lg-10">
                     <div>
                         <ul style="font-size:20px">
-                            <li><i class="fa fa-map-marker" style="width:30px"></i> {{ $contact->address }}</li>
+                            <li><i class="fa fa-map-marker" style="width:30px"></i> <a href="https://yandex.ru/maps/-/CCUFBOVVGB" target="_blank">{{ $contact->address }}</a></li>
                             <li><i class="fa fa-mobile" style="width:30px"></i> <a href="tel:{{ $contact->phone }}">{{ $contact->phone }}</a></li>
                             <li><i class="fa fa-envelope" style="width:30px"></i> <a href="mailto:{{ $contact->email }}">{{ $contact->email }}</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
+            <div class="row m-3">
+                <div class="col-lg-10 m-auto">
+                    <div id="map"></div>
+                </div>
+                
+            </div>
+            
             <div class="row mt-5">
                 <div class="col-lg-10 m-auto">
                     <div class="contact-form">
