@@ -251,7 +251,7 @@
                                     <li><i class="fa fa-mobile"></i> <a href="tel:{{ $contact->phone }}">{{ $contact->phone }}</a></li>
                                     <li><i class="fa fa-envelope"></i> <a href="mailto:{{ $contact->email }}">{{ $contact->email }}</a></li>
                                 </ul>
-                                <a href="https://goo.gl/maps/LspsfvqXceEXgU526" class="map-show" target="_blank">Show Location</a>
+                                <a href="{{ $contact->map }}" class="map-show" target="_blank">Show Location</a>
                             </div>
                         </div>
                     </div>

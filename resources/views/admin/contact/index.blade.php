@@ -83,7 +83,7 @@
 </table>
 <div class="col-12 mt-2">
   @if(isset($contact->map))
-    {{$contact->map}}
+  <a href="{{ $contact->map }}" target="_blank">Ссылка на карту</a>
   @else
     <p>Карта не добавленна</p>
   @endif

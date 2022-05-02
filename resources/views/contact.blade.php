@@ -28,7 +28,7 @@
                 <div class="col-lg-10">
                     <div>
                         <ul style="font-size:20px">
-                            <li><i class="fa fa-map-marker" style="width:30px"></i> <a href="https://yandex.ru/maps/-/CCUFBOVVGB" target="_blank">{{ $contact->address }}</a></li>
+                            <li><i class="fa fa-map-marker" style="width:30px"></i> <a href="{{ $contact->map }}" target="_blank">{{ $contact->address }}</a></li>
                             <li><i class="fa fa-mobile" style="width:30px"></i> <a href="tel:{{ $contact->phone }}">{{ $contact->phone }}</a></li>
                             <li><i class="fa fa-envelope" style="width:30px"></i> <a href="mailto:{{ $contact->email }}">{{ $contact->email }}</a></li>
                         </ul>
