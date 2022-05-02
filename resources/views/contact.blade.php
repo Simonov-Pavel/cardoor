@@ -105,6 +105,7 @@
     <script>
         let latitude = "{{ $contact->latitude }}",
             longitude = "{{ $contact->longitude }}",
+            app_name = "{{ getenv('APP_NAME') }}",
             img = "{{ Storage::url('contact/'.$contact->img) }}",
             img_webp = "{{ Storage::url('contact/'.$contact->img_webp) }}",
             address = "{{ $contact->address }}",

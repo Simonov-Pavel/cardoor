@@ -9,6 +9,7 @@ ymaps.ready(init);
 
             let placemark = new ymaps.Placemark(center, {
                 balloonContent:`
+                    <div style="text-align:center"><h3>`+app_name+`</h3></div>
                     <div style="background:#ebebeb">
                         <picture>
                             <source srcset="`+img_webp+`" type="image/webp">

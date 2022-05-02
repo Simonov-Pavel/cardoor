@@ -12,7 +12,7 @@ function init() {
     zoom: 15
   });
   var placemark = new ymaps.Placemark(center, {
-    balloonContent: "\n                    <div style=\"background:#ebebeb\">\n                        <picture>\n                            <source srcset=\"" + img_webp + "\" type=\"image/webp\">\n                            <img src=\"" + img + "\" alt=\"logo\">\n                        </picture>\n                    </div>\n                    <div>" + address + "</div>\n                    <div><a href=\"mailto:" + email + "\">" + email + "</a></div>\n                    <div><a href=\"tel:" + phone + "\">" + phone + "</a></div>\n                "
+    balloonContent: "\n                    <div style=\"text-align:center\"><h3>" + app_name + "</h3></div>\n                    <div style=\"background:#ebebeb\">\n                        <picture>\n                            <source srcset=\"" + img_webp + "\" type=\"image/webp\">\n                            <img src=\"" + img + "\" alt=\"logo\">\n                        </picture>\n                    </div>\n                    <div>" + address + "</div>\n                    <div><a href=\"mailto:" + email + "\">" + email + "</a></div>\n                    <div><a href=\"tel:" + phone + "\">" + phone + "</a></div>\n                "
   }, {
     iconLayout: 'default#image',
     //iconImageHref: '',
