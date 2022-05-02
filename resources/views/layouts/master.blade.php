@@ -172,9 +172,10 @@
         </div>
         <!--== Header Bottom End ==-->
     </header>
-    <!--== Header Area End ==-->
-@yield('content')
-     <!--== Footer Area Start ==-->
+    @include('includes.user_errors')
+
+    @yield('content')
+     
      <section id="footer-area">
         <!-- Footer Widget Start -->
         <div class="footer-widget-area">

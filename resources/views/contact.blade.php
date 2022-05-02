@@ -47,7 +47,7 @@
             <div class="row mt-5">
                 <div class="col-lg-10 m-auto">
                     <div class="contact-form">
-                        <form action="{{ route('contact') }}" method="post">
+                        <form action="{{ route('message.store') }}" method="post">
                         @csrf
                             <div class="row">
                                 <h2 class="text-center w-100 mb-3" >Напишите нам и мы с вами свяжемся</h2>
@@ -55,7 +55,7 @@
                             <div class="row">
                                 <div class="col-lg-6 col-md-6">
                                     <div class="name-input">
-                                        <input type="text" name='name' placeholder="Укажите ваше имя" required>
+                                        <input type="text" name='name' placeholder="Укажите ваше имя" value="{{ old('name') }}" required>
                                         @include('includes.error', ['field'=>'name'])
                                     </div>
                                 </div>
@@ -69,7 +69,8 @@
                             </div>
 
                             <div class="message-input">
-                                <textarea name="review" cols="30" rows="5" placeholder="Напишите ваше сообщение"></textarea>
+                                <textarea name="message" cols="30" rows="5" placeholder="Напишите ваше сообщение"  required>{{ old('message') }}</textarea>
+                                @include('includes.error', ['field'=>'message'])
                             </div>
 
                             <div class="input-submit">

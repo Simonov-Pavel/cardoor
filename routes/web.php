@@ -5,6 +5,7 @@ use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\MessageController;
 use App\Http\Controllers\Admin\AdminContactController;
 
 
@@ -14,6 +15,7 @@ Route::get('/logout', [AuthenticatedSessionController::class, 'destroy'])->name(
 Route::get('/', [MainController::class, 'index'])->name('index');
 Route::get('/about', [AboutController::class, 'index'])->name('about');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
+Route::post('/message', [MessageController::class, 'store'])->name('message.store');
 
 Route::middleware(['auth'])->group(function(){
     Route::group(['prefix'=>'account'], function(){
