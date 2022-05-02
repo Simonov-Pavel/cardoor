@@ -4,46 +4,17 @@
 @section('keywords', 'keywords')
 @section('canonical', route('contact'))
 @section('title-header', 'Наши контакты')
+@section('custom-css')
+    <link href="{{ asset('css/map.css') }}" rel="stylesheet">
+@endsection
 @section('custom-js')
     <script src="{{ asset('plugins/inputmask/jquery.inputmask.min.js') }}"></script>
     <script>
         $('[data-mask]').inputmask()
     </script>
     <script src="https://api-maps.yandex.ru/2.1/?apikey=23118afd-889a-4350-b7c2-9fede61fc90b&lang=ru_RU"></script>
-    <script>
-        ymaps.ready(init);
-        let center = [56.144975, 101.598878];
-        function init(){
-            let myMap = new ymaps.Map("map", {
-                center: center,
-                zoom: 16
-            });
-
-            let placemark = new ymaps.Placemark(center, {
-                balloonContent: `
-                <div class='bollon'>
-                    <div>{{ $contact->address }}</div>
-                </div>
-                `
-            },{
-                iconLayout:'default#image',
-                //iconImageHref: '',
-                iconImageSize: [40,40],
-                iconImageSOffset: [-19,-44]
-            });
-            
-            myMap.controls.remove('geolocationControl');
-            myMap.controls.remove('searchControl');
-            myMap.controls.remove('trafficControl');
-            myMap.controls.remove('typeSelector');
-            myMap.controls.remove('fullscreenControl');
-            myMap.controls.remove('zoomControl');
-            myMap.controls.remove('rulerControl');
-
-            myMap.geoObjects.add(placemark);
-        }
-
-    </script>
+    
+    <script src="{{ asset('js/map.js') }}"></script>
 @endsection
 
 @section('content')

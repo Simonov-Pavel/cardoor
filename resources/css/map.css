@@ -1,0 +1,10 @@
+#map {
+    height: 400px;
+    width: 100%;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+
+[class*="copyrights-pane"]{
+    display: none !important;
+}

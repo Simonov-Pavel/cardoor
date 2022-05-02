@@ -2732,16 +2732,7 @@ body,
     padding: 15px 25px;
 }
 
-#map {
-    height: 400px;
-    width: 100%;
-    -webkit-filter: grayscale(100%);
-    filter: grayscale(100%);
-}
 
-[class*="copyrights-pane"]{
-    display: none !important;
-}
 
 /*==============================
     About Page Css
