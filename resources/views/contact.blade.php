@@ -61,25 +61,9 @@
                                 </div>
 
                                 <div class="col-lg-6 col-md-6">
-                                    <div class="subject-input">
-                                        <input type="text" name='subject' placeholder="Укажите тему сообщения" required>
-                                        @include('includes.error', ['field'=>'subject'])
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-lg-6 col-md-6">
                                     <div class="phone-input">
                                         <input type="text" name='phone' placeholder="Укажите ваш телефон" data-inputmask='"mask": "+7(999) 999-99-99"' data-mask value="{{ old('phone') }}"  required>
                                         @include('includes.error', ['field'=>'phone'])
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-6 col-md-6">
-                                    <div class="email-input">
-                                        <input type="email" name='email' placeholder="Укажите ваш email" required>
-                                        @include('includes.error', ['field'=>'email'])
                                     </div>
                                 </div>
                             </div>
@@ -89,7 +73,7 @@
                             </div>
 
                             <div class="input-submit">
-                                <button type="submit">Отправить сообщение</button>
+                                <button type="submit">Позвоните мне</button>
                             </div>
                         </form>
                     </div>
