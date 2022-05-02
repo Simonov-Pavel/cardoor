@@ -4,15 +4,15 @@ var __webpack_exports__ = {};
   !*** ./resources/js/map.js ***!
   \*****************************/
 ymaps.ready(init);
-var center = [56.144975, 101.598878];
+var center = [latitude, longitude];
 
 function init() {
   var myMap = new ymaps.Map("map", {
     center: center,
-    zoom: 16
+    zoom: 15
   });
   var placemark = new ymaps.Placemark(center, {
-    balloonContent: "\n                <div class='bollon'>\n                    <div>{{ $contact->address }}</div>\n                </div>\n                "
+    balloonContent: "\n                    <div style=\"background:#ebebeb\">\n                        <picture>\n                            <source srcset=\"" + img_webp + "\" type=\"image/webp\">\n                            <img src=\"" + img + "\" alt=\"logo\">\n                        </picture>\n                    </div>\n                    <div>" + address + "</div>\n                    <div><a href=\"mailto:" + email + "\">" + email + "</a></div>\n                    <div><a href=\"tel:" + phone + "\">" + phone + "</a></div>\n                "
   }, {
     iconLayout: 'default#image',
     //iconImageHref: '',

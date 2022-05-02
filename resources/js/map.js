@@ -1,16 +1,23 @@
+
 ymaps.ready(init);
-        let center = [56.144975, 101.598878];
+        let center = [latitude, longitude];
         function init(){
             let myMap = new ymaps.Map("map", {
                 center: center,
-                zoom: 16
+                zoom: 15
             });
 
             let placemark = new ymaps.Placemark(center, {
-                balloonContent: `
-                <div class='bollon'>
-                    <div>{{ $contact->address }}</div>
-                </div>
+                balloonContent:`
+                    <div style="background:#ebebeb">
+                        <picture>
+                            <source srcset="`+img_webp+`" type="image/webp">
+                            <img src="`+img+`" alt="logo">
+                        </picture>
+                    </div>
+                    <div>`+address+`</div>
+                    <div><a href="mailto:`+email+`">`+email+`</a></div>
+                    <div><a href="tel:`+phone+`">`+phone+`</a></div>
                 `
             },{
                 iconLayout:'default#image',

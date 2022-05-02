@@ -12,9 +12,13 @@
     <script>
         $('[data-mask]').inputmask()
     </script>
-    <script src="https://api-maps.yandex.ru/2.1/?apikey=23118afd-889a-4350-b7c2-9fede61fc90b&lang=ru_RU"></script>
     
-    <script src="{{ asset('js/map.js') }}"></script>
+        <script src="https://api-maps.yandex.ru/2.1/?apikey=23118afd-889a-4350-b7c2-9fede61fc90b&lang=ru_RU"></script>
+    
+        <script src="{{ asset('js/map.js') }}"></script>
+    
+        
+    
 @endsection
 
 @section('content')
@@ -35,11 +39,9 @@
                     </div>
                 </div>
             </div>
+            
             <div class="row m-3">
-                <div class="col-lg-10 m-auto">
-                    <div id="map"></div>
-                </div>
-                
+                <div id="map"></div>   
             </div>
             
             <div class="row mt-5">
@@ -100,5 +102,13 @@
     <!--== Map Area Start ==-->
     
     <!--== Map Area End ==-->
-
+    <script>
+        let latitude = "{{ $contact->latitude }}",
+            longitude = "{{ $contact->longitude }}",
+            img = "{{ Storage::url('contact/'.$contact->img) }}",
+            img_webp = "{{ Storage::url('contact/'.$contact->img_webp) }}",
+            address = "{{ $contact->address }}",
+            phone = "{{ $contact->phone }}",
+            email = "{{ $contact->email }}";
+    </script>
 @endsection

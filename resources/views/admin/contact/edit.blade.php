@@ -5,6 +5,8 @@
 @section('description', 'description')
 @section('custom-js')
     <script src="{{ asset('plugins/inputmask/jquery.inputmask.min.js') }}"></script>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=23118afd-889a-4350-b7c2-9fede61fc90b&lang=ru_RU"></script>
+    <script src="{{ asset('js/getCoordinateMap.js') }}"></script>
     <script>
         $('[data-mask]').inputmask()
     </script>
@@ -101,7 +103,7 @@
         @include('includes.error', ['field'=>'description'])
     </div>
     <div class="form-group">
-        <label for="map">Карта</label>
+        <label for="map">Ссылка на карту яндекс</label>
         <textarea  class="form-control" id="map" name='map'>{{ old('map', $contact->map) }}</textarea>
         @include('includes.error', ['field'=>'map'])
     </div>
@@ -117,6 +119,9 @@
     <small>Рекомендуемые минимальные размеры 100px X 50px</small><br>
     <input type="file" id="image" name="image"><br><br>
     @include('includes.error', ['field'=>'image'])
+
+    <input type="hidden" name='latitude' id='latitude' value='{{ $contact->latitude }}'>
+    <input type="hidden" name='longitude' id='longitude' value='{{ $contact->longitude }}'>
   
 <button type="submit" class="btn btn-primary">Изменить</button>
 </form>
