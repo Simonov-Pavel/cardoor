@@ -9,7 +9,7 @@ use Carbon\Carbon;
 
 class Images
 {
-    public static function updateImages($request, $model, $folder, $width=null, $height=null, $width_prewiew=null, $height_prewiew=null){
+    public static function createImages($request, $folder, $width=null, $height=null, $width_prewiew=null, $height_prewiew=null){
         
             $image = $request->file('image');
             $ext_image = $image->getClientOriginalExtension();
@@ -18,7 +18,6 @@ class Images
             $name = md5(Carbon::now());
             $imageName = $name.'.'.$ext_image;
             $nameWebp = $name . '.webp';
-            Images::deleteImages($model,$folder);
         
             $imagePath = storage_path('app/public/'.$folder.'/'. $imageName);
             $img -> resize($width, function($constraint){
@@ -62,5 +61,11 @@ class Images
                 Storage::delete('public/'.$folder.'/'.$model->img_preview_webp);
             }
         }
+    }
+
+    public static function updateImages($request, $model, $folder, $width=null, $height=null, $width_prewiew=null, $height_prewiew=null)
+    {
+        Images::deleteImages($model,$folder);
+        Images::createImages($request, $folder, $width=null, $height=null, $width_prewiew=null, $height_prewiew=null);
     }
 }
