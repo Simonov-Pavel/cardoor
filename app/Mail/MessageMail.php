@@ -7,20 +7,21 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class MessageMail extends Mailable implements ShouldQueue
+class MessageMail extends Mailable
 {
     use Queueable,  SerializesModels;
 
-    public $mailData;
+    public $message;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($mailData)
+    public function __construct($event)
     {
-        $this->mailData = $mailData;
+        
+        $this->message = $event->message;
     }
 
     /**
@@ -30,6 +31,6 @@ class MessageMail extends Mailable implements ShouldQueue
      */
     public function build()
     {
-        return $this->subject('Обратная связь')->view('emails.message');
+        return $this->subject('Обратная связь')->view('emails.message', ['messag'=>$this->message]);
     }
 }

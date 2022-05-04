@@ -5,9 +5,8 @@
 </head>
 <body>
     <h1>Feedback</h1>
-    <p>{{$mailData['body']}}</p>
-    <p>{{$mailData['text']}}</p>
-    <a href="{{$mailData['link']}}">Посмщтреть</a>
+    <p>Пользователь {{$messag->name}} просит с ним связаться по телефону {{$messag->phone}}</p>
+    <p>{{$messag->message}}</p>
     
     <p>Спасибо</p>
 </body>
