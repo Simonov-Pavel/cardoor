@@ -4,83 +4,28 @@ namespace App\Http\Controllers;
 
 use App\Models\Message;
 use App\Http\Requests\MessageRequest;
+use Mail;
+use App\Mail\MessageMail;
 
 class MessageController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  App\Http\Requests\MessageRequest $request
      * @return \Illuminate\Http\Response
      */
     public function store(MessageRequest $request)
     {
         Message::create($request->all());
+        $mailData = [
+            'title' => 'Обратная связ',
+            'text' => $request->message,
+            'link' => route('admin'),
+            'body' => 'Пользователь '.$request->name.' просить вас с ним связаться по телефону '.$request->phone
+        ];
+         
+        Mail::to('simonov.pavel0306@yandex.ru')->send(new MessageMail($mailData));
         return redirect()->route('contact')->with('success', 'Ув. '.$request->name.' ваша заявка отправленна, в ближайшее время с вами свяжется наш менеджер по указанному вами номеру '.$request->phone);
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Message  $message
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Message $message)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Message  $message
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Message $message)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Message  $message
-     * @return \Illuminate\Http\Response
-     */
-    public function update(MessageRequest $request, Message $message)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Message  $message
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Message $message)
-    {
-        //
     }
 }
