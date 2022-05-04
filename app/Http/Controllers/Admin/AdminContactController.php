@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Contact;
 use App\Http\Requests\Admin\ContactRequest;
-use App\Classes\Images;
+use App\Services\Images;
 
 class AdminContactController extends Controller
 {
