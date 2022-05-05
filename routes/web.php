@@ -7,6 +7,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\Admin\AdminContactController;
+use App\Http\Controllers\Admin\AdminMessageController;
 
 
 require __DIR__.'/auth.php';
@@ -26,6 +27,7 @@ Route::middleware(['auth'])->group(function(){
         Route::get('/', [App\Http\Controllers\Admin\MainController::class, 'index'])->name('admin');
         Route::resources([
             'contact' => AdminContactController::class,
+            'admin-message' => AdminMessageController::class,
         ]);
     });
 });
