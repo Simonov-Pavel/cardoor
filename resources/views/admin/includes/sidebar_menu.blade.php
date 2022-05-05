@@ -8,3 +8,8 @@
         <i class="nav-icon fa fa-map-marker"></i><p>Контакты</p>
     </a>
 </li>
+<li class="nav-item">
+    <a href="{{ route('admin-message.index') }}" class="nav-link @menuactive('admin-message.*')">
+        <i class="nav-icon fa fa-comment-o"></i><p>Сообщения</p>
+    </a>
+</li>
