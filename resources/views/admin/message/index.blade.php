@@ -30,16 +30,14 @@
                 </tr>
             </thead>
             <tbody>
+                @foreach($messages as $message)
                 <tr>
-                    <td class="col-2">1.</td>
-                    <td class="col-2">Update software</td>
-                    <td class="col-6">
-                        <div>
-                            <div class="progress-bar progress-bar-danger"></div>
-                        </div>
-                    </td>
-                    <td class="col-2"><span class="badge bg-danger">55%</span></td>
+                    <td class="col-2">{{$message->name}}</td>
+                    <td class="col-2">{{$message->phone}}</td>
+                    <td class="col-6">{{$message->text}}</td>
+                    <td class="col-1"><a href="@if(!$message->views) {{route('admin-message.update', $message)}} @endif" title='@if($message->views) Просмотренно @else Смотреть @endif'><i class="fa @if($message->views) fa-eye-slash @else fa-eye @endif" aria-hidden="true"></i></a></td>
                 </tr>
+                @endforeach
             </tbody>
         </table>
     </div>
