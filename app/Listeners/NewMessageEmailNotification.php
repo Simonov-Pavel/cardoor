@@ -8,7 +8,7 @@ use Illuminate\Queue\InteractsWithQueue;
 use Mail;
 use App\Mail\MessageMail;
 
-class NewMessageEmailNotification  implements ShouldQueue
+class NewMessageEmailNotification implements ShouldQueue
 {
 
     /**
@@ -19,6 +19,6 @@ class NewMessageEmailNotification  implements ShouldQueue
      */
     public function handle(MessageCreated $event)
     {
-        Mail::to(env(MAIL_FROM_ADDRESS))->send(new MessageMail($event));
+        Mail::to($event->email)->send(new MessageMail($event));
     }
 }

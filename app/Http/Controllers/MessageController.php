@@ -18,7 +18,8 @@ class MessageController extends Controller
     public function store(MessageRequest $request)
     {
         $message = Message::create($request->all());
-        event(new MessageCreated($message));
+        $email = config('mail.admin.address');
+        event(new MessageCreated($message, $email));
         return redirect()->route('contact')->with('success', 'Ув. '.$request->name.' ваша заявка отправленна, в ближайшее время с вами свяжется наш менеджер по указанному вами номеру '.$request->phone);
     }
 }
