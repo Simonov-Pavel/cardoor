@@ -16,7 +16,7 @@ Route::get('/logout', [AuthenticatedSessionController::class, 'destroy'])->name(
 Route::get('/', [MainController::class, 'index'])->name('index');
 Route::get('/about', [AboutController::class, 'index'])->name('about');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
-Route::post('/message', [MessageController::class, 'store'])->name('message.store');
+Route::post('/message', [MessageController::class, 'store'])->name('messageStore');
 
 Route::middleware(['auth'])->group(function(){
     Route::group(['prefix'=>'account'], function(){
@@ -27,7 +27,7 @@ Route::middleware(['auth'])->group(function(){
         Route::get('/', [App\Http\Controllers\Admin\MainController::class, 'index'])->name('admin');
         Route::resources([
             'contact' => AdminContactController::class,
-            'admin-message' => AdminMessageController::class,
+            'message' => AdminMessageController::class,
         ]);
     });
 });

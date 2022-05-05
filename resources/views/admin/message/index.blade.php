@@ -23,19 +23,34 @@
         <table class="table table-sm">
             <thead>
                 <tr>
+                    <th>Создано</th>
                     <th>Имя</th>
                     <th>Телефон</th>
                     <th>Сообщение</th>
+                    <th>Обнавлено</th>
                     <th style="width: 40px"></th>
                 </tr>
             </thead>
             <tbody>
                 @foreach($messages as $message)
-                <tr>
-                    <td class="col-2">{{$message->name}}</td>
-                    <td class="col-2">{{$message->phone}}</td>
-                    <td class="col-6">{{$message->text}}</td>
-                    <td class="col-1"><a href="@if(!$message->views) {{route('admin-message.update', $message)}} @endif" title='@if($message->views) Просмотренно @else Смотреть @endif'><i class="fa @if($message->views) fa-eye-slash @else fa-eye @endif" aria-hidden="true"></i></a></td>
+                <tr style="background:@if($message->views) #ccc @else #0f0 @endif" >
+                    <td class="col-sm-2">{{$message->created_at}}</td>
+                    <td class="col-sm-2">{{$message->name}}</td>
+                    <td class="col-sm-2">{{$message->phone}}</td>
+                    <td class="col-sm-3">{{$message->message}}</td>
+                    <td class="col-sm-2">{{$message->updated_at}}</td>
+                    <td class="col-sm-1">
+                        @if(!$message->views)
+                            <form action="{{ route('message.update', $message) }}" method="post">
+                                @csrf
+                                @method('put')
+                                <button type="submit" class="p-0" style="background:transparent; border:none"><i class="fa fa-eye" aria-hidden="true"></i></button>
+                            </form>
+                            
+                        @else
+                            <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+                        @endif
+                    </td>
                 </tr>
                 @endforeach
             </tbody>

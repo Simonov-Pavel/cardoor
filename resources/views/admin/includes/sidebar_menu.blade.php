@@ -9,7 +9,7 @@
     </a>
 </li>
 <li class="nav-item">
-    <a href="{{ route('admin-message.index') }}" class="nav-link @menuactive('admin-message.*')">
+    <a href="{{ route('message.index') }}" class="nav-link @menuactive('message.*')">
         <i class="nav-icon fa fa-comment-o"></i><p>Сообщения</p>
     </a>
 </li>
