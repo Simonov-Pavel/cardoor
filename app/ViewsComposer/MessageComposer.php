@@ -8,7 +8,7 @@ class MessageComposer
 {
     public function compose(View $view){
         $message = new Message;
-        $messages = $message->orderBy('views')->get();
+        $messages = $message->orderBy('views')->paginate(10);
         $view->with('messages', $messages);
     }
 }

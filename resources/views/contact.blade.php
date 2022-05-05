@@ -47,7 +47,7 @@
             <div class="row mt-5">
                 <div class="col-lg-10 m-auto">
                     <div class="contact-form">
-                        <form action="{{ route('message.store') }}" method="post">
+                        <form action="{{ route('messageStore') }}" method="post">
                         @csrf
                             <div class="row">
                                 <h2 class="text-center w-100 mb-3" >Напишите нам и мы с вами свяжемся</h2>

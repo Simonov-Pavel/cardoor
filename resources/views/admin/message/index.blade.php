@@ -55,7 +55,9 @@
                 @endforeach
             </tbody>
         </table>
+        
     </div>
-              <!-- /.card-body -->
+    
 </div>
+<div style="width:fit-content;margin:0 auto">{{ $messages->withQueryString()->links() }}</div>
 @endsection
