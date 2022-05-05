@@ -15,7 +15,7 @@ class AdminMessageController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.message.index');
     }
 
     /**
