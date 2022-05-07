@@ -58,6 +58,6 @@ class User extends Authenticatable implements MustVerifyEmail
     }
 
     public function scopeUser($query){
-        return $query->where('role', '!=', 1);
+        return $query->where('role', 0);
     }
 }

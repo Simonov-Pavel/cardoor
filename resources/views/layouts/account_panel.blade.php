@@ -28,7 +28,7 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
     </ul>
-    <h1>@yield('panel')</h1>
+    <h2>@yield('panel')</h2>
   </nav>
 
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
@@ -70,7 +70,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">@yield('title')</h1>
+            <h2 class="m-0">@yield('title')</h2>
           </div>
           
               @yield('breadcrumb')

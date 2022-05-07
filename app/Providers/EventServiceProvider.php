@@ -7,7 +7,9 @@ use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Event;
 use App\Events\MessageCreated;
+use App\Events\NewPasswordMail;
 use App\Listeners\NewMessageEmailNotification;
+use App\Listeners\NewPasswordEmailNotification;
 
 class EventServiceProvider extends ServiceProvider
 {
@@ -22,6 +24,9 @@ class EventServiceProvider extends ServiceProvider
         ],
         MessageCreated::class => [
             NewMessageEmailNotification::class,
+        ],
+        NewPasswordMail::class => [
+            NewPasswordEmailNotification::class,
         ],
     ];
 

@@ -3,7 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
-use Illuminate\Http\Request;
+use App\Mail\PasswordMail;
+use App\Http\Requests\Admin\UserRequest;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
+use App\Events\NewPasswordMail;
 
 class UserController extends Controller
 {
@@ -24,7 +29,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.users.form');
     }
 
     /**
@@ -33,9 +38,14 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(UserRequest $request)
     {
-        //
+        $params = $request->all();
+        $password = Str::random(6);
+        $params['password'] = Hash::make($password);
+        User::firstOrCreate(['email'=>$params['email']], $params);
+        event(new NewPasswordMail($params['email'], $password));
+        return redirect()->route('admin.users.index');
     }
 
     /**
@@ -46,7 +56,7 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
-        return view('admin.users.show');
+        return view('admin.users.show', compact('user'));
     }
 
     /**
@@ -57,7 +67,7 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        //
+        return view('admin.users.form', compact('user'));
     }
 
     /**
@@ -67,7 +77,7 @@ class UserController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
+    public function update(UserRequest $request, User $user)
     {
         //
     }
