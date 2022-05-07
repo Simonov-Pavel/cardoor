@@ -30,17 +30,14 @@
     </ul>
     <h2>@yield('panel')</h2>
   </nav>
-
+  
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <div class="logotip">
     <a href="{{ route('index') }}" class="brand-link">
-      
       <picture>
         <source srcset="" type="image/webp">
         <img src="{{ asset('assets/img/logo.png') }}" alt="logo">
       </picture>
-      
-      
     </a>
     </div>
 
@@ -73,13 +70,15 @@
             <h2 class="m-0">@yield('title')</h2>
           </div>
           
-              @yield('breadcrumb')
+            @yield('breadcrumb')
             
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
       <div>
     
       <section class="content">
+        
+        @include('includes.user_errors')
 
         @yield('content')
 
