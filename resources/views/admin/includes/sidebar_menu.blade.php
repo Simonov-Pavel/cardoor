@@ -13,3 +13,8 @@
         <i class="nav-icon fa fa-comment-o"></i><p>Сообщения</p>
     </a>
 </li>
+<li class="nav-item">
+    <a href="" class="nav-link @menuactive('message.*')">
+        <i class="nav-icon fa fa-users"></i><p>Пользователи</p>
+    </a>
+</li>
