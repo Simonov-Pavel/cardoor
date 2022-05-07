@@ -6,6 +6,7 @@ use App\Http\Controllers\MainController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\MessageController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\Admin\AdminContactController;
 use App\Http\Controllers\Admin\AdminMessageController;
 
@@ -25,6 +26,7 @@ Route::middleware(['auth'])->group(function(){
 
     Route::group(['prefix'=>'admin', 'middleware'=>['admin']], function(){
         Route::get('/', [App\Http\Controllers\Admin\MainController::class, 'index'])->name('admin');
+        Route::get('/users', [UserController::class, 'show'])->name('admin.users');
         Route::resources([
             'contact' => AdminContactController::class,
             'message' => AdminMessageController::class,
