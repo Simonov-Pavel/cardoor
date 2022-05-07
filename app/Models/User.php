@@ -56,4 +56,8 @@ class User extends Authenticatable implements MustVerifyEmail
     public function sendEmailVerificationNotification(){
         $this->notify(new SendVerifyWithQueueNotification());
     }
+
+    public function scopeUser($query){
+        return $query->where('role', '!=', 1);
+    }
 }
