@@ -26,6 +26,6 @@ class ViewServiceProvider extends ServiceProvider
     {
         View::composer(['layouts.master', 'contact', 'admin.contact.index'], 'App\ViewsComposer\ContactComposer');
         View::composer(['admin.message.index'], 'App\ViewsComposer\MessageComposer');
-        View::composer(['admin.users.show'], 'App\ViewsComposer\UsersComposer');
+        View::composer(['admin.users.index'], 'App\ViewsComposer\UsersComposer');
     }
 }

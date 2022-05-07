@@ -26,7 +26,7 @@ Route::middleware(['auth'])->group(function(){
 
     Route::group(['prefix'=>'admin', 'middleware'=>['admin']], function(){
         Route::get('/', [App\Http\Controllers\Admin\MainController::class, 'index'])->name('admin');
-        Route::get('/users', [UserController::class, 'show'])->name('admin.users');
+        Route::get('/users', [UserController::class, 'index'])->name('admin.users');
         Route::resources([
             'contact' => AdminContactController::class,
             'message' => AdminMessageController::class,
