@@ -6,7 +6,7 @@ use App\Http\Controllers\MainController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\MessageController;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\Admin\AdminUserController;
 use App\Http\Controllers\Admin\AdminContactController;
 use App\Http\Controllers\Admin\AdminMessageController;
 
@@ -27,12 +27,12 @@ Route::middleware(['auth'])->group(function(){
 
     Route::group(['prefix'=>'admin', 'middleware'=>['admin']], function(){
         Route::get('/', [App\Http\Controllers\Admin\MainController::class, 'index'])->name('admin');
-        Route::get('/users', [UserController::class, 'index'])->name('admin.users.index');
-        Route::get('/users/create', [UserController::class, 'create'])->name('admin.users.create');
-        Route::post('/users/store', [UserController::class, 'store'])->name('admin.users.store');
-        Route::get('/users/{user}', [UserController::class, 'show'])->name('admin.users.show');
-        Route::get('/user/{user}/edit', [UserController::class, 'edit'])->name('admin.user.edit');
-        Route::put('/user/{user}/update', [UserController::class, 'update'])->name('admin.user.update');
+        Route::get('/users', [AdminUserController::class, 'index'])->name('admin.users.index');
+        Route::get('/users/create', [AdminUserController::class, 'create'])->name('admin.users.create');
+        Route::post('/users/store', [AdminUserController::class, 'store'])->name('admin.users.store');
+        Route::get('/users/{user}', [AdminUserController::class, 'show'])->name('admin.users.show');
+        Route::get('/user/{user}/edit', [AdminUserController::class, 'edit'])->name('admin.user.edit');
+        Route::put('/user/{user}/update', [AdminUserController::class, 'update'])->name('admin.user.update');
         Route::resources([
             'contact' => AdminContactController::class,
             'message' => AdminMessageController::class,

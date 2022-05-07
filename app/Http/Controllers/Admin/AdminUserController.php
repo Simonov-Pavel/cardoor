@@ -1,16 +1,17 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Models\User;
 use App\Mail\PasswordMail;
 use App\Http\Requests\Admin\UserRequest;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use App\Events\NewPasswordMail;
 
-class UserController extends Controller
+class AdminUserController extends Controller
 {
     /**
      * Display a listing of the resource.
