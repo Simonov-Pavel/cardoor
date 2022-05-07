@@ -14,7 +14,7 @@
     </a>
 </li>
 <li class="nav-item">
-    <a href="" class="nav-link @menuactive('message.*')">
+    <a href="{{ route('admin.users') }}" class="nav-link @menuactive('admin.users.*')">
         <i class="nav-icon fa fa-users"></i><p>Пользователи</p>
     </a>
 </li>
