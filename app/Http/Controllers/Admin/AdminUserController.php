@@ -46,7 +46,7 @@ class AdminUserController extends Controller
         $params['password'] = Hash::make($password);
         User::firstOrCreate(['email'=>$params['email']], $params);
         event(new NewPasswordMail($params['email'], $password));
-        return redirect()->route('admin.users.index');
+        return redirect()->route('admin.users.index')->with('success', 'Новый пользователь добавлен');
     }
 
     /**
@@ -80,7 +80,9 @@ class AdminUserController extends Controller
      */
     public function update(UserRequest $request, User $user)
     {
-        //
+        $params = $request->all();
+        $user->update($params);
+        return redirect()->route('admin.users.index')->with('success', 'Успешно обновлено');
     }
 
     /**
