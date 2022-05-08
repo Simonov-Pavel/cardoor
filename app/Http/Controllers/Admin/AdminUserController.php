@@ -55,14 +55,14 @@ class AdminUserController extends Controller
     public function destroy(User $user)
     {
         $user->delete();
-        return redirect()->back()->with('warning', "Пользователь $user->name временно усыплен");
+        return to_route('user.index')->with('warning', "Пользователь $user->name временно усыплен");
     }
 
     public function forceDelete($id)
     {
         $user = User::withTrashed()->find($id);
         $user->forceDelete();
-        return redirect()->back()->with('warning', "Пользователь $user->name оканчательно удален");
+        return to_route('user.index')->with('warning', "Пользователь $user->name оканчательно удален");
     }
 
     public function restore($id)
