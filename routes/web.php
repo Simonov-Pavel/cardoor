@@ -27,15 +27,13 @@ Route::middleware(['auth'])->group(function(){
 
     Route::group(['prefix'=>'admin', 'middleware'=>['admin']], function(){
         Route::get('/', [App\Http\Controllers\Admin\MainController::class, 'index'])->name('admin');
-        Route::get('/users', [AdminUserController::class, 'index'])->name('admin.users.index');
-        Route::get('/users/create', [AdminUserController::class, 'create'])->name('admin.users.create');
-        Route::post('/users/store', [AdminUserController::class, 'store'])->name('admin.users.store');
-        Route::get('/users/{user}', [AdminUserController::class, 'show'])->name('admin.users.show');
-        Route::get('/user/{user}/edit', [AdminUserController::class, 'edit'])->name('admin.user.edit');
-        Route::put('/user/{user}/update', [AdminUserController::class, 'update'])->name('admin.user.update');
+        
+        Route::get('/user/{user}/restore', [AdminUserController::class, 'restore'])->name('admin.user.restore');
+        Route::delete('/user/{user}/force_delete', [AdminUserController::class, 'forceDelete'])->name('admin.user.forceDelete');
         Route::resources([
             'contact' => AdminContactController::class,
             'message' => AdminMessageController::class,
+            'user' => AdminUserController::class,
         ]);
     });
 });

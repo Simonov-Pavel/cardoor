@@ -9,7 +9,7 @@
 @endsection
 
 @section('content') 
-<a href="{{ route('admin.users.create') }}" title='Добавить' class='btn btn-success mb-3'>Добавить</a>
+<a href="{{ route('user.create') }}" title='Добавить' class='btn btn-success mb-3'>Добавить</a>
 <div class="card">
     <div class="card-body p-0">
     
@@ -30,15 +30,27 @@
                     <td class="col-sm-2">{{$user->phone}}</td>
                     <td class="col-sm-2">{{$user->email}}</td>
                     <td class="col-sm-1">
-                        <a href="{{ route('admin.users.show', $user) }}" title='Просмотреть'><i class="fa fa-eye" aria-hidden="true"></i></a>
-                        <a href="{{ route('admin.user.edit', $user) }}" title='Редактировать'><i class="fa fa-pencil text-success" aria-hidden="true"></i></a>
-                        <form action="" method="post" class='d-inline-block'>
+                        <a href="{{ route('user.show', $user->id) }}" title='Просмотреть'><i class="fa fa-eye ml-2" aria-hidden="true"></i></a>
+                        @if($user->deleted_at)
+                        <a href="{{ route('admin.user.restore', $user->id) }}" title='Воскресить'><i class="fa fa-ambulance text-primary ml-2" aria-hidden="true"></i></a>
+                        
+                        <form action="{{ route('admin.user.forceDelete', $user->id) }}" method="post" class='d-inline-block'>
                             @csrf
-                            @method('DELITE')
+                            @method('DELETE')
                             <button type="submit" class="p-0" style="background:transparent; border:none">
-                                <a href="" title='Удалить'><i class="fa fa-close text-danger" aria-hidden="true"></i></a>
+                                <a href="" title='Удалить окончательно'><i class="fa fa-times text-danger ml-2" aria-hidden="true"></i></a>
                             </button>
                         </form>
+                        @else
+                        <a href="{{ route('user.edit', $user) }}" title='Редактировать'><i class="fa fa-pencil text-success ml-2" aria-hidden="true"></i></a>
+                        <form action="{{ route('user.destroy', $user) }}" method="post" class='d-inline-block'>
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="p-0" style="background:transparent; border:none">
+                                <a href="" title='Удалить'><i class="fa fa-times text-danger ml-2" aria-hidden="true"></i></a>
+                            </button>
+                        </form>
+                        @endif
                     </td>
                 </tr>
                 @endforeach

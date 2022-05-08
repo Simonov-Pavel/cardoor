@@ -13,32 +13,17 @@ use App\Events\NewPasswordMail;
 
 class AdminUserController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         return view('admin.users.index');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
     public function create()
     {
         return view('admin.users.form');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(UserRequest $request)
     {
         $params = $request->all();
@@ -46,53 +31,44 @@ class AdminUserController extends Controller
         $params['password'] = Hash::make($password);
         User::firstOrCreate(['email'=>$params['email']], $params);
         event(new NewPasswordMail($params['email'], $password));
-        return redirect()->route('admin.users.index')->with('success', 'Новый пользователь добавлен');
+        return to_route('user.index')->with('success', 'Новый пользователь добавлен');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\User  $user
-     * @return \Illuminate\Http\Response
-     */
-    public function show(User $user)
+    public function show($id)
     {
+        $user = User::withTrashed()->find($id);
         return view('admin.users.show', compact('user'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\User  $user
-     * @return \Illuminate\Http\Response
-     */
     public function edit(User $user)
     {
         return view('admin.users.form', compact('user'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\User  $user
-     * @return \Illuminate\Http\Response
-     */
     public function update(UserRequest $request, User $user)
     {
         $params = $request->all();
         $user->update($params);
-        return redirect()->route('admin.users.index')->with('success', 'Успешно обновлено');
+        return to_route('user.index')->with('success', 'Успешно обновлено');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\User  $user
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(User $user)
     {
-        //
+        $user->delete();
+        return redirect()->back()->with('warning', "Пользователь $user->name временно усыплен");
+    }
+
+    public function forceDelete($id)
+    {
+        $user = User::withTrashed()->find($id);
+        $user->forceDelete();
+        return redirect()->back()->with('warning', "Пользователь $user->name оканчательно удален");
+    }
+
+    public function restore($id)
+    {
+        $user = User::withTrashed()->find($id);
+        $user->restore();
+        return redirect()->back()->with('success', "Пользователь $user->name успешно воскрешен");
     }
 }

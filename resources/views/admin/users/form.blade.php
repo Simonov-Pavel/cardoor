@@ -19,14 +19,14 @@
 <div class="col-sm-6">
     <ol class="breadcrumb float-sm-right">
         <li class="breadcrumb-item"><a href="{{route('admin')}}">Главная</a></li>
-        <li class="breadcrumb-item"><a href="{{route('admin.users.index')}}">Пользователи</a></li>
+        <li class="breadcrumb-item"><a href="{{route('user.index')}}">Пользователи</a></li>
         <li class="breadcrumb-item active">{{isset($user)? "Редактирование" : "Добавление"}} пользователя</li>
     </ol>
 </div>
 @endsection
 
 @section('content') 
-<form action="@if(isset($user)){{ route('admin.user.update', $user) }}@else{{ route('admin.users.store') }}@endif" method="post" enctype="multipart/form-data">
+<form action="@if(isset($user)){{ route('user.update', $user) }}@else{{ route('user.store') }}@endif" method="post" enctype="multipart/form-data">
     @csrf
     @if(isset($user))
     @method('put')

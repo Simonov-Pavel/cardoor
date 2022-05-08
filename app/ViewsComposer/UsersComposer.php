@@ -8,7 +8,7 @@ class UsersComposer
 {
     public function compose(View $view){
         $user = new User;
-        $users = $user->user()->orderBy('created_at', 'desc')->paginate(10);
+        $users = $user->user()->orderBy('created_at', 'desc')->withTrashed()->paginate(10);
         $view->with('users', $users);
     }
 }
