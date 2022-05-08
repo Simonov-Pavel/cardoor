@@ -27,8 +27,8 @@
                 @foreach($users as $user)
                 <tr>
                     <td class="col-sm-2">{{$user->name}}</td>
-                    <td class="col-sm-2">{{$user->phone}}</td>
-                    <td class="col-sm-2">{{$user->email}}</td>
+                    <td class="col-sm-2"><a href="tel:{{ $user->phone }}">{{$user->phone}}</a></td>
+                    <td class="col-sm-2"><a href="mailto:{{ $user->email }}">{{$user->email}}</a></td>
                     <td class="col-sm-1">
                         <a href="{{ route('user.show', $user->id) }}" title='Просмотреть'><i class="fa fa-eye ml-2" aria-hidden="true"></i></a>
                         @if($user->deleted_at)
