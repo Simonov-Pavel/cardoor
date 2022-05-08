@@ -9,6 +9,7 @@ use App\Http\Controllers\MessageController;
 use App\Http\Controllers\Admin\AdminUserController;
 use App\Http\Controllers\Admin\AdminContactController;
 use App\Http\Controllers\Admin\AdminMessageController;
+use App\Http\Controllers\Account\AccountUserCotroller;
 
 
 require __DIR__.'/auth.php';
@@ -23,6 +24,9 @@ Route::middleware(['auth'])->group(function(){
     
     Route::group(['prefix'=>'account'], function(){
         Route::get('/', [App\Http\Controllers\Account\MainController::class, 'index'])->name('account');
+        Route::resources([
+            'persona' => AccountUserCotroller::class,
+        ]);
     });
 
     Route::group(['prefix'=>'admin', 'middleware'=>['admin']], function(){

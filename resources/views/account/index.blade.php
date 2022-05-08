@@ -38,7 +38,7 @@
                 </table>
             
             </div>
-            <a href="#" class="btn btn-warning w-100">Редактировать личные данные</a>
+            <a href="{{route('persona.edit', $user->id)}}" class="btn btn-warning w-100">Редактировать личные данные</a>
         </div>
     </div>
 </div>
