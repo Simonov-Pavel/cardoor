@@ -15,6 +15,11 @@
     <!--=== Bootstrap CSS ===-->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">
+
+
+    <link href="{{ asset('assets/css/plugins/vegas.min.css') }}" rel="stylesheet">
+
+
     <!--=== Slicknav CSS ===-->
     <link href="{{ asset('assets/css/plugins/slicknav.min.css') }}" rel="stylesheet">
     <!--=== Magnific Popup CSS ===-->

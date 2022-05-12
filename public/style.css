@@ -1562,6 +1562,7 @@ body,
 .slideshowcontent h1 {
     color: #ffd000;
     margin-bottom: 20px;
+    margin-top: 50px;
 }
 
 #slideslow-bg div.book-ur-car,
@@ -1595,11 +1596,10 @@ body,
 /*== Book Car CSS ==*/
 
 .book-ur-car {
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: transparent;
     border-radius: 4px;
     margin: 70px auto auto;
     overflow: hidden;
-    padding: 50px 20px;
     width: 90%;
 }
 
@@ -1609,6 +1609,7 @@ body,
     float: left;
     margin-right: 1%;
     width: 19.2%;
+    min-height: 43px;
     -webkit-transition: 0.4s;
     transition: 0.4s;
 }
