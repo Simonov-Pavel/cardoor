@@ -2745,12 +2745,11 @@ body,
     color: #fff;
 }
 
-.single-our-facility h3 {
+.single-our-facility h2 {
     color: #fff;
     font-size: 20px;
     margin-bottom: 30px;
     padding-bottom: 15px;
-    position: relative;
 }
 
 .single-our-facility h3::after {

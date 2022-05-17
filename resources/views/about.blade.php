@@ -15,9 +15,8 @@
                 <!-- Section Title Start -->
                 <div class="col-lg-12">
                     <div class="section-title  text-center">
-                        <h2>About us</h2>
+                        <h2>О нас</h2>
                         <span class="title-line"><i class="fa fa-car"></i></span>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                     </div>
                 </div>
                 <!-- Section Title End -->
@@ -28,125 +27,33 @@
                 <div class="col-lg-6">
                     <div class="display-table">
                         <div class="display-table-cell">
-                            <div class="about-content">
-                                <p>Lorem simply dummy is a texted of the printing costed and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.</p>
-                            </div>
+                            <div class="about-content">{!! $about->description !!}</div>
                         </div>
                     </div>
                 </div>
-                <!-- About Content End -->
 
-                <!-- About Video Start -->
                 <div class="col-lg-6">
                     <div class="about-image">
-                        <img src="assets/img/home-2-about.png" alt="JSOFT">
+                        <picture>
+                            <sourse srcset="{{ Storage::url('about/' . $about->img_webp)}}" type="image/webp">
+                            <img src="{{ Storage::url('about/' . $about->img)}}" alt="Car-img" style="width: 100%">
+                        </picture>
                     </div>
                 </div>
-                <!-- About Video End -->
             </div>
-
-            <!-- About Fretutes Start -->
-            <div class="about-feature-area">
-                <div class="row">
-                    <!-- Single Fretutes Start -->
-                    <div class="col-lg-4">
-                        <div class="about-feature-item active">
-                            <i class="fa fa-car"></i>
-                            <h3>ALL BRANDS</h3>
-                            <p>Loremed ipsumed is a compnayes odsoyel dolor sit amet, consectetur adipisicing elit. Nesciunted all of.</p>
-                        </div>
-                    </div>
-                    <!-- Single Fretutes End -->
-
-                    <!-- Single Fretutes Start -->
-                    <div class="col-lg-4">
-                        <div class="about-feature-item">
-                            <i class="fa fa-car"></i>
-                            <h3>ALL BRANDS</h3>
-                            <p>Loremed ipsumed is a compnayes odsoyel dolor sit amet, consectetur adipisicing elit. Nesciunted all of.</p>
-                        </div>
-                    </div>
-                    <!-- Single Fretutes End -->
-
-                    <!-- Single Fretutes Start -->
-                    <div class="col-lg-4">
-                        <div class="about-feature-item">
-                            <i class="fa fa-car"></i>
-                            <h3>ALL BRANDS</h3>
-                            <p>Loremed ipsumed is a compnayes odsoyel dolor sit amet, consectetur adipisicing elit. Nesciunted all of.</p>
-                        </div>
-                    </div>
-                    <!-- Single Fretutes End -->
-                </div>
-            </div>
-            <!-- About Fretutes End -->
         </div>
     </section>
-    <!--== About Page Content End ==-->
     
-    <!--== Our Facility Content Start ==-->
     <section id="our-facility" class="section-padding overlay">
         <div class="container">
             <div class="row">
-                <!-- Single Facility Start -->
-                <div class="col-lg-3 col-md-6">
-                    <div class="single-our-facility">
-                        <h3>LIMO PARTY RENT</h3>
-                        <ul>
-                            <li>Parallax Everywhere</li>
-                            <li>Interactive and Fun</li>
-                            <li>Responsive and Refined</li>
-                            <li>Color it All</li>
-                            <li>Customize and Create</li>
-                        </ul>
-                    </div>
+                <div class="section-title text-center">
+                    <h2>{{ $about->conditions_header }}</h2>
                 </div>
-                <!-- Single Facility Start -->
-                
-                <!-- Single Facility Start -->
-                <div class="col-lg-3 col-md-6">
-                    <div class="single-our-facility">
-                        <h3>BUSINESS LIMO RENT</h3>
-                        <ul>
-                            <li>Parallax Everywhere</li>
-                            <li>Interactive and Fun</li>
-                            <li>Responsive and Refined</li>
-                            <li>Color it All</li>
-                            <li>Customize and Create</li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- Single Facility Start -->
-
-                <!-- Single Facility Start -->
-                <div class="col-lg-3 col-md-6">
-                    <div class="single-our-facility">
-                        <h3>HOTEL/CASINO/HOTEL</h3>
-                        <ul>
-                            <li>Parallax Everywhere</li>
-                            <li>Interactive and Fun</li>
-                            <li>Responsive and Refined</li>
-                            <li>Color it All</li>
-                            <li>Customize and Create</li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- Single Facility Start -->
-
-                <!-- Single Facility Start -->
-                <div class="col-lg-3 col-md-6">
-                    <div class="single-our-facility">
-                        <h3>AIRPORT TRANSPORT</h3>
-                        <ul>
-                            <li>Parallax Everywhere</li>
-                            <li>Interactive and Fun</li>
-                            <li>Responsive and Refined</li>
-                            <li>Color it All</li>
-                            <li>Customize and Create</li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- Single Facility Start -->  
+                <div class="single-our-facility">
+                    
+                    {!! $about->conditions_rental !!}
+                </div> 
             </div>
         </div>
     </section>
