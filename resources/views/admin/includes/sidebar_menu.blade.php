@@ -23,3 +23,8 @@
         <i class="nav-icon fa fa-slideshare"></i><p>Баннер</p>
     </a>
 </li>
+<li class="nav-item">
+    <a href="{{ route('about.index') }}" class="nav-link @menuactive('about.*')">
+        <i class="nav-icon fa fa-building"></i><p>О нас</p>
+    </a>
+</li>
