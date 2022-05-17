@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\About;
 use Illuminate\Http\Request;
+use App\Services\Images;
 
 class AdminAboutController extends Controller
 {
@@ -24,7 +26,7 @@ class AdminAboutController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.about.form');
     }
 
     /**
@@ -35,18 +37,13 @@ class AdminAboutController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
+        if($request->has('image')){
+            Images::createImages($request, 'about', 698, 241);
+        }
+        $params = $request->all();
+        About::create($params);
+        return to_route('about.index')->with('success', 'Успешно добавленно');
+        
     }
 
     /**
@@ -55,9 +52,9 @@ class AdminAboutController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(About $about)
     {
-        //
+        return view('admin.about.form', compact('about'));
     }
 
     /**
@@ -67,19 +64,13 @@ class AdminAboutController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, About $about)
     {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        if($request->has('image')){
+            Images::updateImages($request, $about, 'about', 698, 241);
+            }
+            $params = $request->all();
+            $about->update($params);
+            return to_route('about.index')->with('success', 'Успешно обновлено');
     }
 }

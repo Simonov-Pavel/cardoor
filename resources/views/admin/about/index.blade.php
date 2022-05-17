@@ -19,7 +19,7 @@
 
 @section('content') 
 
-<a href="@if(isset($about)){{ route('about.edit', $about) }}@else{{ route('about.create') }}@endif" class="btn btn-primary ml-2 mb-3">Редактировать</a>
+<a href="@if(isset($about)){{ route('about.edit', $about) }}@else{{ route('about.create') }}@endif" class="btn btn-primary ml-2 mb-3">@if(isset($about)) Редактировать @else Создать @endif</a>
 
 <table class="table table-striped">
     <tbody>
@@ -46,7 +46,7 @@
             <td>
                 @if(isset($about))
                 <div class="col-lg-6">
-                    <div class="about-video">{{$about->video}}</div>
+                    <div class="about-video">{!!$about->video!!}</div>
                 </div>
                 @else Не добавленно @endif
             </td>
