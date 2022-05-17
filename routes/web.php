@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\AdminUserController;
 use App\Http\Controllers\Admin\AdminContactController;
 use App\Http\Controllers\Admin\AdminMessageController;
 use App\Http\Controllers\Admin\AdminBannerController;
+use App\Http\Controllers\Admin\AdminAboutController;
 use App\Http\Controllers\Account\AccountUserCotroller;
 
 
@@ -40,6 +41,7 @@ Route::middleware(['auth'])->group(function(){
             'message' => AdminMessageController::class,
             'user' => AdminUserController::class,
             'banner' => AdminBannerController::class,
+            'about' => AdminAboutController::class,
         ]);
     });
 });
