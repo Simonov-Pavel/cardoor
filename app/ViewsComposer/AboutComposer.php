@@ -4,7 +4,7 @@ namespace App\ViewsComposer;
 use Illuminate\View\View;
 use App\Models\About;
 
-class BannerComposer 
+class AboutComposer 
 {
     public function compose(View $view){
         $about = About::first();
