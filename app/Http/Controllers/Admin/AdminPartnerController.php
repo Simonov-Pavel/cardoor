@@ -14,7 +14,7 @@ class AdminPartnerController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.partner.index');
     }
 
     /**
