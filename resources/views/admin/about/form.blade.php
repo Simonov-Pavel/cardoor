@@ -35,17 +35,17 @@
     @endif
     <div class="form-group">
         <label>Описание</label>
-        <textarea type="text"  name='description' class="form-control" id="description" placeholder="Описание компании">{{ old('description', isset($about)? $about->description : null) }}</textarea>
+        <textarea type="text" name='description' class="form-control" id="description" placeholder="Описание компании" required='required'>{{ old('description', isset($about)? $about->description : null) }}</textarea>
         @include('includes.error', ['field'=>'description'])
     </div>
     <div class="form-group">
         <label>Заголовок для условий аренды</label>
-        <input type="text"  name='conditions_header' class="form-control" id="conditions_header" value="{{ old('conditions_header', isset($about)? $about->conditions_header : null) }}" placeholder="Ведите заголовок для условий аренды">   
+        <input type="text" required  name='conditions_header' class="form-control" id="conditions_header" value="{{ old('conditions_header', isset($about)? $about->conditions_header : null) }}" placeholder="Ведите заголовок для условий аренды">   
         @include('includes.error', ['field'=>'conditions_header'])
     </div>
     <div class="form-group">
         <label>Условия аренды</label>
-        <textarea type="text"  name='conditions_rental' class="form-control" id="conditions_rental" placeholder="Ведите условия аренды">{{ old('conditions_rental', isset($about)? $about->conditions_rental : null) }}</textarea> 
+        <textarea type="text" required  name='conditions_rental' class="form-control" id="conditions_rental" placeholder="Ведите условия аренды">{{ old('conditions_rental', isset($about)? $about->conditions_rental : null) }}</textarea> 
         @include('includes.error', ['field'=>'conditions_rental'])
     </div>
     <div class="form-group">
@@ -60,7 +60,7 @@
     </div>
     <div class="form-group"> 
         <label for="file">Выбирете изображение @if(isset($about))<small>(если хотите изменить его)</small>@endif</label><br>
-        <small>Рекомендуемые минимальные размеры 600px X 600px</small><br>
+        <small>Рекомендуемые минимальные размеры 698px X 241px</small><br>
         <input type="file" id="file" name="image" @if(!isset($about)) required @endif><br><br>
         @include('includes.error', ['field'=>'image'])
         @if(isset($about))
