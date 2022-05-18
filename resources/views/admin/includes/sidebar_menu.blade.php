@@ -28,3 +28,8 @@
         <i class="nav-icon fa fa-building"></i><p>О нас</p>
     </a>
 </li>
+<li class="nav-item">
+    <a href="{{ route('partner.index') }}" class="nav-link @menuactive('partner.*')">
+        <i class="nav-icon fa fa-building"></i><p>Наши партнеры</p>
+    </a>
+</li>
