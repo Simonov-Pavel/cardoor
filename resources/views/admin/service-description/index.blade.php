@@ -1,5 +1,5 @@
 @extends('layouts.account_panel')
-@section('title', 'О нас')
+@section('title', 'Описание раздела услуг')
 @section('panel', "Панель администратора")
 @section('keywords', 'keywords')
 @section('description', 'description')
