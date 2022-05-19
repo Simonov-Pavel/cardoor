@@ -1,17 +1,13 @@
 <section id="service-area" class="section-padding">
         <div class="container">
-            <div class="row">
-                <!-- Section Title Start -->
-                <div class="col-lg-12">
-                    <div class="section-title  text-center">
-                        <h2>Our Services</h2>
-                        <span class="title-line"><i class="fa fa-car"></i></span>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                    </div>
-                </div>
-                <!-- Section Title End -->
-            </div>
-
+		<div class="row">
+    		<div class="col-lg-12">
+        		<div class="section-title  text-center">
+            		<h2>Наши услуги</h2>
+                	<span class="title-line"><i class="fa fa-car"></i></span>
+        		</div>
+    		</div>
+		</div>
            
 			<!-- Service Content Start -->
 			<div class="row">
