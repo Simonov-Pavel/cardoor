@@ -32,8 +32,9 @@
                 </tr>
             </thead>
             <tbody>
+            @foreach($partners as $partner)
                 <tr>
-                    @foreach($partners as $partner)
+                    
                     <td class="col-sm-2">{{ $partner->title }}</td>
                     <td class="col-sm-2">
                         <picture>
@@ -52,8 +53,9 @@
                             </button>
                         </form>
                     </td>
-                    @endforeach
+                    
                 </tr>
+            @endforeach
             </tbody>
         </table>
         
