@@ -25,65 +25,30 @@
         </div>
     </section>
     @endif
+    
+    @if(isset($services))
     <section>
         <div class="container">
             <div class="row">
-				<!-- Single Service Start -->
+				@foreach($services as $service)
 				<div class="col-lg-4 text-center">
 					<div class="service-item">
-						<figure>
-						    <picture>
-                                <img src="{{ asset('assets/img/home-2-about.png')}}" alt="Car-img" style="width: 100%">
-                            </picture>
-						    <figcaption><h3>ПРОКАТ АВТОМОБИЛЕЙ</h3></figcaption>
-						</figure>
+                        <a href="">
+						    <figure>
+							    <picture>
+                            	    <source srcset="{{ Storage::url('service/'.$service->img_webp) }}" type="image/webp">
+                            	    <img src="{{ Storage::url('service/'.$service->img) }}" alt="{{$service->header}}">
+                        	    </picture>
+							    <figcaption><h3>{{$service->header}}</h3></figcaption>
+						    </figure>
+					    </a>
 					</div>
 				</div>
-                <div class="col-lg-4 text-center">
-					<div class="service-item">
-						<figure>
-						<picture>
-                            <img src="{{ asset('assets/img/home-2-about.png')}}" alt="Car-img" style="width: 100%">
-                        </picture>
-						<figcaption><h3>ПРОКАТ АВТОМОБИЛЕЙ</h3></figcaption>
-						</figure>
-					</div>
-				</div>
-                <div class="col-lg-4 text-center">
-					<div class="service-item">
-						<figure>
-						<picture>
-                            <img src="{{ asset('assets/img/home-2-about.png')}}" alt="Car-img" style="width: 100%">
-                        </picture>
-						<figcaption><h3>ПРОКАТ АВТОМОБИЛЕЙ</h3></figcaption>
-						</figure>
-					</div>
-				</div>
-                <div class="col-lg-4 text-center">
-					<div class="service-item">
-						<figure>
-						<picture>
-                            <img src="{{ asset('assets/img/home-2-about.png')}}" alt="Car-img" style="width: 100%">
-                        </picture>
-						<figcaption><h3>ПРОКАТ АВТОМОБИЛЕЙ</h3></figcaption>
-						</figure>
-					</div>
-				</div>
-                <div class="col-lg-4 text-center">
-					<div class="service-item">
-						<figure>
-						<picture>
-                            <img src="{{ asset('assets/img/home-2-about.png')}}" alt="Car-img" style="width: 100%">
-                        </picture>
-						<figcaption><h3>ПРОКАТ АВТОМОБИЛЕЙ</h3></figcaption>
-						</figure>
-					</div>
-				</div>
-                
+                @endforeach
 			</div>
         </div>
     </section>
-
+    @endif
     @include('includes.partner')
     @include('includes.testimonials')
 
