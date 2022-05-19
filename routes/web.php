@@ -13,6 +13,7 @@ use App\Http\Controllers\Admin\AdminMessageController;
 use App\Http\Controllers\Admin\AdminBannerController;
 use App\Http\Controllers\Admin\AdminAboutController;
 use App\Http\Controllers\Admin\AdminPartnerController;
+use App\Http\Controllers\Admin\AdminServiceDescriptionController;
 use App\Http\Controllers\Account\AccountUserCotroller;
 
 
@@ -46,6 +47,7 @@ Route::middleware(['auth'])->group(function(){
             'banner' => AdminBannerController::class,
             'about' => AdminAboutController::class,
             'partner' => AdminPartnerController::class,
+            'service-description' => AdminServiceDescriptionController::class,
         ]);
     });
 });
