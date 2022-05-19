@@ -14,9 +14,12 @@
 				<!-- Single Service Start -->
 				<div class="col-lg-4 text-center">
 					<div class="service-item">
-						<i class="fa fa-taxi"></i>
-						<h3>RENTAL CAR</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit admollitia.</p>
+						<figure>
+						<picture>
+                            <img src="{{ asset('assets/img/home-2-about.png')}}" alt="Car-img" style="width: 100%">
+                        </picture>
+						<figcaption><h3>ПРОКАТ АВТОМОБИЛЕЙ</h3></figcaption>
+						</figure>
 					</div>
 				</div>
 				<!-- Single Service End -->
