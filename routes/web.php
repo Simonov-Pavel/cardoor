@@ -6,6 +6,7 @@ use App\Http\Controllers\MainController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\MessageController;
+use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\Admin\AdminUserController;
 use App\Http\Controllers\Admin\AdminContactController;
 use App\Http\Controllers\Admin\AdminMessageController;
@@ -22,6 +23,7 @@ Route::get('/', [MainController::class, 'index'])->name('index');
 Route::get('/about', [AboutController::class, 'index'])->name('about');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::post('/message', [MessageController::class, 'store'])->name('messageStore');
+Route::get('/service', [ServiceController::class, 'index'])->name('service');
 
 Route::middleware(['auth'])->group(function(){
     
