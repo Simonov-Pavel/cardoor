@@ -15,7 +15,7 @@ class AdminServiceDescriptionController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.servise-description.index');
     }
 
     /**
