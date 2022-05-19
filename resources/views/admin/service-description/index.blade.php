@@ -25,13 +25,13 @@
         <tr>
             <td>Заголовок</td>
             <td>
-                @if($service_description != null){!!$service-description->header!!}@else Не добавленно @endif
+                @if($service_description != null){!!$service_description->header!!}@else Не добавленно @endif
             </td>
         </tr>
         <tr>
             <td>Описание</td>
             <td>
-                @if($service_description != null){!!$service-description->description!!}@else Не добавленно @endif
+                @if($service_description != null){!!$service_description->description!!}@else Не добавленно @endif
             </td>
         </tr>
     </tbody>

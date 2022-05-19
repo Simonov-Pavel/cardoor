@@ -28,7 +28,7 @@
 @endsection
 
 @section('content') 
-<form action="@if(isset($service_description)){{ route('service-description.update', $about) }}@else{{ route('service-description.store') }}@endif" method="post">
+<form action="@if(isset($service_description)){{ route('service-description.update', $service_description) }}@else{{ route('service-description.store') }}@endif" method="post">
     @csrf
     @if(isset($service_description))
     @method('put')
