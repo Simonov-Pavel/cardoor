@@ -25,7 +25,7 @@ class AdminServiceDescriptionController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.service-description.form');
     }
 
     /**
@@ -56,9 +56,9 @@ class AdminServiceDescriptionController extends Controller
      * @param  \App\Models\ServiceDescription  $serviceDescription
      * @return \Illuminate\Http\Response
      */
-    public function edit(ServiceDescription $serviceDescription)
+    public function edit(ServiceDescription $service_description)
     {
-        //
+        return view('admin.service-description.form', compact('service_description'));
     }
 
     /**
