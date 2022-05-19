@@ -48,6 +48,7 @@ class AdminPartnerController extends Controller
     public function destroy(Partner $partner)
     {
         $partner->delete();
+        Images::deleteImages($partner, 'partner');
         return to_route('partner.index')->with('warning', "Партнер $partner->title удален");
     }
 }
