@@ -26,6 +26,7 @@ Route::get('/about', [AboutController::class, 'index'])->name('about');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::post('/message', [MessageController::class, 'store'])->name('messageStore');
 Route::get('/service', [ServiceController::class, 'index'])->name('service');
+Route::get('/service/{service}', [ServiceController::class, 'show'])->name('service-show');
 
 Route::middleware(['auth'])->group(function(){
     
