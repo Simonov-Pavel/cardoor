@@ -8,79 +8,33 @@ use Illuminate\Http\Request;
 
 class AdminServiceDescriptionController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         return view('admin.service-description.index');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         return view('admin.service-description.form');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function store(ServiceDescriptionRequest $request)
     {
-        //
+        $params = $request->all();
+        ServiceDescription::create($params);
+        return to_route('service-description.index')->with('success', 'Успешно добавленно');
+        
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\ServiceDescription  $serviceDescription
-     * @return \Illuminate\Http\Response
-     */
-    public function show(ServiceDescription $serviceDescription)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\ServiceDescription  $serviceDescription
-     * @return \Illuminate\Http\Response
-     */
     public function edit(ServiceDescription $service_description)
     {
         return view('admin.service-description.form', compact('service_description'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\ServiceDescription  $serviceDescription
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, ServiceDescription $serviceDescription)
+    public function update(ServiceDescriptionRequest $request, ServiceDescription $service_description)
     {
-        //
+        $service_description->update($request->all());
+        return to_route('service-description.index')->with('success', 'Успешно обновлено');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\ServiceDescription  $serviceDescription
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(ServiceDescription $serviceDescription)
-    {
-        //
-    }
 }
