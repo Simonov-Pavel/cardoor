@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\ServiceDescription;
-use Illuminate\Http\Request;
+use App\Http\Requests\Admin\ServiceDescriptionRequest;
 
 class AdminServiceDescriptionController extends Controller
 {
