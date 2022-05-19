@@ -8,7 +8,7 @@ class PartnerComposer
 {
     public function compose(View $view){
         $partner = new Partner;
-        $partners = $partner->paginate(10);
+        $partners = $partner->paginate(5);
         $view->with('partners', $partners);
     }
 }
