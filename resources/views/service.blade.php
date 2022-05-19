@@ -33,7 +33,7 @@
 				@foreach($services as $service)
 				<div class="col-lg-4 text-center">
 					<div class="service-item">
-                        <a href="">
+                        <a href="{{ route('service-show', $service) }}">
 						    <figure>
 							    <picture>
                             	    <source srcset="{{ Storage::url('service/'.$service->img_webp) }}" type="image/webp">
