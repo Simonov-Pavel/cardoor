@@ -33,3 +33,23 @@
         <i class="nav-icon fa fa-building"></i><p>Наши партнеры</p>
     </a>
 </li>
+<li class="nav-item">
+    <a href="#" class="nav-link @menuactive('servise-description.*')">
+        <i class="nav-icon fas fa-edit"></i>
+        <p>Наши услуги<i class="fas fa-angle-left right"></i></p>
+    </a>
+    <ul class="nav nav-treeview" style="display: none;">
+        <li class="nav-item">
+            <a href="{{route('service-description.index')}}" class="nav-link @menuactive('servise-description.*')">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Описание раздела Услуги</p>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="pages/forms/advanced.html" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Предоставляемые услуги</p>
+            </a>
+        </li>
+    </ul>
+</li>
