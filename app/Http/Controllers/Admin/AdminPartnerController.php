@@ -24,7 +24,7 @@ class AdminPartnerController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.partner.form');
     }
 
     /**
