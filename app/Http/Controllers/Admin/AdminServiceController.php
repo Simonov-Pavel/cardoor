@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Service;
 use App\Http\Requests\Admin\ServiceRequest;
 
-class ServiceController extends Controller
+class AdminServiceController extends Controller
 {
     public function index()
     {
