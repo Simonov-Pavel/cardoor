@@ -36,7 +36,13 @@ class AdminPartnerController extends Controller
 
     public function update(PartnerRequest $request, Partner $partner)
     {
-        //
+        if($request->has('image')){
+            Images::updateImages($request, $partner, 'partner', 250, 105);
+        }
+        $params = $request->all();
+
+        $partner->update($params);
+        return to_route('partner.index')->with('success', 'Успешно обновлено');
     }
 
     public function destroy(Partner $partner)

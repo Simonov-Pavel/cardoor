@@ -30,7 +30,7 @@
             <div class="input-group-prepend">
                 <span class="input-group-text">Наименование партнера</span>
             </div>
-            <input type="text"  name='title' class="form-control" id="title" value="{{ old('title', isset($partner)? $partner->name : null) }}" placeholder="Введите наименование вашего парнера">
+            <input type="text"  name='title' class="form-control" id="title" value="{{ old('title', isset($partner)? $partner->title : null) }}" placeholder="Введите наименование вашего парнера">
             
         </div>
         @include('includes.error', ['field'=>'title'])
