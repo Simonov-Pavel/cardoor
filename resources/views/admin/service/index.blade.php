@@ -32,7 +32,7 @@
                     <td class="col-sm-2">
                         <picture>
                             <source srcset="{{ Storage::url('service/'.$service->img_webp) }}" type="image/webp">
-                            <img src="{{ Storage::url('service/'.$service->img) }}" alt="{{$service->header}}">
+                            <img src="{{ Storage::url('service/'.$service->img) }}" alt="{{$service->header}}"  width="100">
                         </picture>
                     </td>
                     <td class="col-sm-1">

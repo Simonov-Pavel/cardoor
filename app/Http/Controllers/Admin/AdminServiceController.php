@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Service;
 use App\Http\Requests\Admin\ServiceRequest;
+use App\Services\Images;
 
 class AdminServiceController extends Controller
 {
@@ -20,7 +21,12 @@ class AdminServiceController extends Controller
 
     public function store(ServiceRequest $request)
     {
-        //
+        if($request->has('image')){
+            Images::createImages($request, 'service', 640);
+        }
+        $params = $request->all();
+        Service::create($params);
+        return to_route('service.index')->with('success', 'Новый услуга успешно добавлена');
     }
 
     public function show(Service $service)
