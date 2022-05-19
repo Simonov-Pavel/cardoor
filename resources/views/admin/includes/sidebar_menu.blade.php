@@ -34,7 +34,7 @@
     </a>
 </li>
 <li class="nav-item">
-    <a href="#" class="nav-link @menuactive('service-description.*')">
+    <a href="#" class="nav-link @menuactive('service-description.*')  @menuactive('service.*')">
         <i class="nav-icon fas fa-edit"></i>
         <p>Наши услуги<i class="fas fa-angle-left right"></i></p>
     </a>
@@ -46,7 +46,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a href="pages/forms/advanced.html" class="nav-link">
+            <a href="{{route('service.index')}}" class="nav-link @menuactive('service.*')">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Предоставляемые услуги</p>
             </a>
