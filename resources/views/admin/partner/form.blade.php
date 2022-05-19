@@ -47,7 +47,7 @@
         @endif
     </div>
     <small>Рекомендуемые минимальные размеры 250px X 105px</small><br>
-    <input type="file" id="image" name="image"><br><br>
+    <input type="file" id="image" name="image" @if(!isset($partner)) required @endif><br><br>
     @include('includes.error', ['field'=>'image'])
     <button type="submit" class="btn btn-primary">{{isset($partner)? "Изменить" : "Добавить"}}</button>
 </form>
