@@ -1,79 +1,24 @@
+@if(isset($partners))
 <section id="partner-area">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="partner-content-wrap">
-                        <!-- Single Partner Start -->
+                        @foreach($partners as $partner)
                         <div class="single-partner">
                             <div class="display-table">
                                 <div class="display-table-cell">
-                                    <img src="{{ asset('assets/img/partner/partner-logo-1.png') }}" alt="JSOFT">
+                                <picture>
+                                    <sourse srcset="{{ Storage::url('partner/' . $partner->img_webp)}}" type="image/webp">
+                                    <img src="{{ Storage::url('partner/' . $partner->img)}}" alt="{{$partner->title}}">
+                                </picture>
                                 </div>
                             </div>
                         </div>
-                        <!-- Single Partner End -->
-
-                        <!-- Single Partner Start -->
-                        <div class="single-partner">
-                            <div class="display-table">
-                                <div class="display-table-cell">
-                                    <img src="{{ asset('assets/img/partner/partner-logo-2.png') }}" alt="JSOFT">
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Single Partner End -->
-
-                        <!-- Single Partner Start -->
-                        <div class="single-partner">
-                            <div class="display-table">
-                                <div class="display-table-cell">
-                                    <img src="{{ asset('assets/img/partner/partner-logo-3.png') }}" alt="JSOFT">
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Single Partner End -->
-
-                        <!-- Single Partner Start -->
-                        <div class="single-partner">
-                            <div class="display-table">
-                                <div class="display-table-cell">
-                                    <img src="{{ asset('assets/img/partner/partner-logo-4.png') }}" alt="JSOFT">
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Single Partner End -->
-
-                        <!-- Single Partner Start -->
-                        <div class="single-partner">
-                            <div class="display-table">
-                                <div class="display-table-cell">
-                                    <img src="{{ asset('assets/img/partner/partner-logo-5.png') }}" alt="JSOFT">
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Single Partner End -->
-
-                        <!-- Single Partner Start -->
-                        <div class="single-partner">
-                            <div class="display-table">
-                                <div class="display-table-cell">
-                                    <img src="{{ asset('assets/img/partner/partner-logo-1.png') }}" alt="JSOFT">
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Single Partner End -->
-
-                        <!-- Single Partner Start -->
-                        <div class="single-partner">
-                            <div class="display-table">
-                                <div class="display-table-cell">
-                                    <img src="{{ asset('assets/img/partner/partner-logo-4.png') }}" alt="JSOFT">
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Single Partner End -->
+                        @endforeach
                     </div>
                 </div>
             </div>
         </div>
 </section>
+@endif
