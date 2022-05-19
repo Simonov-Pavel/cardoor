@@ -10,7 +10,9 @@
 
 @section('content') 
 <a href="{{ route('service.create') }}" title='Добавить' class='btn btn-success mb-3'>Добавить</a>
-@if(isset($services))
+
+@if($services->total() != 0)
+
 <div class="card">
     <div class="card-body p-0">
     
