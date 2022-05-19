@@ -140,7 +140,7 @@
                             <ul>
                                 <li class="@menuactive('index')"><a href="{{route('index')}}">Главная</a></li>
                                 <li class="@menuactive('about')"><a href="{{route('about')}}">О нас</a></li>
-                                <li><a href="services.html">services</a></li>
+                                <li class="@menuactive('service')"><a href="{{route('service')}}">Услуги</a></li>
                                 <li><a href="#">Cars</a>
                                     <ul>
                                         <li><a href="car-left-sidebar.html">Car Left Sidebar</a></li>
