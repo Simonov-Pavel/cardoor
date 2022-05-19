@@ -10,7 +10,7 @@ class AdminServiceController extends Controller
 {
     public function index()
     {
-        //
+        return view('admin.service.index');
     }
 
     public function create()
