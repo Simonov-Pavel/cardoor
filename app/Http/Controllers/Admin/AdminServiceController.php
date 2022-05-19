@@ -15,7 +15,7 @@ class AdminServiceController extends Controller
 
     public function create()
     {
-        //
+        return view('admin.service.form');
     }
 
     public function store(ServiceRequest $request)
@@ -30,7 +30,7 @@ class AdminServiceController extends Controller
 
     public function edit(Service $service)
     {
-        //
+        return view('admin.service.form', compact('service'));
     }
 
     public function update(ServiceRequest $request, Service $service)
