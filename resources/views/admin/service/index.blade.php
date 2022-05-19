@@ -36,8 +36,6 @@
                         </picture>
                     </td>
                     <td class="col-sm-1">
-                        <a href="{{ route('service.show', $service) }}" title='Просмотреть'><i class="fa fa-eye ml-2" aria-hidden="true"></i></a>
-                        
                         <a href="{{ route('service.edit', $service) }}" title='Редактировать'><i class="fa fa-pencil text-success ml-2" aria-hidden="true"></i></a>
                         <form action="{{ route('service.destroy', $service) }}" method="post" class='d-inline-block'>
                             @csrf
