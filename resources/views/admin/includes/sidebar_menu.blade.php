@@ -34,13 +34,13 @@
     </a>
 </li>
 <li class="nav-item">
-    <a href="#" class="nav-link @menuactive('servise-description.*')">
+    <a href="#" class="nav-link @menuactive('service-description.*')">
         <i class="nav-icon fas fa-edit"></i>
         <p>Наши услуги<i class="fas fa-angle-left right"></i></p>
     </a>
     <ul class="nav nav-treeview" style="display: none;">
         <li class="nav-item">
-            <a href="{{route('service-description.index')}}" class="nav-link @menuactive('servise-description.*')">
+            <a href="{{route('service-description.index')}}" class="nav-link @menuactive('service-description.*')">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Описание раздела Услуги</p>
             </a>
