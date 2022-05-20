@@ -29,7 +29,8 @@ class ViewServiceProvider extends ServiceProvider
         View::composer(['admin.users.index'], 'App\ViewsComposer\UsersComposer');
         View::composer(['admin.banner.index', 'includes.slider'], 'App\ViewsComposer\BannerComposer');
         View::composer(['admin.about.index', 'includes.about', 'about'], 'App\ViewsComposer\AboutComposer');
-        View::composer(['admin.partner.index', 'includes.partner'], 'App\ViewsComposer\PartnerComposer');
+        View::composer(['admin.partner.index'], 'App\ViewsComposer\PartnerComposer');
+        View::composer(['includes.partner'], 'App\ViewsComposer\PartnerMainComposer');
         View::composer(['admin.service-description.index', 'service'], 'App\ViewsComposer\ServiceDescriptionComposer');
         View::composer(['admin.service.index', 'service'], 'App\ViewsComposer\ServiceComposer');
         View::composer(['includes.service'], 'App\ViewsComposer\ServiceMainComposer');
