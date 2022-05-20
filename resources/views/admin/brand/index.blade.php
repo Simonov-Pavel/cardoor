@@ -33,7 +33,6 @@
                                 <a href="" title='Удалить'><i class="fa fa-times text-danger ml-2" aria-hidden="true"></i></a>
                             </button>
                         </form>
-                        @endif
                     </td>
                 </tr>
                 @endforeach
@@ -41,4 +40,5 @@
         </table>
     </div>
 </div>
+
 @endsection

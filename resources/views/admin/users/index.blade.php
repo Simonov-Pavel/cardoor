@@ -10,6 +10,8 @@
 
 @section('content') 
 <a href="{{ route('user.create') }}" title='Добавить' class='btn btn-success mb-3'>Добавить</a>
+@if($users->items() != [])
+
 <div class="card">
     <div class="card-body p-0">
     
@@ -61,4 +63,7 @@
     
 </div>
 <div style="width:fit-content;margin:0 auto">{{ $users->withQueryString()->links() }}</div>
+@else
+    <p>Пока пользователей нет</p>
+@endif
 @endsection
