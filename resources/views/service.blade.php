@@ -46,6 +46,7 @@
 				</div>
                 @endforeach
 			</div>
+            <div class="mb-5" style="width:fit-content;margin:0 auto">{{ $services->links() }}</div>
         </div>
     </section>
     @endif

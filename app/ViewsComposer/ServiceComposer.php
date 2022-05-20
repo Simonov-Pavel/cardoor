@@ -8,7 +8,7 @@ class ServiceComposer
 {
     public function compose(View $view){
         $service = new Service;
-        $services = $service->paginate(10);
+        $services = $service->select('id', 'header', 'img', 'img_webp')->orderBy('id', 'desc')->paginate(3);
         $view->with('services', $services);
     }
 }
