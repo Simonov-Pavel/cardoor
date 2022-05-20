@@ -16,6 +16,7 @@ use App\Http\Controllers\Admin\AdminPartnerController;
 use App\Http\Controllers\Admin\AdminServiceDescriptionController;
 use App\Http\Controllers\Admin\AdminServiceController;
 use App\Http\Controllers\Admin\AdminBrandController;
+use App\Http\Controllers\Admin\AdminBodyController;
 use App\Http\Controllers\Account\AccountUserCotroller;
 
 
@@ -53,6 +54,7 @@ Route::middleware(['auth'])->group(function(){
             'service-description' => AdminServiceDescriptionController::class,
             'service' => AdminServiceController::class,
             'brand' => AdminBrandController::class,
+            'body' => AdminBodyController::class,
         ]);
     });
 });
