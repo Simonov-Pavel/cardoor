@@ -20,7 +20,8 @@ class AdminBrandController extends Controller
 
     public function store(BrandRequest $request)
     {
-        //
+        Brand::create($request->all());
+        return to_route('brand.index')->with('success', 'Новая мака автомобиля успешно добавленна');
     }
 
     public function edit(Brand $brand)
