@@ -31,11 +31,13 @@ class AdminBrandController extends Controller
 
     public function update(BrandRequest $request, Brand $brand)
     {
-        //
+        $brand->update($request->all());
+        return to_route('brand.index')->with('success', 'Успешно обновлено');
     }
 
     public function destroy(Brand $brand)
     {
-        //
+        $brand->delete();
+        return to_route('brand.index')->with('warning', "Марка $brand->title успешно удалена");
     }
 }
