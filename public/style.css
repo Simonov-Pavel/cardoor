@@ -563,6 +563,15 @@ a.slicknav_btn {
     margin: 20px 0 15px;
 }
 
+.service-item a {
+    display: block;
+    height: 100%;
+}
+
+.service-item a:hover h3 {
+    color: #ffd000;
+}
+
 .service-item i.fa {
     font-size: 55px;
     color: #ffd000;
