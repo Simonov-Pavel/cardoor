@@ -53,3 +53,17 @@
         </li>
     </ul>
 </li>
+<li class="nav-item">
+    <a href="#" class="nav-link @menuactive('brand.*')">
+        <i class="nav-icon fa fa-car"></i>
+        <p>Автопарк<i class="fas fa-angle-left right"></i></p>
+    </a>
+    <ul class="nav nav-treeview" style="display: none;">
+        <li class="nav-item">
+            <a href="{{route('brand.index')}}" class="nav-link @menuactive('brand.*')">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Марки автомобилей</p>
+            </a>
+        </li>
+    </ul>
+</li>
