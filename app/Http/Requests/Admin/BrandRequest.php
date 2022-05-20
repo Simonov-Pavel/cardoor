@@ -23,8 +23,14 @@ class BrandRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            'title' => 'required|string',
+        $rules = [
+            'title' => 'required|string|unique:brands,title',
         ];
+
+        if($this->route()->named('brand.update')){
+            $rules['title'] .= ',' . $this->route()->parameter('brand')->id;
+        }
+
+        return $rules;
     }
 }
