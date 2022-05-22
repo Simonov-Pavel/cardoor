@@ -86,7 +86,7 @@
         <li class="nav-item">
             <a href="{{route('transmission.index')}}" class="nav-link @menuactive('transmission.*')">
                 <i class="far fa-circle nav-icon"></i>
-                <p>Тип двигателей автомобилей</p>
+                <p>Тип коробки передач автомобилей</p>
             </a>
         </li>
     </ul>
