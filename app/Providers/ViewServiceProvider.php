@@ -37,5 +37,6 @@ class ViewServiceProvider extends ServiceProvider
         View::composer(['admin.brand.index'], 'App\ViewsComposer\BrandComposer');
         View::composer(['admin.body.index'], 'App\ViewsComposer\BodyComposer');
         View::composer(['admin.class.index'], 'App\ViewsComposer\ClassCarComposer');
+        View::composer(['admin.engine.index'], 'App\ViewsComposer\EngineComposer');
     }
 }

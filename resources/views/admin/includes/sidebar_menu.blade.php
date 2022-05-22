@@ -54,7 +54,7 @@
     </ul>
 </li>
 <li class="nav-item">
-    <a href="#" class="nav-link @menuactive('brand.*') @menuactive('body.*') @menuactive('class.*')">
+    <a href="#" class="nav-link @menuactive('brand.*') @menuactive('body.*') @menuactive('class.*') @menuactive('engine.*')">
         <i class="nav-icon fa fa-car"></i>
         <p>Автопарк<i class="fas fa-angle-left right"></i></p>
     </a>
@@ -75,6 +75,12 @@
             <a href="{{route('class.index')}}" class="nav-link @menuactive('class.*')">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Класс автомобилей</p>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="{{route('engine.index')}}" class="nav-link @menuactive('engine.*')">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Тип двигателей автомобилей</p>
             </a>
         </li>
     </ul>

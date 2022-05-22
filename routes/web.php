@@ -18,6 +18,7 @@ use App\Http\Controllers\Admin\AdminServiceController;
 use App\Http\Controllers\Admin\AdminBrandController;
 use App\Http\Controllers\Admin\AdminBodyController;
 use App\Http\Controllers\Admin\AdminClassCarController;
+use App\Http\Controllers\Admin\AdminEngineController;
 use App\Http\Controllers\Account\AccountUserCotroller;
 
 
@@ -57,6 +58,7 @@ Route::middleware(['auth'])->group(function(){
             'brand' => AdminBrandController::class,
             'body' => AdminBodyController::class,
             'class' => AdminClassCarController::class,
+            'engine' => AdminEngineController::class,
         ]);
     });
 });
