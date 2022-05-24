@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Description;
 use Cviebrock\EloquentSluggable\Sluggable;
 
 class Car extends Model
@@ -17,6 +18,11 @@ class Car extends Model
         return [
             'slug' => ['source' => 'model']
         ];
+    }
+
+    public function description()
+    {
+        return $this->hasOne(Description::class);
     }
 
 }
