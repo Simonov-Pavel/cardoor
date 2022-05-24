@@ -19,7 +19,7 @@
 
 @section('content') 
 <a href="{{ route('car.create') }}" class="btn btn-primary ml-2 mb-3">Добавить</a>
-@if(isset($cars))
+@if($cars->total() != 0)
 <div class="card">
     <div class="card-body p-0">
         
@@ -62,8 +62,8 @@
     </div>
     
 </div>
-<div style="width:fit-content;margin:0 auto">{{ $partners->withQueryString()->links() }}</div>
+<div style="width:fit-content;margin:0 auto">{{ $cars->withQueryString()->links() }}</div>
 @else
-    <h3>Вы пока не добавляли партнеров</h3>
+    <h3>Вы пока не добавляли автомобилей</h3>
 @endif
 @endsection

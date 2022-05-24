@@ -60,6 +60,12 @@
     </a>
     <ul class="nav nav-treeview" style="display: none;">
         <li class="nav-item">
+            <a href="{{route('car.index')}}" class="nav-link @menuactive('car.*')">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Автомобили</p>
+            </a>
+        </li>
+        <li class="nav-item">
             <a href="{{route('brand.index')}}" class="nav-link @menuactive('brand.*')">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Марки автомобилей</p>
