@@ -24,6 +24,8 @@ class CarRequest extends FormRequest
     public function rules()
     {
         return [
+            'text' => 'required|string',
+            'text' => 'required|string|max:150',
             'model' => 'required|string',
             'brithday' => 'required|string',
             'price' => 'required|numeric',

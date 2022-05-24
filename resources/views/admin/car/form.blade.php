@@ -58,6 +58,66 @@
         <input type="text"  name='price' required class="form-control" id="price" value="{{ old('price', isset($car)? $car->price : null) }}" placeholder="Добавьте price"> 
         @include('includes.error', ['field'=>'price'])
     </div>
+    <div class="form-group">
+        <label>Выбирете модель</label>
+        <select class="form-control" name='brand'>
+            <option></option>
+            @foreach($brands as $brand)
+                <option value="{{ $brand->title }}" @if(isset($car) && $car->brand === $brand->title) selected @endif>
+                    {{$brand->title}}
+                </option>
+            @endforeach
+        </select>
+        @include('includes.error', ['field'=>'brand'])
+    </div>
+    <div class="form-group">
+        <label>Выбирете тип кузова</label>
+        <select class="form-control" name='body'>
+            <option></option>
+            @foreach($bodies as $body)
+                <option value="{{ $body->title }}" @if(isset($car) && $car->body === $body->title) selected @endif>
+                    {{$body->title}}
+                </option>
+            @endforeach
+        </select>
+        @include('includes.error', ['field'=>'body'])
+    </div>
+    <div class="form-group">
+        <label>Выбирете класс автомобиля</label>
+        <select class="form-control" name='class'>
+            <option></option>
+            @foreach($clases as $class)
+                <option value="{{ $class->title }}" @if(isset($car) && $car->class === $class->title) selected @endif>
+                    {{$class->title}}
+                </option>
+            @endforeach
+        </select>
+        @include('includes.error', ['field'=>'class'])
+    </div>
+    <div class="form-group">
+        <label>Выбирете тип двигателя</label>
+        <select class="form-control" name='engine'>
+            <option></option>
+            @foreach($engines as $engine)
+                <option value="{{ $engine->title }}" @if(isset($car) && $car->engine === $engine->title) selected @endif>
+                    {{$engine->title}}
+                </option>
+            @endforeach
+        </select>
+        @include('includes.error', ['field'=>'engine'])
+    </div>
+    <div class="form-group">
+        <label>Выбирете тип коробки передач</label>
+        <select class="form-control" name='transmission'>
+            <option></option>
+            @foreach($transmissions as $transmission)
+                <option value="{{ $transmission->title }}" @if(isset($car) && $car->transmission === $transmission->title) selected @endif>
+                    {{$transmission->title}}
+                </option>
+            @endforeach
+        </select>
+        @include('includes.error', ['field'=>'transmission'])
+    </div>
     <div class="form-group"> 
         <label for="file">Выбирете изображение @if(isset($car))<small>(если хотите изменить его)</small>@endif</label><br>
         <small>Рекомендуемые минимальные размеры 1280px X 800px</small><br>

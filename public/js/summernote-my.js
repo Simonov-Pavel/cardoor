@@ -1,5 +1,5 @@
 $(function () {
-    $('#description, #conditions_rental').summernote({
+    $('#description, #conditions_rental, #text, #text_preview').summernote({
       lang:'ru-RU',
       toolbar: [
           ['style', ['style']],
