@@ -60,8 +60,8 @@
     </div>
     <div class="form-group">
         <label>Выбирете модель</label>
-        <select class="form-control" name='brand'>
-            <option></option>
+        <select class="form-control" name='brand' required>
+            <option>{{ old('brand', isset($car)? $car->brand : null) }}</option>
             @foreach($brands as $brand)
                 <option value="{{ $brand->title }}" @if(isset($car) && $car->brand === $brand->title) selected @endif>
                     {{$brand->title}}
@@ -72,8 +72,8 @@
     </div>
     <div class="form-group">
         <label>Выбирете тип кузова</label>
-        <select class="form-control" name='body'>
-            <option></option>
+        <select class="form-control" name='body' required>
+            <option>{{ old('body', isset($car)? $car->body : null) }}</option>
             @foreach($bodies as $body)
                 <option value="{{ $body->title }}" @if(isset($car) && $car->body === $body->title) selected @endif>
                     {{$body->title}}
@@ -84,8 +84,8 @@
     </div>
     <div class="form-group">
         <label>Выбирете класс автомобиля</label>
-        <select class="form-control" name='class'>
-            <option></option>
+        <select class="form-control" name='class' required>
+            <option>{{ old('class', isset($car)? $car->class : null) }}</option>
             @foreach($clases as $class)
                 <option value="{{ $class->title }}" @if(isset($car) && $car->class === $class->title) selected @endif>
                     {{$class->title}}
@@ -96,8 +96,8 @@
     </div>
     <div class="form-group">
         <label>Выбирете тип двигателя</label>
-        <select class="form-control" name='engine'>
-            <option></option>
+        <select class="form-control" name='engine' required>
+            <option>{{ old('engine', isset($car)? $car->engine : null) }}</option>
             @foreach($engines as $engine)
                 <option value="{{ $engine->title }}" @if(isset($car) && $car->engine === $engine->title) selected @endif>
                     {{$engine->title}}
@@ -108,8 +108,8 @@
     </div>
     <div class="form-group">
         <label>Выбирете тип коробки передач</label>
-        <select class="form-control" name='transmission'>
-            <option></option>
+        <select class="form-control" name='transmission' required>
+            <option>{{ old('transmission', isset($car)? $car->transmission : null) }}</option>
             @foreach($transmissions as $transmission)
                 <option value="{{ $transmission->title }}" @if(isset($car) && $car->transmission === $transmission->title) selected @endif>
                     {{$transmission->title}}
