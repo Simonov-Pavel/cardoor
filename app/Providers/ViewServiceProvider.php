@@ -34,11 +34,11 @@ class ViewServiceProvider extends ServiceProvider
         View::composer(['admin.service-description.index', 'service'], 'App\ViewsComposer\ServiceDescriptionComposer');
         View::composer(['admin.service.index', 'service'], 'App\ViewsComposer\ServiceComposer');
         View::composer(['includes.service'], 'App\ViewsComposer\ServiceMainComposer');
-        View::composer(['admin.brand.index'], 'App\ViewsComposer\BrandComposer');
-        View::composer(['admin.body.index'], 'App\ViewsComposer\BodyComposer');
-        View::composer(['admin.class.index'], 'App\ViewsComposer\ClassCarComposer');
-        View::composer(['admin.engine.index'], 'App\ViewsComposer\EngineComposer');
-        View::composer(['admin.transmission.index'], 'App\ViewsComposer\TransmissionComposer');
+        View::composer(['admin.brand.index', 'admin.car.form'], 'App\ViewsComposer\BrandComposer');
+        View::composer(['admin.body.index', 'admin.car.form'], 'App\ViewsComposer\BodyComposer');
+        View::composer(['admin.class.index', 'admin.car.form'], 'App\ViewsComposer\ClassCarComposer');
+        View::composer(['admin.engine.index', 'admin.car.form'], 'App\ViewsComposer\EngineComposer');
+        View::composer(['admin.transmission.index', 'admin.car.form'], 'App\ViewsComposer\TransmissionComposer');
         View::composer(['admin.car.index'], 'App\ViewsComposer\CarComposer');
     }
 }
