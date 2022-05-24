@@ -5,11 +5,6 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\Sluggable;
-use App\Models\Brand;
-use App\Models\Body;
-use App\Models\ClassCar;
-use App\Models\Engine;
-use App\Models\Transmission;
 
 class Car extends Model
 {
