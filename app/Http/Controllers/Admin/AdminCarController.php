@@ -15,7 +15,7 @@ class AdminCarController extends Controller
 
     public function create()
     {
-        //
+        return view('admin.car.form');
     }
 
     public function store(CarRequest $request)
@@ -25,7 +25,7 @@ class AdminCarController extends Controller
 
     public function edit(Car $car)
     {
-        //
+        return view('admin.car.form', compact('car'));
     }
 
     public function update(CarRequest $request, Car $car)
