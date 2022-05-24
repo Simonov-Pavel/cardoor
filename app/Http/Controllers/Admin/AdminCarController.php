@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Car;
+use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\CarRequest;
 
 class AdminCarController extends Controller
