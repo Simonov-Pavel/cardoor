@@ -10,7 +10,7 @@ class AdminCarController extends Controller
 {
     public function index()
     {
-        //
+        return view('admin.car.index');
     }
 
     public function create()
