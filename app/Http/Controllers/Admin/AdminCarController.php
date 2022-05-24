@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Car;
+use App\Models\Description;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\CarRequest;
+use App\Services\Images;
 
 class AdminCarController extends Controller
 {
@@ -19,6 +21,17 @@ class AdminCarController extends Controller
     }
 
     public function store(CarRequest $request)
+    {
+        if($request->has('image')){
+            Images::createImages($request, 'cars', 1280, 800);
+        }
+        $params = $request->all();
+        $car = Car::create($params);
+        $car->description()->create($request->only('text', 'text_preview'));
+        return to_route('car.index');
+    }
+
+    public function show(Car $car)
     {
         //
     }

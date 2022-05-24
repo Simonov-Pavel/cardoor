@@ -26,24 +26,23 @@
         <table class="table table-sm">
             <thead>
                 <tr>
-                    <th>Изображение</th>
                     <th>Модель</th>
+                    <th>Изображение</th>
                     <th style="width: 40px"></th>
                 </tr>
             </thead>
             <tbody>
             @foreach($cars as $car)
                 <tr>
-                    
                     <td class="col-sm-2">{{ $car->model }}</td>
                     <td class="col-sm-2">
                         <picture>
                             <source srcset="{{ Storage::url('cars/'.$car->img_webp) }}" type="image/webp">
-                            <img src="{{ Storage::url('cars/'.$car->img) }}" alt="{{$car->slug}}">
+                            <img src="{{ Storage::url('cars/'.$car->img) }}" alt="{{$car->slug}}" width="100">
                         </picture>
                     </td>
-                    
                     <td class="col-sm-1">
+                        <a href="{{ route('car.show', $car) }}" title='Просмотреть'><i class="fa fa-eye ml-2" aria-hidden="true"></i></a>
                         <a href="{{ route('car.edit', $car) }}" title='Редактировать'><i class="fa fa-pencil text-success ml-2" aria-hidden="true"></i></a>
                         <form action="{{ route('car.destroy', $car) }}" method="post" class='d-inline-block'>
                             @csrf
@@ -62,7 +61,7 @@
     </div>
     
 </div>
-<div style="width:fit-content;margin:0 auto">{{ $cars->withQueryString()->links() }}</div>
+<div style="width:fit-content;margin:0 auto">{{ $cars->links() }}</div>
 @else
     <h3>Вы пока не добавляли автомобилей</h3>
 @endif

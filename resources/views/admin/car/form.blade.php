@@ -40,13 +40,13 @@
     </div>
     <div class="form-group">
         <label>Краткое описание</label>
-        <textarea type="text" name='description_preview' class="form-control" id="description_preview" placeholder="Описание автомобиля" required='required'>{{ old('description_preview') }}</textarea>
-        @include('includes.error', ['field'=>'description_preview'])
+        <textarea type="text" name='text_preview' class="form-control" id="text_preview" placeholder="Описание автомобиля" required='required'>{{ old('text_preview', isset($car->description->text_preview)? $car->description->text_preview : null) }}</textarea>
+        @include('includes.error', ['field'=>'text_preview'])
     </div>
     <div class="form-group">
         <label>Описание</label>
-        <textarea type="text" name='description' class="form-control" id="description" placeholder="Описание автомобиля" required='required'>{{ old('description', isset($car)? $car->description : null) }}</textarea>
-        @include('includes.error', ['field'=>'description'])
+        <textarea type="text" name='text' class="form-control" id="text" placeholder="Описание автомобиля" required='required'>{{ old('text', isset($car->description->text)? $car->description->text : null) }}</textarea>
+        @include('includes.error', ['field'=>'text'])
     </div>
     <div class="form-group">
         <label>Год выпуска</label>
