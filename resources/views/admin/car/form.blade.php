@@ -128,6 +128,15 @@
         @include('includes.error', ['field'=>'transmission'])
     </div>
     @endif
+    <div class="form-group">
+        <label>Дополнительные опции</label>
+        @foreach($options as $option)
+        <div class="form-check">
+            <input name="options[]" value="{{$option->id}}" class="form-check-input" type="checkbox" @if(isset($car)) checked @endif>
+            <label class="form-check-label">{{$option->title}}</label>
+        </div>
+        @endforeach
+    </div>
     <div class="form-group"> 
         <label for="file">Выбирете изображение @if(isset($car))<small>(если хотите изменить его)</small>@endif</label><br>
         <small>Рекомендуемые минимальные размеры 1280px X 800px</small><br>
