@@ -42,6 +42,7 @@ class AdminOptionController extends Controller
 
     public function destroy(Option $option)
     {
-        //
+        $option->delete();
+        return to_route('option.index')->with('warning', "Опция для автомобилей $option->title успешно удалена");
     }
 }

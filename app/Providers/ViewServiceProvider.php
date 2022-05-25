@@ -40,6 +40,6 @@ class ViewServiceProvider extends ServiceProvider
         View::composer(['admin.engine.index', 'admin.car.form'], 'App\ViewsComposer\EngineComposer');
         View::composer(['admin.transmission.index', 'admin.car.form'], 'App\ViewsComposer\TransmissionComposer');
         View::composer(['admin.car.index'], 'App\ViewsComposer\CarComposer');
-        View::composer(['admin.option.index'], 'App\ViewsComposer\OptionComposer');
+        View::composer(['admin.option.index', 'admin.option.form'], 'App\ViewsComposer\OptionComposer');
     }
 }
