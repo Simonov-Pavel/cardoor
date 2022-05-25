@@ -46,7 +46,18 @@ class AdminCarController extends Controller
 
     public function update(CarRequest $request, Car $car)
     {
-        //
+        if($request->has('image')){
+            Images::updateImages($request, $car, 'cars', 1280, 800);
+        }
+        $params = $request->all();
+
+        $car->update($params);
+        $car->description()->update($request->only('text', 'text_preview'));
+        $car->options()->detach();
+        if($request->options):
+            $car->options()->attach($request->options);
+        endif;
+        return to_route('car.index')->with('success', 'Успешно обновлено');
     }
 
     public function destroy(Car $car)
