@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Description;
+use App\Models\Option;
 use Cviebrock\EloquentSluggable\Sluggable;
 
 class Car extends Model
@@ -23,6 +24,11 @@ class Car extends Model
     public function description()
     {
         return $this->hasOne(Description::class);
+    }
+
+    public function options()
+    {
+        return $this->belongsToMany(Option::class);
     }
 
 }
