@@ -21,6 +21,7 @@ use App\Http\Controllers\Admin\AdminClassCarController;
 use App\Http\Controllers\Admin\AdminEngineController;
 use App\Http\Controllers\Admin\AdminTransmissionController;
 use App\Http\Controllers\Admin\AdminCarController;
+use App\Http\Controllers\Admin\AdminOptionController;
 use App\Http\Controllers\Account\AccountUserCotroller;
 
 
@@ -63,6 +64,7 @@ Route::middleware(['auth'])->group(function(){
             'engine' => AdminEngineController::class,
             'transmission' => AdminTransmissionController::class,
             'car' => AdminCarController::class,
+            'option' => AdminOptionController::class,
         ]);
     });
 });
