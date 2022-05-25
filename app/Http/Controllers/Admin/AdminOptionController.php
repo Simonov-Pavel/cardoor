@@ -20,7 +20,8 @@ class AdminOptionController extends Controller
 
     public function store(OptionRequest $request)
     {
-        //
+        Option::create($request->all());
+        return to_route('option.index')->with('success', 'Новая опция для автомобилей успешно добавленна');
     }
 
     public function show(Option $option)
@@ -35,7 +36,8 @@ class AdminOptionController extends Controller
 
     public function update(OptionRequest $request, Option $option)
     {
-        //
+        $option->update($request->all());
+        return to_route('option.index')->with('success', "Опция для автомобилей $option->title успешно обновленна");
     }
 
     public function destroy(Option $option)
