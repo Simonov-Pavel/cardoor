@@ -12,7 +12,7 @@
 <a href="{{ route('option.create') }}" title='Добавить опцию автомобиля' class='btn btn-success mb-3'>Добавить опцию автомобиля</a>
 <div class="card">
     <div class="card-body p-0">
-    
+    @if($options->count() != 0)
         <table class="table table-sm">
             <thead>
                 <tr>
@@ -38,6 +38,9 @@
                 @endforeach
             </tbody>
         </table>
+    @else
+        <h4>Дополнительных опций для автомобилей к сожалению пока добавленно не было</h4>
+    @endif
     </div>
 </div>
 
