@@ -15,7 +15,7 @@ class AdminOptionController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.option.index');
     }
 
     /**
