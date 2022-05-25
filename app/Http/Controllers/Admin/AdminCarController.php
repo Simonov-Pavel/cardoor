@@ -28,6 +28,9 @@ class AdminCarController extends Controller
         $params = $request->all();
         $car = Car::create($params);
         $car->description()->create($request->only('text', 'text_preview'));
+        if($request->options):
+            $car->options()->attach($request->options);
+        endif;
         return to_route('car.index');
     }
 
