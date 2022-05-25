@@ -34,7 +34,7 @@
     @method('put')
     @endif
     <div class="form-group">
-        <label>Модель</label>
+        <label>Марка автомобиля</label>
         <input type="text" required  name='model' class="form-control" id="model" value="{{ old('model', isset($car)? $car->model : null) }}" placeholder="Ведите модель автомобиля">   
         @include('includes.error', ['field'=>'model'])
     </div>
@@ -58,6 +58,7 @@
         <input type="text"  name='price' required class="form-control" id="price" value="{{ old('price', isset($car)? $car->price : null) }}" placeholder="Добавьте price"> 
         @include('includes.error', ['field'=>'price'])
     </div>
+    @if($brands->count() != 0)
     <div class="form-group">
         <label>Выбирете модель</label>
         <select class="form-control" name='brand' required>
@@ -70,6 +71,8 @@
         </select>
         @include('includes.error', ['field'=>'brand'])
     </div>
+    @endif
+    @if($bodies->count() != 0)
     <div class="form-group">
         <label>Выбирете тип кузова</label>
         <select class="form-control" name='body' required>
@@ -82,6 +85,8 @@
         </select>
         @include('includes.error', ['field'=>'body'])
     </div>
+    @endif
+    @if($clases->count() != 0)
     <div class="form-group">
         <label>Выбирете класс автомобиля</label>
         <select class="form-control" name='class' required>
@@ -94,6 +99,8 @@
         </select>
         @include('includes.error', ['field'=>'class'])
     </div>
+    @endif
+    @if($engines->count() != 0)
     <div class="form-group">
         <label>Выбирете тип двигателя</label>
         <select class="form-control" name='engine' required>
@@ -106,6 +113,8 @@
         </select>
         @include('includes.error', ['field'=>'engine'])
     </div>
+    @endif
+    @if($transmissions->count() != 0)
     <div class="form-group">
         <label>Выбирете тип коробки передач</label>
         <select class="form-control" name='transmission' required>
@@ -118,6 +127,7 @@
         </select>
         @include('includes.error', ['field'=>'transmission'])
     </div>
+    @endif
     <div class="form-group"> 
         <label for="file">Выбирете изображение @if(isset($car))<small>(если хотите изменить его)</small>@endif</label><br>
         <small>Рекомендуемые минимальные размеры 1280px X 800px</small><br>

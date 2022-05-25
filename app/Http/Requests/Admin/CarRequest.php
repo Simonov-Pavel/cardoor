@@ -30,11 +30,11 @@ class CarRequest extends FormRequest
             'brithday' => 'required|string',
             'price' => 'required|numeric',
             'image' => 'file|image|mimes:jpeg,jpg,png|dimensions:min_width=1280,min_height=800',
-            'brand' => 'required|string|exists:brands,title',
-            'body' => 'required|string|exists:bodies,title',
-            'class' => 'required|string|exists:class_cars,title',
-            'engine' => 'required|string|exists:engines,title',
-            'transmission' => 'required|string|exists:transmissions,title',
+            'brand' => 'nullable|string|exists:brands,title',
+            'body' => 'nullable|string|exists:bodies,title',
+            'class' => 'nullable|string|exists:class_cars,title',
+            'engine' => 'nullable|string|exists:engines,title',
+            'transmission' => 'nullable|string|exists:transmissions,title',
         ];
     }
 }
