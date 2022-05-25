@@ -62,6 +62,8 @@ class AdminCarController extends Controller
 
     public function destroy(Car $car)
     {
-        //
+        $car->delete();
+        Images::deleteImages($car, 'cars');
+        return to_route('car.index')->with('warning', "Автомобиль $car->model удален");
     }
 }
