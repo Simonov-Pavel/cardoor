@@ -132,7 +132,7 @@
         <label>Дополнительные опции</label>
         @foreach($options as $option)
         <div class="form-check">
-            <input name="options[]" value="{{$option->id}}" class="form-check-input" type="checkbox" @if(isset($car)) checked @endif>
+            <input name="options[]" value="{{$option->id}}" class="form-check-input" type="checkbox" @if($car->options->where('id', $option->id)->count()) checked @endif>
             <label class="form-check-label">{{$option->title}}</label>
         </div>
         @endforeach
