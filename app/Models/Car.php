@@ -17,7 +17,7 @@ class Car extends Model
 {
     use HasFactory, Sluggable;
 
-    protected $fillable = ['model', 'slug', 'brithday', 'price', 'img', 'img_webp', 'brand', 'body', 'class', 'engine', 'transmission'];
+    protected $fillable = ['model', 'slug', 'brithday', 'price', 'img', 'img_webp', 'brand_id', 'body_id', 'class_cars_id', 'engine_id', 'transmission_id'];
 
     public function sluggable(): array
     {
