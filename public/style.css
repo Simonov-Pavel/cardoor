@@ -917,6 +917,7 @@ a.slicknav_btn {
     text-transform: uppercase;
     -webkit-transition: 0.3s;
     transition: 0.3s;
+    cursor:pointer;
 }
 
 .p-car-feature a:hover {
