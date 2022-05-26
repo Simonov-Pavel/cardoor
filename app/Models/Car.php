@@ -6,6 +6,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Description;
 use App\Models\Option;
+use App\Models\Brand;
+use App\Models\Body;
+use App\Models\ClassCar;
+use App\Models\Engine;
+use App\Models\Transmission;
 use Cviebrock\EloquentSluggable\Sluggable;
 
 class Car extends Model
@@ -29,6 +34,31 @@ class Car extends Model
     public function options()
     {
         return $this->belongsToMany(Option::class);
+    }
+
+    public function brand()
+    {
+        return $this->belongsTo(Brand::class);
+    }
+
+    public function body()
+    {
+        return $this->belongsTo(Body::class);
+    }
+
+    public function class()
+    {
+        return $this->belongsTo(ClassCar::class);
+    }
+
+    public function engine()
+    {
+        return $this->belongsTo(Engine::class);
+    }
+
+    public function transmission()
+    {
+        return $this->belongsTo(Transmission::class);
     }
 
 }
