@@ -21,11 +21,11 @@ return new class extends Migration
             $table->string('price');
             $table->string('img');
             $table->string('img_webp');
-            $table->string('brand');
-            $table->string('body');
-            $table->string('class');
-            $table->string('engine');
-            $table->string('transmission');
+            $table->foreignId('brand_id')->constrained()->onDelete('cascade');
+            $table->foreignId('body_id')->constrained()->onDelete('cascade');
+            $table->foreignId('class_cars_id')->constrained()->onDelete('cascade');
+            $table->foreignId('engine_id')->constrained()->onDelete('cascade');
+            $table->foreignId('transmission_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }
