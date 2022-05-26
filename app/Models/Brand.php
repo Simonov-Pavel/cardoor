@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\Sluggable;
+use App\Models\Car;
 
 class Brand extends Model
 {
@@ -17,5 +18,10 @@ class Brand extends Model
         return [
             'slug' => ['source' => 'title']
         ];
+    }
+
+    public function car()
+    {
+        return $this->hasMany(Car::class);
     }
 }
