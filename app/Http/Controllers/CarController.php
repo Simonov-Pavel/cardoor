@@ -10,9 +10,10 @@ class CarController extends Controller
     {
         return view('car');
     }
-    
-    public function show(Car $car)
-    {
-        //
+
+    public function show(string $slug)
+    { 
+        $car = Car::where('slug', $slug)->first();
+        return view('car-show', compact('car'));
     }
 }
