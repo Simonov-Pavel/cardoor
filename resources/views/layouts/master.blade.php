@@ -141,14 +141,7 @@
                                 <li class="@menuactive('index')"><a href="{{route('index')}}">Главная</a></li>
                                 <li class="@menuactive('about')"><a href="{{route('about')}}">О нас</a></li>
                                 <li class="@menuactive('service*')"><a href="{{route('service')}}">Услуги</a></li>
-                                <li><a href="#">Cars</a>
-                                    <ul>
-                                        <li><a href="car-left-sidebar.html">Car Left Sidebar</a></li>
-                                        <li><a href="car-right-sidebar.html">Car Right Sidebar</a></li>
-                                        <li><a href="car-without-sidebar.html">Car Without Sidebar</a></li>
-                                        <li><a href="car-details.html">Car Details</a></li>
-                                    </ul>
-                                </li>
+                                <li class="@menuactive('car*')"><a href="{{ route('car') }}">Автопарк</a></li>
                                 <li><a href="index.html">Pages</a>
                                     <ul>
                                         <li><a href="package.html">Pricing</a></li>
