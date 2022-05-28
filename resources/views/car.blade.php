@@ -47,7 +47,7 @@
                             <div class="col-lg-6 col-md-6">
                                 <div class="single-car-wrap">
                                     <div>
-                                        <a href="#" title="Подробнее">
+                                        <a href="{{route('car-show', $car->slug)}}" title="Подробнее">
                                         <picture>
                                             <sourse srcset="{{ Storage::url('cars/' . $car->img_webp)}}" type="image/webp">
                                             <img src="{{ Storage::url('cars/' . $car->img)}}" alt="{{$car->model}}">
@@ -55,7 +55,7 @@
                                         </a>
                                     </div>
                                     <div class="car-list-info without-bar">
-                                        <h2><a href="#" title="Подробнее">{{ $car->model }}</a></h2>
+                                        <h2><a href="{{route('car-show', $car->slug)}}" title="Подробнее">{{ $car->model }}</a></h2>
                                         <h3 style="font-size:16px;font-weight:400">{{$car->body->title}}</h3>
                                         <h5>{{$car->price}} руб./в сутки</h5>
                                         <p>{!! $car->description->text_preview !!}</p>

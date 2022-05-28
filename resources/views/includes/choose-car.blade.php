@@ -24,7 +24,7 @@
                             </div>
                             <div class="p-car-content">
                                 <h3>
-                                    <a href="#">{{ $car->model }}</a>
+                                    <a href="{{route('car-show', $car->slug)}}">{{ $car->model }}</a>
                                     <span class="price"><i class="fa fa-tag"></i> ${{$car->price}}/day</span>
                                 </h3>
                                 <h5>{{$car->body->title}}</h5>
