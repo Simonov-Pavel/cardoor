@@ -36,6 +36,7 @@ Route::post('/message', [MessageController::class, 'store'])->name('messageStore
 Route::get('/service', [ServiceController::class, 'index'])->name('service');
 Route::get('/service/{service}', [ServiceController::class, 'show'])->name('service-show');
 Route::get('/car', [CarController::class, 'index'])->name('car');
+Route::get('/car/{slug}', [CarController::class, 'show'])->name('car-show');
 
 Route::middleware(['auth'])->group(function(){
     
