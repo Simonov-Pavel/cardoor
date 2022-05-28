@@ -2255,29 +2255,6 @@ body,
     margin-bottom: 0;
 }
 
-.car-thumb-1 {
-    background-image: url(assets/img/car/car-1.jpg);
-}
-
-.car-thumb-2 {
-    background-image: url(assets/img/car/car-2.jpg);
-}
-
-.car-thumb-3 {
-    background-image: url(assets/img/car/car-3.jpg);
-}
-
-.car-thumb-4 {
-    background-image: url(assets/img/car/car-4.jpg);
-}
-
-.car-list-thumb {
-    background-size: cover;
-    background-position: center center;
-    height: 300px;
-    max-height: 100%;
-}
-
 .car-list-info {
     padding-right: 10px;
     position: relative;
@@ -2286,6 +2263,12 @@ body,
 
 .car-list-info h2 a {
     color: #22252c;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.car-list-info h2 a:hover {
+    color: #ffd000;
     font-size: 20px;
     font-weight: 600;
 }
@@ -2372,7 +2355,8 @@ body,
 /*== Page Pagination CSS ==*/
 
 .page-pagi {
-    margin-top: 50px;
+    margin: 30px auto;
+    width:fit-content
 }
 
 .page-pagi nav li a {
@@ -2383,7 +2367,7 @@ body,
     transition: all 0.4s ease 0s;
 }
 
-.page-pagi nav ul li.active a {
+.page-pagi nav ul li.active span {
     background-color: #ffd000 !important;
     border-color: #ffd000 !important;
 }

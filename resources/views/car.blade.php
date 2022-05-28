@@ -13,57 +13,56 @@
     <section id="car-list-area">
         <div class="container">
             <div class="choose-content-wrap">
+                @if($clases->count() != 0)
                 <ul class="nav nav-tabs" id="classCar" role="tablist">
                     <li class="nav-item">
                         <a class="nav-link active" id="home-tab" data-toggle="tab" href="#popular_cars" role="tab" aria-selected="true">Класс авто</a>
                     </li>
+                    @foreach($clases as $class)
                     <li class="nav-item">
-                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#newest_cars" role="tab" aria-selected="false">Эконом</a>
+                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#newest_cars" role="tab" aria-selected="false">{{$class->title}}</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#office_map" role="tab" aria-selected="false">Средний</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#office_map" role="tab" aria-selected="false">Премиум</a>
-                    </li>
+                    @endforeach
                 </ul>
-
+                @endif
+                @if($bodies->count() != 0)
                 <ul class="nav nav-tabs" id="bodyCar" role="tablist">
                     <li class="nav-item">
                         <a class="nav-link active" id="home-tab" data-toggle="tab" href="#popular_cars" role="tab" aria-selected="true">Кузов авто</a>
                     </li>
+                    @foreach($bodies as $body)
                     <li class="nav-item">
-                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#newest_cars" role="tab" aria-selected="false">Седан</a>
+                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#newest_cars" role="tab" aria-selected="false">{{$body->title}}</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#office_map" role="tab" aria-selected="false">Хетчбэк</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#office_map" role="tab" aria-selected="false">Универсал</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#office_map" role="tab" aria-selected="false">Джип</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#office_map" role="tab" aria-selected="false">Кросовер</a>
-                    </li>
+                    @endforeach
                 </ul>
+                @endif
             </div>
+            @if($cars->count() != 0)
             <div class="row">
                 <div class="col-lg-12">
                     <div class="car-list-content">
                         <div class="row">
+                            @foreach($cars as $car)
                             <div class="col-lg-6 col-md-6">
                                 <div class="single-car-wrap">
-                                    <div class="car-list-thumb car-thumb-1"></div>
+                                    <div>
+                                        <a href="#" title="Подробнее">
+                                        <picture>
+                                            <sourse srcset="{{ Storage::url('cars/' . $car->img_webp)}}" type="image/webp">
+                                            <img src="{{ Storage::url('cars/' . $car->img)}}" alt="{{$car->model}}">
+                                        </picture>
+                                        </a>
+                                    </div>
                                     <div class="car-list-info without-bar">
-                                        <h2><a href="#">Aston Martin One-77</a></h2>
-                                        <h5>39$ Rent /per a day</h5>
-                                        <p>Vivamus eget nibh. Etiam cursus leo vel metus. Nulla facilisi. Aenean inorci luctus et ultrices posuere cubilia.</p>
+                                        <h2><a href="#" title="Подробнее">{{ $car->model }}</a></h2>
+                                        <h3 style="font-size:16px;font-weight:400">{{$car->body->title}}</h3>
+                                        <h5>{{$car->price}} руб./в сутки</h5>
+                                        <p>{!! $car->description->text_preview !!}</p>
                                         <ul class="car-info-list">
-                                            <li>AC</li>
-                                            <li>Diesel</li>
-                                            <li>Auto</li>
+                                            <li>{{$car->brithday}}</li>
+                                            <li>{{$car->engine->title}}</li>
+                                            <li>{{$car->transmission->title}}</li>
                                         </ul>
                                         <p class="rating">
                                             <i class="fa fa-star"></i>
@@ -72,100 +71,19 @@
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star unmark"></i>
                                         </p>
-                                        <a href="#" class="rent-btn">Book It</a>
+                                        <a href="#" class="rent-btn">Арендовать</a>
                                     </div>
                                 </div>
                             </div>
-
-                            <div class="col-lg-6 col-md-6">
-                                <div class="single-car-wrap">
-                                    <div class="car-list-thumb car-thumb-2"></div>
-                                    <div class="car-list-info without-bar">
-                                        <h2><a href="#">Aston Martin One-77</a></h2>
-                                        <h5>39$ Rent /per a day</h5>
-                                        <p>Vivamus eget nibh. Etiam cursus leo vel metus. Nulla facilisi. Aenean inorci luctus et ultrices posuere cubilia.</p>
-                                        <ul class="car-info-list">
-                                            <li>AC</li>
-                                            <li>Diesel</li>
-                                            <li>Auto</li>
-                                        </ul>
-                                        <p class="rating">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star unmark"></i>
-                                        </p>
-                                        <a href="#" class="rent-btn">Book It</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-6 col-md-6">
-                                <div class="single-car-wrap">
-                                    <div class="car-list-thumb car-thumb-3"></div>
-                                    <div class="car-list-info without-bar">
-                                        <h2><a href="#">Aston Martin One-77</a></h2>
-                                        <h5>39$ Rent /per a day</h5>
-                                        <p>Vivamus eget nibh. Etiam cursus leo vel metus. Nulla facilisi. Aenean inorci luctus et ultrices posuere cubilia.</p>
-                                        <ul class="car-info-list">
-                                            <li>AC</li>
-                                            <li>Diesel</li>
-                                            <li>Auto</li>
-                                        </ul>
-                                        <p class="rating">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star unmark"></i>
-                                        </p>
-                                        <a href="#" class="rent-btn">Book It</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-6 col-md-6">
-                                <div class="single-car-wrap">
-                                    <div class="car-list-thumb car-thumb-4"></div>
-                                    <div class="car-list-info without-bar">
-                                        <h2><a href="#">Aston Martin One-77</a></h2>
-                                        <h5>39$ Rent /per a day</h5>
-                                        <p>Vivamus eget nibh. Etiam cursus leo vel metus. Nulla facilisi. Aenean inorci luctus et ultrices posuere cubilia.</p>
-                                        <ul class="car-info-list">
-                                            <li>AC</li>
-                                            <li>Diesel</li>
-                                            <li>Auto</li>
-                                        </ul>
-                                        <p class="rating">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star unmark"></i>
-                                        </p>
-                                        <a href="#" class="rent-btn">Book It</a>
-                                    </div>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
-
-                    <div class="page-pagi">
-                        <nav aria-label="Page navigation example">
-                            <ul class="pagination">
-                                <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item"><a class="page-link" href="#">4</a></li>
-                                <li class="page-item"><a class="page-link" href="#">5</a></li>
-                                <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                            </ul>
-                        </nav>
-                    </div>
+                    <div class="page-pagi">{{ $cars->withQueryString()->links() }}</div>
                 </div>
             </div>
+            @else
+                <h3>К сожалению пока нет машин в автопарке</h3>
+            @endif
         </div>
     </section>
 @endsection
