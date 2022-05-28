@@ -7,6 +7,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\CarController;
 use App\Http\Controllers\Admin\AdminUserController;
 use App\Http\Controllers\Admin\AdminContactController;
 use App\Http\Controllers\Admin\AdminMessageController;
@@ -34,6 +35,7 @@ Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::post('/message', [MessageController::class, 'store'])->name('messageStore');
 Route::get('/service', [ServiceController::class, 'index'])->name('service');
 Route::get('/service/{service}', [ServiceController::class, 'show'])->name('service-show');
+Route::get('/car', [CarController::class, 'index'])->name('car');
 
 Route::middleware(['auth'])->group(function(){
     
