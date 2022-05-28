@@ -41,38 +41,6 @@
                 </div>
                 <div style="display:flex"><a href="" class="btn btn-success" style="margin:0 auto">Смотреть все автомобили</a></div>
                 
-                <!-- Filters -->
-                <div class="choose-content-wrap">
-                    <ul class="nav nav-tabs" id="myTab" role="tablist">
-                        <li class="nav-item">
-                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#popular_cars" role="tab" aria-selected="true">popular Cars</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#newest_cars" role="tab" aria-selected="false">newest cars</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#office_map" role="tab" aria-selected="false">Our Office</a>
-                        </li>
-                    </ul>
-
-                    <div class="tab-content" id="myTabContent">
-                        <div class="tab-pane fade show active" id="popular_cars" role="tabpanel" aria-labelledby="home-tab">
-                            <div class="popular-cars-wrap">
-                                <div class="popucar-menu text-center">
-                                    <a href="#" data-filter="*" class="active">all</a>
-                                    <a href="#" data-filter=".con">Conver</a>
-                                    <a href="#" data-filter=".hat">Truck</a>
-                                    <a href="#" data-filter=".mpv">MPV</a>
-                                    <a href="#" data-filter=".sedan">Sedan</a>
-                                    <a href="#" data-filter=".suv">SUV</a>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <!-- End Filters -->
-
             </div>
         </div>
     </div>
