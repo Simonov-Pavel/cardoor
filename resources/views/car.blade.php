@@ -10,35 +10,44 @@
     @include('includes.header-page')
 
     
-    <section id="car-list-area" class="section-padding">
+    <section id="car-list-area">
         <div class="container">
             <div class="choose-content-wrap">
-                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <ul class="nav nav-tabs" id="classCar" role="tablist">
                     <li class="nav-item">
-                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#popular_cars" role="tab" aria-selected="true">popular Cars</a>
+                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#popular_cars" role="tab" aria-selected="true">Класс авто</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#newest_cars" role="tab" aria-selected="false">newest cars</a>
+                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#newest_cars" role="tab" aria-selected="false">Эконом</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#office_map" role="tab" aria-selected="false">Our Office</a>
+                        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#office_map" role="tab" aria-selected="false">Средний</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#office_map" role="tab" aria-selected="false">Премиум</a>
                     </li>
                 </ul>
 
-                <div class="tab-content" id="myTabContent">
-                    <div class="tab-pane fade show active" id="popular_cars" role="tabpanel" aria-labelledby="home-tab">
-                        <div class="popular-cars-wrap">
-                            <div class="popucar-menu text-center">
-                                <a href="#" data-filter="*" class="active">all</a>
-                                <a href="#" data-filter=".con">Conver</a>
-                                <a href="#" data-filter=".hat">Truck</a>
-                                <a href="#" data-filter=".mpv">MPV</a>
-                                <a href="#" data-filter=".sedan">Sedan</a>
-                                <a href="#" data-filter=".suv">SUV</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <ul class="nav nav-tabs" id="bodyCar" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#popular_cars" role="tab" aria-selected="true">Кузов авто</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#newest_cars" role="tab" aria-selected="false">Седан</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#office_map" role="tab" aria-selected="false">Хетчбэк</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#office_map" role="tab" aria-selected="false">Универсал</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#office_map" role="tab" aria-selected="false">Джип</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#office_map" role="tab" aria-selected="false">Кросовер</a>
+                    </li>
+                </ul>
             </div>
             <div class="row">
                 <div class="col-lg-12">

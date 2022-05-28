@@ -738,6 +738,7 @@ a.slicknav_btn {
 
 .choose-content-wrap .nav-tabs {
     border-bottom: 3px solid #ffd000;
+    margin: 30px 0;
 }
 
 .choose-content-wrap .nav-tabs li a {
@@ -2402,7 +2403,6 @@ body,
 
 .car-list-info.without-bar .rating {
     right: 25px;
-    top: 40px;
 }
 
 .car-list-content .col-lg-6 .single-car-wrap {
