@@ -160,7 +160,7 @@
                                         <li><a href="article-details.html">Blog Details</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="{{route('contact')}}">Контакты</a></li>
+                                <li class="@menuactive('contact*')"><a href="{{route('contact')}}">Контакты</a></li>
                             </ul>
                         </nav>
                     </div>
