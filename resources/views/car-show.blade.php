@@ -3,7 +3,7 @@
 @section('description', 'description')
 @section('keywords', 'keywords')
 @section('canonical', route('car'))
-@section('title-header', 'Наши машины')
+@section('title-header', $car->model)
 
 @section('content')
 
