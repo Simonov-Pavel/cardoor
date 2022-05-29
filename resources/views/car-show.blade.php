@@ -73,6 +73,9 @@
                                 @endif
                             </div>
                         </div>
+                        <div class="text-center">
+                            @include('includes.button-rent')
+                        </div>
                     </div>
                 </div>
             </div>

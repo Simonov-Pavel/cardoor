@@ -31,7 +31,7 @@
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star unmark"></i>
                                     </p>
-                                    <a href="#" class="rent-btn">Арендовать</a>
+                                    @include('includes.button-rent')
                                 </div>
                             </div>
                         </div>
