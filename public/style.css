@@ -2266,14 +2266,10 @@ body,
 
 .car-list-info h2 a {
     color: #22252c;
-    font-size: 20px;
-    font-weight: 600;
 }
 
 .car-list-info h2 a:hover {
     color: #ffd000;
-    font-size: 20px;
-    font-weight: 600;
 }
 
 .car-list-info h5 {
@@ -2529,7 +2525,6 @@ body,
 .car-details-info {
     color: #666;
     line-height: 2;
-    padding-top: 30px;
 }
 
 .car-details-info h4 {

@@ -92,11 +92,11 @@
     </div>
     <div class="form-group">
         <label>Выбирете класс автомобиля @if($clases->count() == 0) <a href="{{ route('class.create') }}">Добавить</a> @endif</label>
-        <select class="form-control" name='class_cars_id' required>
+        <select class="form-control" name='class_car_id' required>
             @if($clases->count() != 0)
             <option>{{ old('class', isset($car)? $car->class : null) }}</option>
             @foreach($clases as $class)
-                <option value="{{ $class->id }}" @if(isset($car) && $car->class_cars_id === $class->id) selected @endif>
+                <option value="{{ $class->id }}" @if(isset($car) && $car->class_car_id === $class->id) selected @endif>
                     {{$class->title}}
                 </option>
             @endforeach
