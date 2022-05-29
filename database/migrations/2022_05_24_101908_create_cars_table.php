@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('img_webp');
             $table->foreignId('brand_id')->constrained()->onDelete('cascade');
             $table->foreignId('body_id')->constrained()->onDelete('cascade');
-            $table->foreignId('class_cars_id')->constrained()->onDelete('cascade');
+            $table->foreignId('class_car_id')->constrained()->onDelete('cascade');
             $table->foreignId('engine_id')->constrained()->onDelete('cascade');
             $table->foreignId('transmission_id')->constrained()->onDelete('cascade');
             $table->timestamps();

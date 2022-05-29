@@ -11,8 +11,8 @@
   
     <section id="car-list-area">
         <div class="container">
-            @include('includes.sort-car')
-            @include('includes.car')
+            <div class="sort">@include('includes.sort-car')</div>
+            <div class="car">@include('includes.car')</div>
         </div>
     </section>
 @endsection

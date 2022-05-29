@@ -42,7 +42,7 @@
                                             </tr>
                                             <tr>
                                                 <th>Класс</th>
-                                                <td>{{$car->class_cars->title}}</td>
+                                                <td>{{$car->class_car->title}}</td>
                                             </tr>
                                             <tr>
                                                 <th>Кузов</th>

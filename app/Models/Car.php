@@ -46,7 +46,7 @@ class Car extends Model
         return $this->belongsTo(Body::class);
     }
 
-    public function class_cars()
+    public function class_car()
     {
         return $this->belongsTo(ClassCar::class);
     }
