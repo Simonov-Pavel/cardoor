@@ -754,8 +754,11 @@ a.slicknav_btn {
     text-transform: uppercase;
 }
 
-.choose-content-wrap .nav-tabs li a.active {
+.choose-content-wrap .nav-tabs li a:hover {
     background-color: #ffd000 !important;
+}
+
+.choose-content-wrap .nav-tabs li a.active {
     background-color: #ffd000 !important;
     color: #fff !important;
 }
