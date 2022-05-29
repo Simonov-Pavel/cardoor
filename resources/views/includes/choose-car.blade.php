@@ -39,7 +39,7 @@
                     @endforeach
                     
                 </div>
-                <div style="display:flex"><a href="" class="btn btn-success" style="margin:0 auto">Смотреть все автомобили</a></div>
+                <div style="display:flex"><a href="{{ route('car') }}" class="btn btn-success" style="margin:0 auto">Смотреть все автомобили</a></div>
                 
             </div>
         </div>
