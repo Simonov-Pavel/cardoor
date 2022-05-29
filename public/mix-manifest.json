@@ -2,6 +2,7 @@
     "/js/app.js": "/js/app.js",
     "/js/map.js": "/js/map.js",
     "/js/getCoordinateMap.js": "/js/getCoordinateMap.js",
+    "/js/summernote-my.js": "/js/summernote-my.js",
     "/css/map.css": "/css/map.css",
     "/css/app.css": "/css/app.css"
 }

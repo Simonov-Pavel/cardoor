@@ -719,14 +719,14 @@ select {
 .mb-5 {
   margin-bottom: 1.25rem;
 }
+.mr-3 {
+  margin-right: 0.75rem;
+}
 .mb-4 {
   margin-bottom: 1rem;
 }
 .mt-1 {
   margin-top: 0.25rem;
-}
-.mr-3 {
-  margin-right: 0.75rem;
 }
 .block {
   display: block;
