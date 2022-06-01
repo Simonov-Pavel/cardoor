@@ -24,11 +24,11 @@ class ClassCarRequest extends FormRequest
     public function rules()
     {
         $rules = [
-            'title' => 'required|string|unique:brands,title',
+            'title' => 'required|string|unique:class_cars,title',
         ];
     
-        if($this->route()->named('brand.update')){
-            $rules['title'] .= ',' . $this->route()->parameter('brand')->id;
+        if($this->route()->named('class.update')){
+            $rules['title'] .= ',' . $this->route()->parameter('class')->id;
         }
     
         return $rules;
