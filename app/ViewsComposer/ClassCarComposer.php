@@ -7,7 +7,7 @@ use App\Models\ClassCar;
 class ClassCarComposer 
 {
     public function compose(View $view){
-        $clases = ClassCar::get();
+        $clases = ClassCar::with('car')->get();
         $view->with('clases', $clases);
     }
 }
