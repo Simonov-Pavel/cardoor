@@ -39,6 +39,12 @@
                     <div class="bookinput-item" style="border: 1px solid #000;background: #ccc;">
                         <input name='endRent' type="text" id="endRent" required placeholder="Дата возврата" autocomplete="off" data-inputmask-alias="datetime" data-inputmask-inputformat="dd.mm.yyyy" data-mask>
                     </div>
+                    @if(isset($_GET['class']))
+                        <input type="hidden" name="class" value="{{ $_GET['class'] }}">
+                    @endif
+                    @if(isset($_GET['body']))
+                        <input type="hidden" name="body" value="{{ $_GET['body'] }}">
+                    @endif
 
                     <div class="bookcar-btn bookinput-item" style="border: 1px solid #000;">
                         <button type="submit">Подобрать</button>
