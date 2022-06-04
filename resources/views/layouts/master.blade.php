@@ -27,7 +27,7 @@
     <!--=== Owl Carousel CSS ===-->
     <link href="{{ asset('assets/css/plugins/owl.carousel.min.css') }}" rel="stylesheet">
     <!--=== Gijgo CSS ===-->
-    <link href="{{ asset('assets/css/plugins/gijgo.css') }}" rel="stylesheet">
+    <!--<link href="{{ asset('assets/css/plugins/gijgo.css') }}" rel="stylesheet">-->
     <!--=== FontAwesome CSS ===-->
     <link href="{{ asset('assets/css/font-awesome.css') }}" rel="stylesheet">
     
@@ -290,7 +290,7 @@
     <!--=== Bootstrap Min Js ===-->
     <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
     <!--=== Gijgo Min Js ===-->
-    <script src="{{ asset('assets/js/plugins/gijgo.js') }}"></script>
+    <!--<script src="{{ asset('assets/js/plugins/gijgo.js') }}"></script>-->
     <!--=== Vegas Min Js ===-->
     <script src="{{ asset('assets/js/plugins/vegas.min.js') }}"></script>
     <!--=== Isotope Min Js ===-->

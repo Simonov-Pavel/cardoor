@@ -4,8 +4,21 @@
 @section('keywords', 'keywords')
 @section('canonical', route('car'))
 @section('title-header', 'Наши машины')
+@section('custom-css')
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+@endsection
 @section('custom-js')
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+    <script src="{{ asset('plugins/inputmask/jquery.inputmask.min.js') }}"></script>
     <script src="{{ asset('js/sort-car.js') }}"></script>
+    <script>
+        $('#startRent').inputmask('dd.mm.yyyy', { 'placeholder': 'dd.mm.yyyy' });
+        $('#endRent').inputmask('dd.mm.yyyy', { 'placeholder': 'dd.mm.yyyy' });
+        $( "#startRent" ).datepicker();
+        $( "#startRent" ).datepicker( "option", "dateFormat", "dd.mm.yy" );
+        $( "#endRent" ).datepicker();
+        $( "#endRent" ).datepicker( "option", "dateFormat", "dd.mm.yy" );
+    </script>
 @endsection
 
 @section('content')
@@ -14,7 +27,24 @@
   
     <section id="car-list-area">
         <div class="container">
-            <div class="sort">@include('includes.sort-car')</div>
+            <div class="sort">
+                @include('includes.sort-car')
+            </div>
+            <div class="book-ur-car"style="margin: 40px auto;background-color: #ccc;" >
+            <h3>Укажите даты аренды авто и мы покажим вам все свободные фвто в эти даты</h3>
+                <form action="{{route('car')}}" method="GET" style="padding: 45px 0;">
+                    <div class="bookinput-item" style="border: 1px solid #000;background: #ccc;">
+                        <input name='startRent' type="text" id="startRent" required placeholder="Дата аренды" autocomplete="off" data-inputmask-alias="datetime" data-inputmask-inputformat="dd.mm.yyyy" data-mask>
+                    </div>
+                    <div class="bookinput-item" style="border: 1px solid #000;background: #ccc;">
+                        <input name='endRent' type="text" id="endRent" required placeholder="Дата возврата" autocomplete="off" data-inputmask-alias="datetime" data-inputmask-inputformat="dd.mm.yyyy" data-mask>
+                    </div>
+
+                    <div class="bookcar-btn bookinput-item" style="border: 1px solid #000;">
+                        <button type="submit">Подобрать</button>
+                    </div>
+                </form>
+            </div>
             <div class="car">
             @if($cars->count() != 0)
             <div class="row">

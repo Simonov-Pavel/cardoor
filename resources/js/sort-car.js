@@ -27,7 +27,6 @@ $('.sort').on('click', function(){
     }else{
         window.location.href = base;
     }
-    console.log($(this));
     
     return false;
 });
