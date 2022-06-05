@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('startRent');
             $table->string('endRent');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
