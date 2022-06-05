@@ -77,6 +77,10 @@
 
 /*== Theme Defualt CSS ==*/
 
+.form-pattern:invalid {
+    color: #f00;
+}
+
 .overlay {
     position: relative;
     z-index: 1;
@@ -94,7 +98,7 @@
 }
 
 .section-padding {
-    padding: 100px 0;
+    padding: 50px 0;
 }
 
 .section-title {
@@ -139,6 +143,7 @@
 }
 
 .overlay .section-title h2,
+.overlay .section-title h3,
 .overlay .section-title p {
     color: #fff;
 }

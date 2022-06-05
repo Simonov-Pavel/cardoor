@@ -3,6 +3,17 @@ var __webpack_exports__ = {};
 /*!**********************************!*\
   !*** ./resources/js/sort-car.js ***!
   \**********************************/
+$('#startRent').inputmask('dd.mm.yyyy', {
+  'placeholder': 'dd.mm.yyyy'
+});
+$('#endRent').inputmask('dd.mm.yyyy', {
+  'placeholder': 'dd.mm.yyyy'
+});
+$.datepicker.setDefaults($.datepicker.regional["ru"]);
+$("#startRent").datepicker();
+$("#startRent").datepicker("option", "minDate", +1);
+$("#endRent").datepicker();
+$("#endRent").datepicker("option", "minDate", +1);
 $('.sort').on('click', function () {
   var sort = $(this).data('sort');
   var slug = $(this).data('slug');
@@ -35,7 +46,6 @@ $('.sort').on('click', function () {
     window.location.href = base;
   }
 
-  console.log($(this));
   return false;
 });
 /******/ })()

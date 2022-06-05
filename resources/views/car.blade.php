@@ -9,48 +9,57 @@
 @endsection
 @section('custom-js')
     <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+    <script src="{{ asset('js/datepicker-ru.js') }}"></script>
     <script src="{{ asset('plugins/inputmask/jquery.inputmask.min.js') }}"></script>
     <script src="{{ asset('js/sort-car.js') }}"></script>
-    <script>
-        $('#startRent').inputmask('dd.mm.yyyy', { 'placeholder': 'dd.mm.yyyy' });
-        $('#endRent').inputmask('dd.mm.yyyy', { 'placeholder': 'dd.mm.yyyy' });
-        $( "#startRent" ).datepicker();
-        $( "#startRent" ).datepicker( "option", "dateFormat", "dd.mm.yy" );
-        $( "#endRent" ).datepicker();
-        $( "#endRent" ).datepicker( "option", "dateFormat", "dd.mm.yy" );
-    </script>
 @endsection
 
 @section('content')
 
     @include('includes.header-page')
+    <section id="funfact-area" class="overlay section-padding mb-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-11 col-md-12 m-auto">
+                    <div class="funfact-content-wrap">
+                        <div class="row">
+                            <div class="section-title text-center w-100 m-0">
+                                <h3>Укажите интересующие вас параметры</h3>
+                            </div>
+                            <div class="book-ur-car">
+                                <form action="{{route('car')}}" method="GET">
+                                    <div class="bookinput-item m-0">
+                                        <input name='startRent' type="text" id="startRent" required placeholder="Дата аренды" autocomplete="off" data-inputmask-alias="datetime" data-inputmask-inputformat="dd.mm.yyyy" data-mask>
+                                    </div>
+                                    <div class="bookinput-item">
+                                        <input name='endRent' type="text" id="endRent" required placeholder="Дата возврата" autocomplete="off" data-inputmask-alias="datetime" data-inputmask-inputformat="dd.mm.yyyy" data-mask>
+                                    </div>
+                                    @if(isset($_GET['class']))
+                                        <input type="hidden" name="class" value="{{ $_GET['class'] }}">
+                                    @endif
+                                    @if(isset($_GET['body']))
+                                        <input type="hidden" name="body" value="{{ $_GET['body'] }}">
+                                    @endif
+
+                                    <div class="bookcar-btn bookinput-item">
+                                        <button type="submit">Подобрать</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="sort">
+                            @include('includes.sort-car')
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
   
     <section id="car-list-area">
         <div class="container">
-            <div class="sort">
-                @include('includes.sort-car')
-            </div>
-            <div class="book-ur-car"style="margin: 40px auto;background-color: #ccc;" >
-            <h3>Укажите даты аренды авто и мы покажим вам все свободные фвто в эти даты</h3>
-                <form action="{{route('car')}}" method="GET" style="padding: 45px 0;">
-                    <div class="bookinput-item" style="border: 1px solid #000;background: #ccc;">
-                        <input name='startRent' type="text" id="startRent" required placeholder="Дата аренды" autocomplete="off" data-inputmask-alias="datetime" data-inputmask-inputformat="dd.mm.yyyy" data-mask>
-                    </div>
-                    <div class="bookinput-item" style="border: 1px solid #000;background: #ccc;">
-                        <input name='endRent' type="text" id="endRent" required placeholder="Дата возврата" autocomplete="off" data-inputmask-alias="datetime" data-inputmask-inputformat="dd.mm.yyyy" data-mask>
-                    </div>
-                    @if(isset($_GET['class']))
-                        <input type="hidden" name="class" value="{{ $_GET['class'] }}">
-                    @endif
-                    @if(isset($_GET['body']))
-                        <input type="hidden" name="body" value="{{ $_GET['body'] }}">
-                    @endif
-
-                    <div class="bookcar-btn bookinput-item" style="border: 1px solid #000;">
-                        <button type="submit">Подобрать</button>
-                    </div>
-                </form>
-            </div>
+            
+            
             <div class="car">
             @if($cars->count() != 0)
             <div class="row">

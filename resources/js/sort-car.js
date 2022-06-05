@@ -1,3 +1,11 @@
+$('#startRent').inputmask('dd.mm.yyyy', { 'placeholder': 'dd.mm.yyyy' });
+$('#endRent').inputmask('dd.mm.yyyy', { 'placeholder': 'dd.mm.yyyy' });
+$.datepicker.setDefaults( $.datepicker.regional["ru"] );
+$( "#startRent" ).datepicker();
+$( "#startRent" ).datepicker( "option", "minDate", +1);
+$( "#endRent" ).datepicker();
+$( "#endRent" ).datepicker( "option", "minDate", +1 );
+
 $('.sort').on('click', function(){
     let sort = $(this).data('sort');
     let slug = $(this).data('slug');

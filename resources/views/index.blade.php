@@ -14,9 +14,12 @@
         $('#endRent').inputmask('dd.mm.yyyy', { 'placeholder': 'dd.mm.yyyy' });
         $( "#startRent" ).datepicker();
         $( "#startRent" ).datepicker( "option", "dateFormat", "dd.mm.yy" );
+        $( "#startRent" ).datepicker( "option", "minDate", +1 );
         $( "#endRent" ).datepicker();
         $( "#endRent" ).datepicker( "option", "dateFormat", "dd.mm.yy" );
+        $( "#endRent" ).datepicker( "option", "minDate", +1);
     </script>
+    
 @endsection
 
 @section('content')

@@ -8,8 +8,10 @@ use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvi
 use Illuminate\Support\Facades\Event;
 use App\Events\MessageCreated;
 use App\Events\NewPasswordMail;
+use App\Events\RentCreated;
 use App\Listeners\NewMessageEmailNotification;
 use App\Listeners\NewPasswordEmailNotification;
+use App\Listeners\NewRentEmailNotification;
 
 class EventServiceProvider extends ServiceProvider
 {
@@ -27,6 +29,9 @@ class EventServiceProvider extends ServiceProvider
         ],
         NewPasswordMail::class => [
             NewPasswordEmailNotification::class,
+        ],
+        RentCreated::class => [
+            NewRentEmailNotification::class,
         ],
     ];
 

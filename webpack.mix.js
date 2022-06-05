@@ -16,6 +16,7 @@ mix.js('resources/js/app.js', 'public/js')
     .js('resources/js/getCoordinateMap.js', 'public/js')
     .js('resources/js/summernote-my.js', 'public/js')
     .js('resources/js/sort-car.js', 'public/js')
+    .js('resources/js/datepicker-ru.js', 'public/js')
     .postCss('resources/css/app.css', 'public/css', [
         require('postcss-import'),
         require('tailwindcss'),

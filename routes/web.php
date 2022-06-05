@@ -8,6 +8,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\CarController;
+use App\Http\Controllers\RentController;
 use App\Http\Controllers\Admin\AdminUserController;
 use App\Http\Controllers\Admin\AdminContactController;
 use App\Http\Controllers\Admin\AdminMessageController;
@@ -39,7 +40,8 @@ Route::get('/car', [CarController::class, 'index'])->name('car');
 Route::get('/car/{slug}', [CarController::class, 'show'])->name('car-show');
 
 Route::middleware(['auth'])->group(function(){
-    
+    Route::get('/rent/{slug}', [RentController::class, 'create'])->name('rent');
+    Route::post('/rent', [RentController::class, 'store'])->name('rentStore');
     Route::group(['prefix'=>'account'], function(){
         Route::get('/', [App\Http\Controllers\Account\MainController::class, 'index'])->name('account');
         Route::resources([
