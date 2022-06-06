@@ -19,7 +19,7 @@ class RentController extends Controller
 
     public function store(RentRequest $request)
     {
-        $validate = RentService::validate($request);
+        $validate = RentService::validateDate($request->startRent, $request->endRent);
         if(!$validate){
             return redirect()->back()->with('warning', 'Произошла ошибка, проверьте даты аренды и попробуйте снова');
         }

@@ -11,6 +11,7 @@ use App\Models\Body;
 use App\Models\ClassCar;
 use App\Models\Engine;
 use App\Models\Transmission;
+use App\Models\Rent;
 use Cviebrock\EloquentSluggable\Sluggable;
 use App\Services\Filters\BaseFilter;
 use Illuminate\Database\Eloquent\Builder;
@@ -61,6 +62,11 @@ class Car extends Model
     public function transmission()
     {
         return $this->belongsTo(Transmission::class);
+    }
+
+    public function rents()
+    {
+        return $this->hasMany(Rent::class);
     }
 
     public function scopeFilter(Builder $builder, BaseFilter $filter)

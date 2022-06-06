@@ -4,6 +4,7 @@ namespace App\Services\Filters;
 
 use Illuminate\Database\Eloquent\Builder;
 use App\Http\Requests\FilterRequest;
+use App\Services\Rent\RentService;
 
 class BaseFilter
 {
@@ -13,6 +14,11 @@ class BaseFilter
 
     public function __construct(FilterRequest $request)
     {
+        if(isset($request->startRent) && isset($request->endRent)){
+            if(RentService::validateDate($request->startRent, $request->endRent)){
+                $request['date'] = $request->startRent . ',' . $request->endRent;
+            }
+        }
         $this->request = $request;
     }
 
