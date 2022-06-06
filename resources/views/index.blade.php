@@ -9,17 +9,8 @@
 @section('custom-js')
     <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
     <script src="{{ asset('plugins/inputmask/jquery.inputmask.min.js') }}"></script>
-    <script>
-        $('#startRent').inputmask('dd.mm.yyyy', { 'placeholder': 'dd.mm.yyyy' });
-        $('#endRent').inputmask('dd.mm.yyyy', { 'placeholder': 'dd.mm.yyyy' });
-        $( "#startRent" ).datepicker();
-        $( "#startRent" ).datepicker( "option", "dateFormat", "dd.mm.yy" );
-        $( "#startRent" ).datepicker( "option", "minDate", +1 );
-        $( "#endRent" ).datepicker();
-        $( "#endRent" ).datepicker( "option", "dateFormat", "dd.mm.yy" );
-        $( "#endRent" ).datepicker( "option", "minDate", +1);
-    </script>
-    
+    <script src="{{ asset('js/datepicker-ru.js') }}"></script>
+    <script src="{{ asset('js/sort-car.js') }}"></script>   
 @endsection
 
 @section('content')

@@ -3,8 +3,8 @@
 jQuery(function($){
 	$.datepicker.regional['ru'] = {
 		closeText: 'Закрыть',
-		prevText: '&#x3C;Пред',
-		nextText: 'След&#x3E;',
+		prevText: 'Предыдущий',
+		nextText: 'Следующий',
 		currentText: 'Сегодня',
 		monthNames: ['Январь','Февраль','Март','Апрель','Май','Июнь',
 		'Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'],
@@ -18,6 +18,7 @@ jQuery(function($){
 		firstDay: 1,
 		isRTL: false,
 		showMonthAfterYear: false,
+		minDate: +1,
 		yearSuffix: ''};
 	$.datepicker.setDefaults($.datepicker.regional['ru']);
 });

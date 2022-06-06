@@ -23,6 +23,7 @@ class RentController extends Controller
         if(!$validate){
             return redirect()->back()->with('warning', 'Произошла ошибка, проверьте даты аренды и попробуйте снова');
         }
+        $request['user_id'] = auth()->user()->id;
         $rent = Rent::create($request->all());
         $email = config('mail.admin.address');
         event(new RentCreated($rent, $email));

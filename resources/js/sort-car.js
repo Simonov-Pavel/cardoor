@@ -2,9 +2,19 @@ $('#startRent').inputmask('dd.mm.yyyy', { 'placeholder': 'dd.mm.yyyy' });
 $('#endRent').inputmask('dd.mm.yyyy', { 'placeholder': 'dd.mm.yyyy' });
 $.datepicker.setDefaults( $.datepicker.regional["ru"] );
 $( "#startRent" ).datepicker();
-$( "#startRent" ).datepicker( "option", "minDate", +1);
 $( "#endRent" ).datepicker();
-$( "#endRent" ).datepicker( "option", "minDate", +1 );
+
+$('#startRent').on('change', function(){
+    var start = $('#startRent').val();
+    localStorage.setItem('start', start);
+});
+$('#endRent').on('change', function(){
+    var end = $('#endRent').val();
+    localStorage.setItem('end', end);
+});
+
+$( "#startRent" ).val(localStorage.getItem('start'));
+$( "#endRent" ).val(localStorage.getItem('end'));
 
 $('.sort').on('click', function(){
     let sort = $(this).data('sort');
