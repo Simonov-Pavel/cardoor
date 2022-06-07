@@ -30,9 +30,6 @@ class CarFilter extends BaseFilter
                 foreach($car->rents as $rent){
                     $startRent = Carbon::createFromFormat('d.m.Y', $rent->startRent);
                     $endRent = Carbon::createFromFormat('d.m.Y', $rent->endRent);
-                    if(($start->lt($startRent) && $end->lt($startRent)) || ($start->gt($endRent) && $end->gt($endRent))){
-                        
-                    }
                     if(!($start->between($startRent, $endRent) || $end->between($startRent, $endRent) || $startRent->between($start, $end))){
                         $car_ids[] = $car->id;
                     }
