@@ -5,11 +5,15 @@ $( "#startRent" ).datepicker();
 $( "#endRent" ).datepicker();
 
 $('#startRent').on('change', function(){
-    var start = $('#startRent').val();
+    let start = $('#startRent').val();
+    let date = start.split('.');
+    $( "#endRent" ).datepicker("option", "minDate", new Date(date[2]+'.'+date[1]+'.'+((parseInt(date[0]))+1)));
     localStorage.setItem('start', start);
 });
 $('#endRent').on('change', function(){
-    var end = $('#endRent').val();
+    let end = $('#endRent').val();
+    let date = end.split('.');
+    $( "#startRent" ).datepicker("option", "maxDate", new Date(date[2]+'.'+date[1]+'.'+((parseInt(date[0]))-1)));
     localStorage.setItem('end', end);
 });
 

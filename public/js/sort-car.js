@@ -14,10 +14,14 @@ $("#startRent").datepicker();
 $("#endRent").datepicker();
 $('#startRent').on('change', function () {
   var start = $('#startRent').val();
+  var date = start.split('.');
+  $("#endRent").datepicker("option", "minDate", new Date(date[2] + '.' + date[1] + '.' + (parseInt(date[0]) + 1)));
   localStorage.setItem('start', start);
 });
 $('#endRent').on('change', function () {
   var end = $('#endRent').val();
+  var date = end.split('.');
+  $("#startRent").datepicker("option", "maxDate", new Date(date[2] + '.' + date[1] + '.' + (parseInt(date[0]) - 1)));
   localStorage.setItem('end', end);
 });
 $("#startRent").val(localStorage.getItem('start'));
