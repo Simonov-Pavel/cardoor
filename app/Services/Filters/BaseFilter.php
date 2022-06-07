@@ -15,7 +15,7 @@ class BaseFilter
     public function __construct(FilterRequest $request)
     {
         if(isset($request->startRent) && isset($request->endRent)){
-            if(RentService::validateDate($request->startRent, $request->endRent)){
+            if(RentService::validateDate($request)){
                 $request['date'] = $request->startRent . ',' . $request->endRent;
             }
         }

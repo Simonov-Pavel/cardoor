@@ -29,10 +29,12 @@
                             <div class="book-ur-car">
                                 <form action="{{route('car')}}" method="GET">
                                     <div class="bookinput-item m-0">
-                                        <input name='startRent' type="text" id="startRent" required placeholder="Дата аренды" autocomplete="off" data-inputmask-alias="datetime" data-inputmask-inputformat="dd.mm.yyyy" data-mask>
+                                        <input name='startRent' type="text" id="startRent"  class="form-pattern" value="{{ old('startRent', isset($_GET['startRent'])? $_GET['startRent'] : null) }}"  required placeholder="Дата аренды" autocomplete="off" data-inputmask-alias="datetime" data-inputmask-inputformat="dd.mm.yyyy" data-mask pattern="\d{2}[.]+\d{2}[.]+\d{4}" title="Допускаются только цифры и точка в формате - дд.мм.гггг - (например : 08.03.2000)">
+                                        @include('includes.error', ['field'=>'startRent'])
                                     </div>
                                     <div class="bookinput-item">
-                                        <input name='endRent' type="text" id="endRent" required placeholder="Дата возврата" autocomplete="off" data-inputmask-alias="datetime" data-inputmask-inputformat="dd.mm.yyyy" data-mask>
+                                        <input name='endRent' type="text" id="endRent" class="form-pattern" value="{{ old('endRent', isset($_GET['endRent'])? $_GET['endRent'] : null) }}" required placeholder="Дата возврата" autocomplete="off" data-inputmask-alias="datetime" data-inputmask-inputformat="dd.mm.yyyy" data-mask pattern="\d{2}[.]+\d{2}[.]+\d{4}" title="Допускаются только цифры и точка в формате - дд.мм.гггг - (например : 08.03.2000)">
+                                        @include('includes.error', ['field'=>'endRent'])
                                     </div>
                                     @if(isset($_GET['class']))
                                         <input type="hidden" name="class" value="{{ $_GET['class'] }}">

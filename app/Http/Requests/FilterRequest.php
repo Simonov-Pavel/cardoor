@@ -26,6 +26,18 @@ class FilterRequest extends FormRequest
         return [
             'body' => 'nullable|string|exists:bodies,slug',
             'class' => 'nullable|string|exists:class_cars,slug',
+            'startRent' => 'nullable|date|after:today',
+            'endRent' => 'nullable|date|after:startRent',
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'startRent.date' => 'Необходим формат даты - дд.мм.гггг',
+            'endRent.date' => 'Необходим формат даты - дд.мм.гггг',
+            'startRent.after' => 'дата должна быть не ранее завтрешней',
+            'endRent.after' => 'дата должна быть не ранее даты начала аренды',
         ];
     }
 }

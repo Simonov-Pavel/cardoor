@@ -57,12 +57,12 @@
                 @csrf
                 <div class="form-group">
                     <label><b>Дата начала аренды</b></label>
-                    <input type="text" required  name='startRent' @if(isset($_GET['startRent'])) value="{{ $_GET['startRent'] }}" @endif id="startRent" class="form-control form-pattern" placeholder="Ведите дату аренды" autocomplete="off" data-inputmask-alias="datetime" data-inputmask-inputformat="dd.mm.yyyy" data-mask pattern="\d{2}[.]+\d{2}[.]+\d{4}" title="Допускаются только цифры и точка в формате - дд.мм.гггг - (например : 08.03.2000)">   
+                    <input type="text" required  name='startRent' value="{{ old('startRent', isset($_GET['startRent'])? $_GET['startRent'] : null) }}" id="startRent" class="form-control form-pattern" placeholder="Ведите дату аренды" autocomplete="off" data-inputmask-alias="datetime" data-inputmask-inputformat="dd.mm.yyyy" data-mask pattern="\d{2}[.]+\d{2}[.]+\d{4}" title="Допускаются только цифры и точка в формате - дд.мм.гггг - (например : 08.03.2000)">   
                     @include('includes.error', ['field'=>'startRent'])
                 </div>
                 <div class="form-group">
                     <label><b>Дата конца аренды</b></label>
-                    <input type="text" required  name='endRent' @if(isset($_GET['endRent'])) value="{{ $_GET['endRent'] }}" @endif id="endRent" class="form-control form-pattern" placeholder="Ведите дату сдачи автомобиля" autocomplete="off" data-inputmask-alias="datetime" data-inputmask-inputformat="dd.mm.yyyy" data-mask pattern="\d{2}[.]+\d{2}[.]+\d{4}" title="Допускаются только цифры и точка в формате - дд.мм.гггг - (например : 08.03.2000)" >   
+                    <input type="text" required  name='endRent' value="{{ old('endRent', isset($_GET['endRent'])? $_GET['endRent'] : null) }}" id="endRent" class="form-control form-pattern" placeholder="Ведите дату сдачи автомобиля" autocomplete="off" data-inputmask-alias="datetime" data-inputmask-inputformat="dd.mm.yyyy" data-mask pattern="\d{2}[.]+\d{2}[.]+\d{4}" title="Допускаются только цифры и точка в формате - дд.мм.гггг - (например : 08.03.2000)" >   
                     @include('includes.error', ['field'=>'endRent'])
                 </div>
                 <p><b>Стоимость аренды <small>(за сутки)</small></b>: {{ $car->price }}</p>
