@@ -1,7 +1,7 @@
 <section id="footer-area">
     <div class="footer-widget-area">
         <div class="container">
-            <div class="row">
+            <div class="row" style="justify-content:space-between">
                 <div class="col-lg-4 col-md-6">
                     <div class="single-footer-widget">
                         <h2>о нас</h2>
@@ -22,7 +22,7 @@
                         </div>
                     </div>
                 </div>
-
+                @if($posts->count() != 0)
                 <div class="col-lg-4 col-md-6">
                     <div class="single-footer-widget">
                         <h2>последнии посты</h2>
@@ -56,7 +56,7 @@
                         </div>
                     </div>
                 </div>
-
+                @endif
                 <div class="col-lg-4 col-md-6">
                     <div class="single-footer-widget">
                         <h2>Контакты</h2>

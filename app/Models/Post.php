@@ -10,7 +10,7 @@ class Post extends Model
 {
     use HasFactory, Sluggable;
 
-    protected $fillable = ['header', 'slug', 'description', 'img', 'img_webp'];
+    protected $fillable = ['header', 'slug', 'text', 'text_preview', 'img', 'img_webp'];
 
     public function sluggable(): array
     {

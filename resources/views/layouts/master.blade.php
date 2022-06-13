@@ -59,16 +59,12 @@
     </div>
     <!--== Preloader Area End ==-->
 
-    <!--== Header Area Start ==-->
-    
-        <!--== Header Top Start ==-->
-        @include('includes.header')
+    @include('includes.header')
     @include('includes.user_errors')
 
     @yield('content')
      
     @include('includes.footer')
-    <!--== Footer Area End ==-->
 
     <!--== Scroll Top Area Start ==-->
     <div class="scroll-top">

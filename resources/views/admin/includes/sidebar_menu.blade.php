@@ -103,3 +103,8 @@
         </li>
     </ul>
 </li>
+<li class="nav-item">
+    <a href="{{ route('post.index') }}" class="nav-link @menuactive('post.*')">
+        <i class="nav-icon fa fa-building"></i><p>Блог</p>
+    </a>
+</li>

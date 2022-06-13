@@ -25,7 +25,7 @@ class CarRequest extends FormRequest
     {
         return [
             'text' => 'required|string',
-            'text' => 'required|string|max:150',
+            'text_preview' => 'required|string|max:150',
             'model' => 'required|string',
             'brithday' => 'required|string',
             'price' => 'required|numeric',

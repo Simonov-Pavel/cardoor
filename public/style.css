@@ -1303,7 +1303,7 @@ a.slicknav_btn {
 .article-body p {
     color: #999;
     line-height: 1.8;
-    text-transform: capitalize;
+    text-transform: initial;
 }
 
 .readmore-btn {

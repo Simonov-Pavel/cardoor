@@ -17,7 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('header');
             $table->string('slug')->index()->unique()->nullable();
-            $table->text('description');
+            $table->text('text');
+            $table->string('text_preview');
             $table->string('img');
             $table->string('img_webp');
             $table->timestamps();
