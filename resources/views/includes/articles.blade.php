@@ -32,7 +32,7 @@
                                                 <a href="#" class="commnet">Комментарии :: <span>10</span></a>
                                             </div>
 
-                                            <div class="article-date">25 <span class="month">jan</span></div>
+                                            <div class="article-date">{{$post->created_at->day}} <span class="month">{{ $post->created_at->shortMonthName }}</span></div>
 
                                             {!!$post->text_preview!!}
 
