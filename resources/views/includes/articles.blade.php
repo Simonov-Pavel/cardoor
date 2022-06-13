@@ -26,7 +26,7 @@
                                 <div class="display-table">
                                     <div class="display-table-cell">
                                         <div class="article-body">
-                                            <h3><a href="article-details.html">{{$post->header}}</a></h3>
+                                            <h3><a href="{{route('blog-show', $post->slug)}}">{{$post->header}}</a></h3>
                                             <div class="article-meta">
                                                 <a href="#" class="author">Автор :: <span>Админ</span></a>
                                                 <a href="#" class="commnet">Комментарии :: <span>10</span></a>
