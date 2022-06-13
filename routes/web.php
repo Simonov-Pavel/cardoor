@@ -9,6 +9,7 @@ use App\Http\Controllers\MessageController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\CarController;
 use App\Http\Controllers\RentController;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\Admin\AdminUserController;
 use App\Http\Controllers\Admin\AdminContactController;
 use App\Http\Controllers\Admin\AdminMessageController;
@@ -38,6 +39,8 @@ Route::get('/service', [ServiceController::class, 'index'])->name('service');
 Route::get('/service/{service}', [ServiceController::class, 'show'])->name('service-show');
 Route::get('/car', [CarController::class, 'index'])->name('car');
 Route::get('/car/{slug}', [CarController::class, 'show'])->name('car-show');
+Route::get('/blog', [BlogController::class, 'index'])->name('blog');
+Route::get('/blog/{slug}', [BlogController::class, 'show'])->name('blog-show');
 
 Route::middleware(['auth'])->group(function(){
     Route::get('/rent/{slug}', [RentController::class, 'create'])->name('rent');

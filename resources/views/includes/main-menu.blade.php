@@ -5,6 +5,7 @@
             <li class="@menuactive('about')"><a href="{{route('about')}}">О нас</a></li>
             <li class="@menuactive('service*')"><a href="{{route('service')}}">Услуги</a></li>
             <li class="@menuactive('car*')"><a href="{{ route('car') }}">Автопарк</a></li>
+            <li class="@menuactive('blog*')"><a href="{{ route('blog') }}">Блог</a></li>
             <li class="@menuactive('contact*')"><a href="{{route('contact')}}">Контакты</a></li>
         </ul>
     </nav>
