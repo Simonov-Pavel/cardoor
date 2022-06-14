@@ -22,4 +22,5 @@ mix.js('resources/js/app.js', 'public/js')
         require('tailwindcss'),
         require('autoprefixer'),
     ])
-    .postCss('resources/css/map.css', 'public/css');
+    .postCss('resources/css/map.css', 'public/css')
+    .postCss('resources/css/comment.css', 'public/css');

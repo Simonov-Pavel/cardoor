@@ -65,6 +65,18 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/css/comment.css":
+/*!***********************************!*\
+  !*** ./resources/css/comment.css ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
 /***/ "./resources/js/routes.json":
 /*!**********************************!*\
   !*** ./resources/js/routes.json ***!
@@ -174,6 +186,7 @@ module.exports = JSON.parse('{"debugbar.openhandler":"_debugbar/open","debugbar.
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
 /******/ 			"/js/app": 0,
+/******/ 			"css/comment": 0,
 /******/ 			"css/map": 0,
 /******/ 			"css/app": 0
 /******/ 		};
@@ -225,9 +238,10 @@ module.exports = JSON.parse('{"debugbar.openhandler":"_debugbar/open","debugbar.
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["css/map","css/app"], () => (__webpack_require__("./resources/js/app.js")))
-/******/ 	__webpack_require__.O(undefined, ["css/map","css/app"], () => (__webpack_require__("./resources/css/app.css")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/map","css/app"], () => (__webpack_require__("./resources/css/map.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/comment","css/map","css/app"], () => (__webpack_require__("./resources/js/app.js")))
+/******/ 	__webpack_require__.O(undefined, ["css/comment","css/map","css/app"], () => (__webpack_require__("./resources/css/app.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/comment","css/map","css/app"], () => (__webpack_require__("./resources/css/map.css")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/comment","css/map","css/app"], () => (__webpack_require__("./resources/css/comment.css")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()
